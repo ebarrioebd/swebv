@@ -1,0 +1,26 @@
+@media (max-width: 768px) and (min-width: 100px) {
+#head_main{
+	height: 7.5vh !important;
+}
+#sect01 {
+	display: none;
+}
+#sect02 {
+	height: 7vh;
+	display: flex;
+    justify-content: center;
+}
+/*center*/
+#sect11{
+	height: 40vh;
+}
+#center_main{
+height: max-content !important;
+}
+#sect21{
+	display: none;
+}
+.container{
+	overflow: scroll;
+}
+}

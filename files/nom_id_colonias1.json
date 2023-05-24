@@ -1,0 +1,4134 @@
+{
+    "nombres_col": [
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SIERRA",
+            "gid": 26118,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CUAUHTEMOC",
+            "gid": 25395,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "C T M",
+            "gid": 25985,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMATILLO",
+            "gid": 25460,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOMAS DEL AEROPUERTO",
+            "gid": 25256,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL MIRADOR",
+            "gid": 25394,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL ROSARIO",
+            "gid": 25396,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "FABRICA O LA CARTONERA",
+            "gid": 25397,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SAN PEDRO LAS PLAYAS",
+            "gid": 25398,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SOLIDARIDAD",
+            "gid": 25399,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ANGEL AGUIRRE RIVERO",
+            "gid": 25400,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "TRES PALOS",
+            "gid": 25401,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA UNION",
+            "gid": 25402,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PLAN DE AYUTLA",
+            "gid": 25403,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BARRA VIEJA",
+            "gid": 25416,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "KILOMETRO 30",
+            "gid": 25404,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "NUEVA REVOLUCION",
+            "gid": 25409,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL QUEMADO",
+            "gid": 25410,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BELLA VISTA",
+            "gid": 25411,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VISTA ALEGRE",
+            "gid": 25412,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PROGRESO",
+            "gid": 25413,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "FIDEL VELAZQUEZ",
+            "gid": 25414,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ARROYO SECO",
+            "gid": 25415,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SAN ANDRES (PLAYA ENCANTADA)",
+            "gid": 25417,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VICENTE GUERRERO 2000 (200)",
+            "gid": 25436,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "JOSE RUBEN ROBLES CATALAN",
+            "gid": 25431,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALFREDO V BONFIL",
+            "gid": 25432,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CUQUITA MASSIEU",
+            "gid": 25433,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PLAYA LA GLORIA",
+            "gid": 25434,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PARQUE ECOLOGICO DE LOS VIVERISTAS",
+            "gid": 25435,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AEROPUERTO  INTERNACIONAL",
+            "gid": 25437,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA POZA",
+            "gid": 25438,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MARQUESITA",
+            "gid": 25439,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "FRENTE NACIONAL",
+            "gid": 25440,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LENGUA DEL SAPO",
+            "gid": 25441,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "RESIDENCIAL LOS ARCOS",
+            "gid": 25442,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AGUAS BLANCAS",
+            "gid": 25478,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CARABALI",
+            "gid": 25479,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA FABRICA",
+            "gid": 25480,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PALMAR DEL CARABALI",
+            "gid": 25481,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MIGUEL ALEMAN",
+            "gid": 25482,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "HOGAR MODERNO",
+            "gid": 25483,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VILLA COLONIAL",
+            "gid": 25485,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ADOLFO LOPEZ MATEOS",
+            "gid": 25486,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "TAXCO",
+            "gid": 25487,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAS MARAÑONAS",
+            "gid": 25488,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "RESIDENCIAL DEL MAR",
+            "gid": 25491,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "FRACC  RESIDENCIAL PEÑASCOS  MOZIMBA",
+            "gid": 25494,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "RUFFO FIGUEROA / ESTADO DE GUERRERO",
+            "gid": 25497,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PUESTA DEL SOL",
+            "gid": 25500,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MUNICIPAL",
+            "gid": 25521,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAS PLAYAS",
+            "gid": 25543,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAS COLINAS",
+            "gid": 25544,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALBATROS",
+            "gid": 25545,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAS AMERICAS",
+            "gid": 25546,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA MIRA",
+            "gid": 25517,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION LA MIRA",
+            "gid": 25518,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ESTADO GUERRERO",
+            "gid": 25519,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SANTA ROSITA",
+            "gid": 25520,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA CRUCITA",
+            "gid": 25522,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA GUINEA",
+            "gid": 25523,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA DOBERIA( LA POZA)",
+            "gid": 25524,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DE LOS TEPETATES",
+            "gid": 25525,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOPEZ PORTILLO",
+            "gid": 25564,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DEL HUESO",
+            "gid": 25526,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DEL TANQUE / LAS CRUCITASAS",
+            "gid": 25527,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DEL PANTEON",
+            "gid": 25528,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DE LA CUERERIA",
+            "gid": 25529,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DE LA LIMA",
+            "gid": 25530,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DEL CAPIRE",
+            "gid": 25531,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "GAVIOTAS",
+            "gid": 25547,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "POZO DE LA NACION",
+            "gid": 25532,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DEL TECONCHE",
+            "gid": 25533,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DE LA POCITA",
+            "gid": 25534,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PETAQUILLAS",
+            "gid": 25535,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DEL CEVICHE",
+            "gid": 25548,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "OLIMPICA DE 68",
+            "gid": 25565,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CENTRO",
+            "gid": 25536,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DE LA CANDELARIA",
+            "gid": 25537,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DE LA PINZONA Y ( DEL MEZON)",
+            "gid": 25538,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MANZANILLO",
+            "gid": 25539,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DE LA BODEGA / JUSTO SIERRA",
+            "gid": 25540,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "FLAMINGOS",
+            "gid": 25541,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "TAMBUCO",
+            "gid": 25542,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAS PLAYAS",
+            "gid": 25549,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "FARALLON",
+            "gid": 25551,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA SUIZA",
+            "gid": 25552,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CERRO DEL VENADO",
+            "gid": 25554,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VISTA DEL MAR",
+            "gid": 25556,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VILLA GRANJAS",
+            "gid": 25563,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA BELLAVISTA",
+            "gid": 25557,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CUAUHTEMOC",
+            "gid": 25558,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA CUAUHTEMOC",
+            "gid": 25559,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ACAPULCO",
+            "gid": 25560,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ARENA DE BELLA VISTA",
+            "gid": 25561,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "JUAN R ESCUDERO",
+            "gid": 25562,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MARTIRES DE 68",
+            "gid": 25566,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "FUERTE DE SAN DIEGO",
+            "gid": 25567,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MORELOS",
+            "gid": 25568,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SANTA CECILIA",
+            "gid": 25569,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CONSTITUYENTES",
+            "gid": 25570,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MIRADOR",
+            "gid": 25571,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "REAL ACAPULCO / VISTA HERMOSA II",
+            "gid": 25586,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VISTA HERMOSA I",
+            "gid": 25587,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SANTA CRUZ",
+            "gid": 25572,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SANTA CRUZ",
+            "gid": 25573,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MOZIMBA",
+            "gid": 25574,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MARBELLA",
+            "gid": 25577,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "FLORIDA",
+            "gid": 25578,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PROGRESO / FLORIDA",
+            "gid": 25579,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MOZIMBA",
+            "gid": 25575,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PUNTA GORDA / VICENTE LOMBARDO TOLEDANO",
+            "gid": 25576,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "13 DE JUNIO",
+            "gid": 25584,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "RDCIAL HORNOS INSURGENTES",
+            "gid": 25585,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "FRANCISCO VILLA",
+            "gid": 25580,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VICENTE GUERRERO / MODULO SOCIAL FOVISSSTE",
+            "gid": 25581,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "REVOLUCION DE SUR",
+            "gid": 25582,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA PROGRESO",
+            "gid": 25583,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "GUADALUPE VICTORIA",
+            "gid": 25588,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MARIA DE LA O",
+            "gid": 25589,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MARIA DE LA O PARTE ALTA",
+            "gid": 25590,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PLAN DE AYALA",
+            "gid": 25591,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "INDEPENDENCIA",
+            "gid": 25592,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PALMA SOLA",
+            "gid": 25594,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PALMA SOLA SECTOR FOVISSSTE",
+            "gid": 25596,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAS ANCLAS",
+            "gid": 25676,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "HORNOS INSURGENTES",
+            "gid": 25670,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "HORNOS",
+            "gid": 25674,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LEONARDO RODRIGUEZ ALCAINE",
+            "gid": 25679,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BARRANCA LA LAJA",
+            "gid": 25686,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA LAJA",
+            "gid": 25687,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MARROQUIN",
+            "gid": 25688,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MAGALLANES",
+            "gid": 25692,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALIANZA POPULAR / TRABAJADORES",
+            "gid": 25695,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BOCAMAR",
+            "gid": 25698,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL ROBLE",
+            "gid": 25701,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOMAS DEL TIGRE",
+            "gid": 25703,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CUAUHTEMOC",
+            "gid": 25704,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SANTA ELENA",
+            "gid": 25705,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAUREL",
+            "gid": 25707,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL ROBLE",
+            "gid": 25709,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA LAJA",
+            "gid": 25714,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "FRONTERA",
+            "gid": 25718,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BUROCRATAS",
+            "gid": 25722,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA LAJA",
+            "gid": 25731,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SOLIDARIDAD",
+            "gid": 25733,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTAMIRA",
+            "gid": 25736,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTAMIRA",
+            "gid": 25743,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "6 DE ENERO",
+            "gid": 25748,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "6 DE ENERO",
+            "gid": 25750,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PERIODISTA",
+            "gid": 25756,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BUENAVISTA",
+            "gid": 25760,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BUENAVISTA",
+            "gid": 25765,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PASEO DE LA CAÑADA",
+            "gid": 25813,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAS MARGARITAS",
+            "gid": 25819,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "UNIDAD OBRERA",
+            "gid": 25820,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PANORAMICA II",
+            "gid": 25821,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "GUERRERO ES PRIMERO",
+            "gid": 25822,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL MORRO/ LOPEZ MATEO",
+            "gid": 25823,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "GUSTAVO DIAZ ORDAZ",
+            "gid": 25824,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA QUEBRADORA",
+            "gid": 25941,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PROVIDENCIA",
+            "gid": 25942,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VISTA HERMOSA",
+            "gid": 25943,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOMA BONITA",
+            "gid": 25946,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAZARO CARDENAS",
+            "gid": 25949,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VICENTE GUERRERO",
+            "gid": 25951,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "20 DE NOVIEMBRE",
+            "gid": 25958,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CENTRO ACAPULCO",
+            "gid": 25983,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PACIFICO",
+            "gid": 25961,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOMA HERMOSA",
+            "gid": 25964,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "GARITA DE JUAREZ",
+            "gid": 25967,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "FARALLON DEL OBISPO",
+            "gid": 25984,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DEL VALLE",
+            "gid": 25970,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "FARALLON DEL OBISPO",
+            "gid": 25972,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ARUBA",
+            "gid": 25974,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOMAS DE MAGALLANES",
+            "gid": 25978,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CUMBRES",
+            "gid": 25987,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MAGISTERIO GUERRERENSE",
+            "gid": 25989,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CUMBRES DIANA",
+            "gid": 25992,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CUMBRES DE FIGUEROA",
+            "gid": 25993,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BOSQUES DE LA CAÑADA",
+            "gid": 25994,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PABLO GALEANA",
+            "gid": 25996,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CAÑADA DE LOS AMATES",
+            "gid": 25997,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VILLAS CONDESA",
+            "gid": 25999,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CHINAMECA",
+            "gid": 26000,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "JARDIN DE LOS AMATES",
+            "gid": 26001,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "FARALLON",
+            "gid": 26002,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CONDESA",
+            "gid": 26004,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CLUB DEPORTIVO",
+            "gid": 26006,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOMAS DE COSTA AZUL",
+            "gid": 26008,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SILVESTRE CASTRO",
+            "gid": 26119,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ANTORCHA REVOLUCIONARIA",
+            "gid": 26121,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SILVESTRE CASTRO",
+            "gid": 26122,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SOLIDARIDAD MOZIMBA",
+            "gid": 26124,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CLEMENCIA FIGUEROA / LUIS DONALDO COLOSIO",
+            "gid": 26125,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VENUSTIANO CARRANZA",
+            "gid": 26127,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VENUSTIANO CARRANZA",
+            "gid": 26128,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOMAS DE LOS TAMARINDOS",
+            "gid": 26129,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "UNIVERSITARIA I",
+            "gid": 26130,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOMAS DE LOS TAMARINDOS",
+            "gid": 26131,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA GENERACION 2000",
+            "gid": 26132,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VISTA  AZUL",
+            "gid": 26134,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "RUBEN JARAMILLO / PUNTA GORDA",
+            "gid": 26135,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "UNIVERSITARIA II",
+            "gid": 26136,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "GENERACION 2000",
+            "gid": 26137,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CAMBIO XXI",
+            "gid": 26146,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "NUEVA ERA",
+            "gid": 26139,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "NUEVA ERA",
+            "gid": 26140,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SEMARNAP",
+            "gid": 26142,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BALCONES AL MAR",
+            "gid": 26143,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPL LAS JOYAS",
+            "gid": 26144,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "TABACHINES",
+            "gid": 26147,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MEMBRILLO",
+            "gid": 26152,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "20 DE ABRIL",
+            "gid": 26155,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CORREGIDORA",
+            "gid": 26165,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "GENARO VAZQUEZ  ROJAS",
+            "gid": 26169,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ANGEL AGUIRRE RIVERO",
+            "gid": 26173,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PLAN DE AYUTLA",
+            "gid": 26174,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "NUEVA JERUSALEN",
+            "gid": 26175,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "18 DE ENERO ( RENE JUAREZ CISNEROS)",
+            "gid": 26178,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "INDEPENDENCIA",
+            "gid": 26190,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VILLA DE LAS FLORES",
+            "gid": 26199,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "NARCIZO MENDOZA",
+            "gid": 26203,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION IZAZAGA",
+            "gid": 26206,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "IZAZAGA",
+            "gid": 26208,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BATALLA CARDENISTA",
+            "gid": 26213,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION PASO LIMONERO",
+            "gid": 26219,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ROBERTO ESPERON",
+            "gid": 26230,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SAN MIGUEL",
+            "gid": 26246,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LEYES DE REFORMA",
+            "gid": 26234,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA MICA",
+            "gid": 26235,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION JACARANDAS",
+            "gid": 26236,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAS TORRES",
+            "gid": 26238,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA VOZ DE LA MONTAÑA",
+            "gid": 26243,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION VOZ DE LA MONTAÑA",
+            "gid": 26245,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "YOLOZOCHITL",
+            "gid": 26247,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALBORADA",
+            "gid": 26251,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "C N C",
+            "gid": 26257,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "HACIENDA",
+            "gid": 26258,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAS MARIAS",
+            "gid": 26303,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MEXICO",
+            "gid": 26261,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOMAS VERDES",
+            "gid": 26264,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "24 DE OCTUBRE",
+            "gid": 26269,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CAUDILLOS DEL SUR",
+            "gid": 26271,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SOL AZTECA",
+            "gid": 26281,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA LAJITA",
+            "gid": 26282,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VISTA DIAMANTE",
+            "gid": 26283,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "19 DE NOVIEMBRE",
+            "gid": 26284,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL NUEVO PUERTO MARQUEZ",
+            "gid": 26285,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MIRAMAR",
+            "gid": 26286,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA MIRAMAR",
+            "gid": 26287,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VISTA BRISA",
+            "gid": 26288,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "GUADALUPANA",
+            "gid": 26289,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA CALERA I",
+            "gid": 26306,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOMA LARGA",
+            "gid": 26291,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "NUEVA LUZ",
+            "gid": 26292,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PRADERAS DE GUADALUPE",
+            "gid": 26293,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOS COHETEROS",
+            "gid": 26294,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VILLA GUERRERO",
+            "gid": 26295,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "KILOMETRO 45",
+            "gid": 26312,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION LAZARO CARDENAS / VILLA GUERRERO / OBRERA",
+            "gid": 26313,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "Io DE MAYO",
+            "gid": 26315,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION JOSE LOPEZ PORTILLO",
+            "gid": 26318,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "JOSE LOPEZ PORTILLO",
+            "gid": 26320,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SIMON BOLIVAR",
+            "gid": 26321,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION LA MICA",
+            "gid": 26323,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION EL PORVENIR",
+            "gid": 26325,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VILLAS REAL HACIENDA",
+            "gid": 26327,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ECOLOGISTA",
+            "gid": 26331,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SIN NOMBRE",
+            "gid": 26333,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BARRIO NUEVO DE LA VENTA",
+            "gid": 26335,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "NABOR  OJEDA",
+            "gid": 26349,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA VENTA",
+            "gid": 26338,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BETANIA",
+            "gid": 26339,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA ESMERALDA",
+            "gid": 26341,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL TANQUE",
+            "gid": 26344,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "2 DE FEBRERO",
+            "gid": 26353,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "TECNOLOGICA",
+            "gid": 26356,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "JACARANDAS",
+            "gid": 26361,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAS FLORES",
+            "gid": 26387,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PARAISO",
+            "gid": 26388,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AGRICOLA",
+            "gid": 26389,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SEDESOL I",
+            "gid": 26390,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAS OAXAQUILLAS",
+            "gid": 26417,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VISTA HERMOSA",
+            "gid": 26391,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LUIS DONALDO COLOSIO",
+            "gid": 26392,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EMPERADOR CUAUHTEMOC",
+            "gid": 26393,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION LA VENTA",
+            "gid": 26394,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ARBOLEDA",
+            "gid": 26395,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "POSTAL",
+            "gid": 26396,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LIBERTADORES",
+            "gid": 26397,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CLUB CAMPESTRE",
+            "gid": 26398,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CLUB CAMPESTRE",
+            "gid": 26399,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "TERMOPILAS",
+            "gid": 26400,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMADEO VIDALES",
+            "gid": 26401,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA POPULAR",
+            "gid": 26402,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LIBERTAD",
+            "gid": 26403,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOS LIRIOS",
+            "gid": 26404,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BENITO JUAREZ",
+            "gid": 26406,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SAN PEDRO CACAHUATEPEC",
+            "gid": 26418,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAS CRUCES",
+            "gid": 26407,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MELCHOR OCAMPO",
+            "gid": 26408,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA SABANA",
+            "gid": 26409,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "COSTA AZUL",
+            "gid": 26410,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CONDOMINIOS GUACAMAYAS",
+            "gid": 26411,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BELLA VISTA",
+            "gid": 26432,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA ICACOS",
+            "gid": 26412,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ICACOS",
+            "gid": 26413,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BASE NAVAL",
+            "gid": 26414,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BALCONES DE COSTA AZUL",
+            "gid": 26415,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALEJO PERALTA",
+            "gid": 26416,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BRISAS DEL MAR",
+            "gid": 26419,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MIRAMAR",
+            "gid": 26420,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VICENTE GUERRERO / PLAYA HERMOSA",
+            "gid": 26421,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PLAYA PIE DE LA CUESTA",
+            "gid": 26422,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PIE DE LA CUESTA",
+            "gid": 26423,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAZARO CARDENAS",
+            "gid": 26424,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL TANQUE",
+            "gid": 26425,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CENTRO",
+            "gid": 26426,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "TIERRA BLANCA",
+            "gid": 26427,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PLAN DE LOS AMATES",
+            "gid": 26428,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA PUÑALADA ( VALLE DE LA FLORES)",
+            "gid": 26430,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL CERRITO DE LA LAGUNA",
+            "gid": 26431,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAGUNA DEL QUEMADO",
+            "gid": 26434,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SAN ISIDRO",
+            "gid": 26435,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOS MANGOS",
+            "gid": 26437,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CAMPAMENTO EMILIANO ZAPATA",
+            "gid": 26438,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LUCIO CABAÑAS",
+            "gid": 26439,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SECTOR TRES PALMITAS",
+            "gid": 26440,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL PEDREGAL",
+            "gid": 26442,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA ESTACION",
+            "gid": 26443,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AGUILA DEL SUR",
+            "gid": 26444,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL ARENAL",
+            "gid": 26445,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PUESTA DEL SOL",
+            "gid": 26446,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SAN ANTONIO",
+            "gid": 26449,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DIEZ DE ABRIL",
+            "gid": 26450,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL BEJUCO",
+            "gid": 26453,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BELLA VISTA PAPAGAYO",
+            "gid": 26455,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CERRO DE PIEDRA",
+            "gid": 26461,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "XOLAPA",
+            "gid": 26476,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "JOYAS DIAMANTE",
+            "gid": 26479,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "RESIDENCIAL EL MARQUEZ",
+            "gid": 26481,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA PRINCESA",
+            "gid": 26484,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LUIS DONALDO COLOSIO",
+            "gid": 26486,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CANUTO NOGUEDA",
+            "gid": 26491,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL RASTRO",
+            "gid": 26494,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MARTIRES DE CUILAPAN",
+            "gid": 26496,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOS MANANTIALES",
+            "gid": 26500,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "RUBEN FIGUEROA",
+            "gid": 26506,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL PRI",
+            "gid": 26508,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "NICOLAS BRAVO",
+            "gid": 26509,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "GUADALUPE VICTORIA",
+            "gid": 26510,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION LA MAQUINA",
+            "gid": 26512,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA MAQUINA",
+            "gid": 26513,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VILLA HERMOSA DE LAS FLORES",
+            "gid": 26514,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CARLOS SALINAS DE GORTARI;",
+            "gid": 26515,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "APOLONIO CASTILLO",
+            "gid": 26518,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "POTRERO DE LA MORA",
+            "gid": 26519,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA JABONERA",
+            "gid": 26520,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PIEDRA ROJA",
+            "gid": 26521,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA ESPERANZA",
+            "gid": 26522,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CRUCERO DE CAYACO",
+            "gid": 26525,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA PRADERA DE COSTA AZUL",
+            "gid": 26533,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CAYACO",
+            "gid": 26526,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VISTA HERMOSA",
+            "gid": 26531,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "23  DE NOVIEMBRE",
+            "gid": 26532,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA PRINCESA (LA CHARRITA)",
+            "gid": 26559,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "JUSTICIA SOCIAL",
+            "gid": 26534,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "HERMENEGILDO GALEANA",
+            "gid": 26535,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "IX REGION MILITAR",
+            "gid": 26538,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MAYAN PALACE",
+            "gid": 26560,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "JOYAS DE BRISAMAR",
+            "gid": 26539,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CUMBRES DE LLANO LARGO",
+            "gid": 26540,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BARRIO AZTECA",
+            "gid": 26541,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PLAYA GUITARRON",
+            "gid": 26542,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BRISAS DIAMANTE",
+            "gid": 26543,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PLAYA DIAMANTE",
+            "gid": 26561,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BRISAS II",
+            "gid": 26544,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PUNTA BRUJA",
+            "gid": 26545,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL PICHILINGUE",
+            "gid": 26547,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "GLOMAR",
+            "gid": 26548,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PLAYAMAR",
+            "gid": 26563,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOMAS DEL MARQUEZ",
+            "gid": 26549,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CLUB RESIDENCIAL LAS BRISAS",
+            "gid": 26551,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA CIMA",
+            "gid": 26552,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CRUCERO DE PUERTO MARQUEZ",
+            "gid": 26565,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "TEXCA",
+            "gid": 26585,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BRISAS I",
+            "gid": 26553,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PUERTO MARQUEZ",
+            "gid": 26554,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PLAYA MAR II",
+            "gid": 26555,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PLAYA MAR I",
+            "gid": 26556,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SUN VIDA",
+            "gid": 26558,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CLUB DE GOLF TRES VIDAS",
+            "gid": 26566,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PIERRE MARQUEZ",
+            "gid": 26567,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PUNTA DIAMANTE",
+            "gid": 26569,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL PUEBLITO DEL REVOLCADERO",
+            "gid": 26570,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALBORADA CARDENISTA",
+            "gid": 26572,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LLANO LARGO",
+            "gid": 26573,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION SIMON BOLIVAR (LA AGRICOLA)",
+            "gid": 26575,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "UNIDAD CIUDADANA",
+            "gid": 26576,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "GUADALUPE VICTORIA",
+            "gid": 26577,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CONSTITUCION",
+            "gid": 26578,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL PALMAR",
+            "gid": 26579,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "INSURGENTES SUR",
+            "gid": 26580,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VILLA MADERO",
+            "gid": 26581,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION MIGUEL DE LA MADRID",
+            "gid": 26582,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "NIÑOS HEROES / MIGUEL HIDALGO",
+            "gid": 26587,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOS LIBERTADORES",
+            "gid": 26588,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CORAL",
+            "gid": 26589,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ORGANOS DE SAN AGUSTIN",
+            "gid": 26602,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAS PAROTAS",
+            "gid": 26590,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "NICOLAS BRAVO",
+            "gid": 26591,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MIGUEL DE LA MADRID",
+            "gid": 26592,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "15 DE SEPTIEMBRE",
+            "gid": 26593,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "JOSE MARIA PINO SUAREZ",
+            "gid": 26594,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ORGANOS DE JUAN R ESCUDERO",
+            "gid": 26604,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA FRONTERA",
+            "gid": 26605,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION EMILIANO ZAPATA",
+            "gid": 26595,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EMILIANO ZAPATA",
+            "gid": 26596,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SINAI",
+            "gid": 26597,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION SINAI",
+            "gid": 26598,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VILLA SOL",
+            "gid": 26600,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL PORVENIR",
+            "gid": 26601,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DOS ARROYOS",
+            "gid": 26606,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA SIERRITA",
+            "gid": 26607,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "KILOMETRO 42",
+            "gid": 26608,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MADERO (EL PLAYON)",
+            "gid": 26609,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA PROVIDENCIA",
+            "gid": 26610,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PABLO GALEANA",
+            "gid": 26611,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "NUEVA REFORMA",
+            "gid": 26612,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VICENTE GUERRERO",
+            "gid": 26613,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LUIS DONALDO COLOSIO",
+            "gid": 26614,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CERVANTES DELGADO",
+            "gid": 26615,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA PILITA",
+            "gid": 26616,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL RETEN",
+            "gid": 26617,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MIRADOR",
+            "gid": 26618,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAZARO CARDENAS",
+            "gid": 26619,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VISTA HERMOSA / BORDITO CHIVERO",
+            "gid": 26620,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BARRIO NUEVO",
+            "gid": 26621,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CENTRO",
+            "gid": 26622,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "KILOMETRO 22",
+            "gid": 26623,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAS TORTOLITAS",
+            "gid": 26847,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "RUBEN FIGUEROA",
+            "gid": 26850,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA FRONTERA",
+            "gid": 26851,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MIGUEL TERRAZAS",
+            "gid": 26852,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION MIGUEL TERRAZAS",
+            "gid": 26853,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "INDEPENDENCIA",
+            "gid": 26854,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAS JOYAS",
+            "gid": 26855,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOS NARANJITOS",
+            "gid": 26888,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOS NARANJOS",
+            "gid": 26889,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA CUAUHTEMOC",
+            "gid": 26911,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "UNIDAD HABITACIONAL MILITAR",
+            "gid": 26964,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "FUERZA AEREA",
+            "gid": 26966,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CIUDAD RENACIMIENTO",
+            "gid": 26982,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CAMINO AL CIELO",
+            "gid": 27032,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "NAVIDAD DEL LLANO",
+            "gid": 27033,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOMA ALTA LA ESPERANZA",
+            "gid": 27034,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MIRADOR COLOSO",
+            "gid": 27035,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL COLOSO",
+            "gid": 27036,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "16 DE MARZO",
+            "gid": 27044,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "OBRERA",
+            "gid": 27045,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "HORNOS INSURGENTES",
+            "gid": 27406,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BOSQUE DE SAN JUAN",
+            "gid": 27515,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PARAISO",
+            "gid": 27516,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALBORADA",
+            "gid": 27518,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALBORADA",
+            "gid": 27519,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CHE-GUEVARA",
+            "gid": 27520,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA MICA",
+            "gid": 27521,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION LA MICA",
+            "gid": 27522,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PASO LIMONERO",
+            "gid": 27523,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "INDEPENDENCIA",
+            "gid": 27524,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DESARROLLO SAN AGUSTIN",
+            "gid": 27526,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "RICARDO MORLET SUTTER",
+            "gid": 27527,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "TEPEYAC",
+            "gid": 27589,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "JARDIN AZTECA",
+            "gid": 27587,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "REFORMA AGRARIA",
+            "gid": 27588,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ROCA DE ORO",
+            "gid": 27590,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PARAISO ESCONDIDO",
+            "gid": 27591,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "IGNACIO MANUEL ALTAMIRANO",
+            "gid": 27592,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "JARDIN PALMAS",
+            "gid": 27594,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VISTA AL MAR",
+            "gid": 27595,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "JARDIN MANGOS",
+            "gid": 27593,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAGO DORADO",
+            "gid": 27596,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SAN ISIDRO",
+            "gid": 27597,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PALMERA",
+            "gid": 27655,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "POTRERILLO ( MOZIMBA LA QUEBRADA MIRA 3o SECCION )",
+            "gid": 27675,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "COSTA BRAVA",
+            "gid": 27678,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EX- CAMPO DE TIRO",
+            "gid": 27704,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "JUAN SALGADO TENORIO",
+            "gid": 27705,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "FUENTES DEL MARQUES",
+            "gid": 28237,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MOVIMIENTO SOCIAL",
+            "gid": 27773,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "16 DE NOVIEMBRE",
+            "gid": 27798,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL PEDREGOSO",
+            "gid": 27810,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "RUFFO FIGUEROA",
+            "gid": 27820,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "5 DE MAYO",
+            "gid": 27821,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "KILOMETRO 21",
+            "gid": 27822,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SAN AGUSTIN",
+            "gid": 27823,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTO MIRADOR COLOSO",
+            "gid": 27824,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CARABALI",
+            "gid": 27825,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PIEDRA IMAN",
+            "gid": 27827,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAS SABANILLAS",
+            "gid": 27833,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMALIA SOLORZANO",
+            "gid": 27834,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMP AMALIA SOLORZANO",
+            "gid": 27835,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION LIRIOS",
+            "gid": 27861,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA PROGRESO 2o ETAPA Y 2o SECCION",
+            "gid": 27919,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SAN MIGUEL",
+            "gid": 27871,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PASO LIMONERO",
+            "gid": 27896,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOMA DE SAN JUAN",
+            "gid": 27904,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "KILOMETRO 40",
+            "gid": 27905,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SAN AGUSTIN",
+            "gid": 27914,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA TORRE",
+            "gid": 27915,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BLANCO",
+            "gid": 27916,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA PROGRESO 1o SECCION",
+            "gid": 27918,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA PROGRESO 2o ETAPA Y 3o SECCION",
+            "gid": 27920,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA PROGRESO 1o ETAPA",
+            "gid": 27921,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA PROGRESO 3o ETAPA Y 2o SECCION",
+            "gid": 27922,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA PROGRESO 3o ETAPA Y 1o SECCION",
+            "gid": 27923,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA PROGRESO 4o ETAPA Y 2o SECCION",
+            "gid": 27924,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA PROGRESO 6o ETAPA",
+            "gid": 27925,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA PROGRESO 5o ETAPA Y 1o SECCION",
+            "gid": 27926,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTA PROGRESO 5o ETAPA Y 2o SECCION",
+            "gid": 27927,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CENTRO",
+            "gid": 27931,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL PEDREGAL",
+            "gid": 27932,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOS TRABAJADORES",
+            "gid": 27933,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BALCONES AL MAR",
+            "gid": 27945,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "4 DE JULIO",
+            "gid": 27953,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PANORAMICA II",
+            "gid": 27960,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "INDUSTRIAL / UNIDOS POR GUERRERO / C N O P",
+            "gid": 27961,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOMAS DE MOZIMBA",
+            "gid": 27980,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "2 DE FEBRERO-2",
+            "gid": 27997,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "TECNOLOGICA",
+            "gid": 27998,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOMA BONITA-BEJUCO",
+            "gid": 28006,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "U HABITACIONAL MAGISTERIO GUERRERENSE",
+            "gid": 28080,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CONJUNTO HAB MAR AZUL MOZIMBA",
+            "gid": 28055,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DE LOS ELECTRICISTAS",
+            "gid": 28077,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SANTA MARTHA",
+            "gid": 28078,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "TULIPAN",
+            "gid": 28079,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "BRISAS DEL PALMAR",
+            "gid": 28102,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VISTA AL MAR AZUL",
+            "gid": 28103,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "KILOMETRO 39",
+            "gid": 28106,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "SOL AZTECA",
+            "gid": 28107,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL CAPIRE",
+            "gid": 28114,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DONACIANO RIVERA",
+            "gid": 28119,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ARENAS",
+            "gid": 28130,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA ESPERANZA",
+            "gid": 28181,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "MARIANO MOLINA",
+            "gid": 28182,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ANGEL AGUIRRE RIVERO",
+            "gid": 28183,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "HOMEX  COSTA  DORADA",
+            "gid": 28238,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PALMA REAL HOMEX",
+            "gid": 28239,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "JOYAS DE SAN AGUSTIN",
+            "gid": 28207,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VILLAS PARAISO",
+            "gid": 28230,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CLUB CAMPESTRE LA LAGUNA",
+            "gid": 28235,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PALMA REAL HOMEX",
+            "gid": 28240,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA CEIBA",
+            "gid": 28245,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA CEIBA II",
+            "gid": 28246,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PARQUE DE MATERIALES",
+            "gid": 28247,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LA MARQUESA-LAS GAVIOTAS",
+            "gid": 28248,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "JOYAS DEL MARQUES",
+            "gid": 28249,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "COSTA DORADA -ETAPA II",
+            "gid": 28250,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "EL PORVENIR",
+            "gid": 28301,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMP CASITAS",
+            "gid": 28300,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAS JOYAS",
+            "gid": 28308,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAZARO CARDENAS",
+            "gid": 28309,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CAMPESTRE LA LAGUNA",
+            "gid": 28310,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMIR ZARUT MENDEZ",
+            "gid": 28321,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ANGEL E AGUIRRE RIVERO O RADIO KOKO",
+            "gid": 28322,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "OBRERA 10 DE DICIEMBRE",
+            "gid": 28323,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "AMPLIACION SIMON BOLIVAR",
+            "gid": 28324,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CONJUNTO HABITACIONAL LAS PALMAS",
+            "gid": 28334,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "RESIDENCIAL DIAMANTE",
+            "gid": 28366,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "RESIDENCIAL OLINALA",
+            "gid": 28368,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VILLAS LAS PALMAS",
+            "gid": 28369,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "JOYAS DIAMANTE PLUS",
+            "gid": 28389,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LOMAS DE LOS LIMONES",
+            "gid": 28391,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VILLAS MALAGA",
+            "gid": 28428,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "VISTA BRISA DIAMANTE",
+            "gid": 28429,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DIMANTE LAKES",
+            "gid": 28430,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "HEROES DE GUERRERO",
+            "gid": 28431,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "CENTRO  INTERNACIONAL  ACAPULCO",
+            "gid": 28432,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "NUEVA GENERACION",
+            "gid": 28433,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PUENTE DEL MAR",
+            "gid": 28434,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "GUADALUPE",
+            "gid": 28445,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "GRACIANO SANCHEZ",
+            "gid": 28556,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ACAPULCO 2000",
+            "gid": 28581,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "DEMOCRATICA INDEPENDIENTE",
+            "gid": 28584,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PLAYA AZUL",
+            "gid": 28610,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "PLAYA AZUL",
+            "gid": 28611,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "HUAMUCHITOS",
+            "gid": 28630,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "ALTO DE SAN ISIDRO",
+            "gid": 28629,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        },
+        {
+            "nom_muni": "Acapulco",
+            "nombre_colonia": "LAS PLAZUELAS",
+            "gid": 28631,
+            "clave_estado": "12",
+            "clave_municipio": "12001"
+        }
+    ]
+}

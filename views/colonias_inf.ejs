@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css">
+</head>
+<style type="text/css">
+#mapa {
+    position: sticky !important;
+    width: 100%;
+    height: 99vh;
+}
+
+#data {
+    display: flex;
+}
+
+#tabla {
+    overflow: scroll;
+    height: 99vh;
+    width: 60%;
+}
+
+#mapa_tabla {
+    width: 40%;
+}
+</style>
+
+<body>
+    <div id="data">
+        <div id="tabla">
+        </div>
+        <div id="mapa_tabla">
+            <div id="mapa"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var map = L.map('mapa', {
+        center: [16.9077743, -99.8276894],
+        zoom: 15,
+    });
+    var maxZoom = 25,
+        minZoom = 8;
+    mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+    
+    var capaOSM = new L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        minZoom: minZoom,
+        maxZoom: maxZoom,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);  
+
+    let ordColonias = <%- ordColonias %>;
+    var th = `<tr style="background: black;color: white;">
+    <td><strong>#</strong></td>
+    <td><strong>Municipio</strong></td>
+    <td><strong>Colonia</strong></td>
+    <td><strong>gid</strong></td>
+    <td><strong>Clave de Estado</strong></td> 
+    <td><strong>Clave de Municipio</strong></td>
+    <td><strong>Ver en Mapa</strong></td>
+    <tr>`;
+    var trs = ``;
+    var color = ``;
+    for (var i = 0; i < ordColonias.length; i++) {
+        trs += `<tr style="${color}">
+        <td>${(i + 1)}</td>
+        <td>${ordColonias[i].nom_muni}</td>
+        <td>${ordColonias[i].nombre_colonia}</td>
+        <td>${ordColonias[i].gid}</td>
+        <td>${ordColonias[i].clave_estado}</td>
+        <td>${ordColonias[i].clave_municipio}</td>
+        <td><button onclick="addMapa('${ordColonias[i].gid}')">Ver</button></td>
+        </tr>`;
+        if (i % 2 == 0) {
+            color = "background: #bfbfbf";
+        } else {
+            color = "";
+        }
+    }
+    document.getElementById("tabla").innerHTML = `<table><thead>${th}</thead><tbody>${trs}</tbody></table>`;
+
+    var geoZona = [];
+
+    function addMapa(gid) {
+        fetch("/getZona", {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ gid: [gid] })
+            })
+            .then(res => res.json())
+            .then(data => {
+                //data.zona
+                map.removeLayer(geoZona);
+                console.log(data.zona)
+                geoZona = L.geoJson({ type: "FeatureCollection", features: data.zona }).addTo(map)
+                map.setView(new L.LatLng(data.zona[0].geometry.coordinates[0][0][0][1], data.zona[0].geometry.coordinates[0][0][0][0]));
+            })
+    }
+    </script>
+</body>
