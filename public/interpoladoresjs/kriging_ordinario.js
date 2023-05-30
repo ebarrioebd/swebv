@@ -77,7 +77,7 @@ Sylvester.Matrix.prototype = {
             return 1
         }
         if (!this.isSquare()) {
-            console.log("not isSquare")
+            //remplace//console.log("not isSquare")
             return null
         }
         var M = this.toRightTriangular()
@@ -120,11 +120,11 @@ Sylvester.Matrix.prototype = {
 
     inverse: function () {
         if (this.elements.length === 0) {
-            console.log("===0")
+            //remplace//console.log("===0")
             return null
         }
         if (!this.isSquare() || this.isSingular()) {
-            console.log("isSingular:", this.isSingular(), "  isSquare:", this.isSquare())
+            //remplace//console.log("isSingular:", this.isSingular(), "  isSquare:", this.isSquare())
             return null
         }
         var n = this.elements.length,
@@ -253,7 +253,7 @@ function invMM(matriz) {
 }
 //fin de invertir matriz
 function c(o, b) {
-    //--console.log(o, b);
+    //--//remplace//console.log(o, b);
 }
 function transpose(matrix) {
     const rows = matrix.length,
@@ -300,18 +300,18 @@ function modelExp(h, a, m_s) {
     }
 }
 function estimar(lat, long, variograma, x, y, z, mvt, m_s) {
-    //console.log("estimar:",variograma.nugget,variograma.sill_parcial,modelExp((Math.pow(Math.pow(lat - x[0], 2) + Math.pow(long - y[0], 2), 0.5)) * 100000,variograma.rango))      
+    ////remplace//console.log("estimar:",variograma.nugget,variograma.sill_parcial,modelExp((Math.pow(Math.pow(lat - x[0], 2) + Math.pow(long - y[0], 2), 0.5)) * 100000,variograma.rango))      
     //c(lat,long)
     let _Y = [];
     for (let i = 0; i < x.length; i++) {
         _Y[i] = [variograma.nugget + variograma.sill_parcial * modelExp((Math.pow(Math.pow(lat - x[i], 2) + Math.pow(long - y[i], 2), 0.5)) * 100000, variograma.rango, m_s)]
-        //console.log(_Y[i])   
+        ////remplace//console.log(_Y[i])   
     }
     _Y[x.length] = [1]
-    //console.log("_Y:",_Y)
+    ////remplace//console.log("_Y:",_Y)
     //calulor de los pesos y el parametro de lagrange
     let pesos = mult(mvt, _Y)
-    //console.log("pesos::",pesos)
+    ////remplace//console.log("pesos::",pesos)
     pesos = pesos.slice(0, x.length);
     return mult(transpose(pesos), z)[0]
 }

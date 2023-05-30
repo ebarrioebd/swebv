@@ -1,4 +1,4 @@
-console.log("Indicadores.js")
+//remplace//console.log("Indicadores.js")
 /*let markers = []//new Array(); 
 var groupMakers = L.layerGroup(markers); 
 */
@@ -72,7 +72,7 @@ function closeTableDescri() {
 function createTablaDescriptivos(data) {
     document.getElementById("decriptivo_table_body").innerHTML = ""
     var tr = ""
-    console.log(data.gid.length)
+    //remplace//console.log(data.gid.length)
     let dh = []
     for (var i = 0; i < data.gid.length; i++) {
         dh = data.cant_h[i].sort((a, b) => { return a - b })
@@ -86,7 +86,7 @@ function createTablaDescriptivos(data) {
     document.getElementById("decriptivo_table_body").innerHTML = tr
 }
 function groupOvi(arr) {
-    //console.log("arr",arr)
+    ////remplace//console.log("arr",arr)
     let a = [
         []
     ]
@@ -134,8 +134,8 @@ function indicadores(inf_ovi, _zona, type_dat) {
         desviacions_estandar: [],
         coef_variacion: [],
     }
-    console.log("TypeDat:" + type_dat)
-    console.log("inf_ovi::", inf_ovi)
+    //remplace//console.log("TypeDat:" + type_dat)
+    //remplace//console.log("inf_ovi::", inf_ovi)
     _zona = [];
     _PH = [] //Promedio de Huevos
     let c_pop = { //val para chart porcentaje de ovitrampa positiva
@@ -187,14 +187,14 @@ function indicadores(inf_ovi, _zona, type_dat) {
         cant_t_ovi = 0;
         _PH.push({ ph: sum_cant / (inf_ovi[j].length), sumaH: sum_cant, nom_col: inf_ovi[j][0].nom_col, fecha: inf_ovi[j][0].fecha, cant_ovi: inf_ovi[j].length });
     }
-    console.log("max_data::",max_data)
+    //remplace//console.log("max_data::",max_data)
     Est_Des_Data.data_max=Math.max(...max_data)
     //var aux_suma = 0
     for (var i = 0; i < inf_ovi.length; i++) {
         p_n_c[i] = ((n_c[i] * 100) / t_huevos).toFixed(3)
         //aux_suma+=parseInt(p_n_c[i]);
     }
-    //console.log("Porcentaje:", p_n_c, "Suma:", aux_suma)
+    ////remplace//console.log("Porcentaje:", p_n_c, "Suma:", aux_suma)
     //dar valore a las siguientes varibles definidas como variables_G
     nombres_de_colonias = c_pop.nom_col;
     cantidad_h_de_cada_colonia = n_c;
@@ -213,13 +213,13 @@ function indicadores(inf_ovi, _zona, type_dat) {
     chart_pop.update();
     addZonaName("zona_name", c_pop.nom_col, cant_ovi_colonia, colorsL, n_c)
     graphPromedioHoy(_PH);
-    console.log("Agregando zona..")
-    console.log("AddZona::::", _zona)
-    console.log("getZona()", c_pop)
+    //remplace//console.log("Agregando zona..")
+    //remplace//console.log("AddZona::::", _zona)
+    //remplace//console.log("getZona()", c_pop)
     getZonas(_zona, c_pop, type_dat)
-    console.log("Zonas agregadas..")
+    //remplace//console.log("Zonas agregadas..")
     addOvi(inf_ovi);
-    console.log(Est_Des_Data)
+    //remplace//console.log(Est_Des_Data)
     createTablaDescriptivos(Est_Des_Data)
 }
 function sumClass(arr) {
@@ -251,12 +251,12 @@ function crearHistogramaDeFrecuencias(od) {
         }
         contador[i] = auxcontador;
     }
-    //console.log(contador)
+    ////remplace//console.log(contador)
     var inter = Math.ceil(Math.sqrt(od.length))>15?15:Math.ceil(Math.sqrt(od.length))
-    console.log("valored del array:", dataVal, "\ncantidad de V:", dataVal.length, "canta:", dataVal.length / inter)
+    //remplace//console.log("valored del array:", dataVal, "\ncantidad de V:", dataVal.length, "canta:", dataVal.length / inter)
 
     var tamClases = Math.round(dataVal.length / inter)
-    console.log("Tamano de classes:", tamClases, "Cantidad de Intervalos:", inter)
+    //remplace//console.log("Tamano de classes:", tamClases, "Cantidad de Intervalos:", inter)
     var frecuencia = []
     var interClass = []
 
@@ -275,21 +275,21 @@ function crearHistogramaDeFrecuencias(od) {
 
 }
 function calcularHistograma(index) {
-    //console.log(index)
-    //console.log("Datos Analizar:",Est_Des_Data.cant_h[index])
+    ////remplace//console.log(index)
+    ////remplace//console.log("Datos Analizar:",Est_Des_Data.cant_h[index])
     var hist = crearHistogramaDeFrecuencias(Est_Des_Data.cant_h[index])
     document.getElementById("ventanaHistogramaDeFrecuencias").style.display = "";
     barChartHistograma.data.labels = hist.labelClass;
     barChartHistograma.data.datasets[0].data = hist.frec;
     barChartHistograma.update();
-    console.log(hist)
+    //remplace//console.log(hist)
 }
 function closeHistograma() { document.getElementById("ventanaHistogramaDeFrecuencias").style.display = "none"; }
 
 function promedio(lista){
     var suma = 0;
     for (var i = 0; i < lista.length; i++) {
-        suma +=  (lista[i]);
+        suma +=  Math.abs(lista[i]);
     }
     var promedio = suma / lista.length;
     return promedio;

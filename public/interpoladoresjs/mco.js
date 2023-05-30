@@ -75,7 +75,7 @@ Sylvester.Matrix.prototype = {
             return 1
         }
         if (!this.isSquare()) {
-            console.log("not isSquare")
+            //remplace//console.log("not isSquare")
             return null
         }
         var M = this.toRightTriangular()
@@ -118,11 +118,11 @@ Sylvester.Matrix.prototype = {
 
     inverse: function () {
         if (this.elements.length === 0) {
-            console.log("===0")
+            //remplace//console.log("===0")
             return null
         }
         if (!this.isSquare() || this.isSingular()) {
-            console.log("isSingular:", this.isSingular(), "  isSquare:", this.isSquare())
+            //remplace//console.log("isSingular:", this.isSingular(), "  isSquare:", this.isSquare())
             return null
         }
         var n = this.elements.length,
@@ -252,7 +252,7 @@ function invMM(matriz) {
 //fin de invertir matriz
 
 function c(o, b) {
-    //--console.log(o, b);
+    //--//remplace//console.log(o, b);
 }
 function transpose(matrix) {
     const rows = matrix.length,
@@ -301,6 +301,7 @@ function modelExp(h, a, m_s) {
 //minimos cuadrados ordinarios
 function OrdinaryLeastsquares(X, Y, h, a, m_s) {
     //funcion exponencial
+    console.log(h, a, m_s)
     //genera valores del variogrma teorico del valor de Xs
     for (var i = 0; i < Y.length; i++) {
         X[i][1] = modelExp(h[i], a, m_s)
@@ -323,7 +324,7 @@ function OrdinaryLeastsquares(X, Y, h, a, m_s) {
     return mult(xinvxt, ya);
 }
 self.addEventListener('message', function (e) {
-    console.log("MCDDATA::", e.data)
+    //remplace//console.log("MCDDATA::", e.data)
     let Y = e.data[0].semi;
     let X = Array(Y.length).fill().map(() => Array(2).fill(1));
     //W0,W1 son los valores que minimizan el error (Y(h,W)-Y*(h))^2 y w0,w1 ajustan  Y(h,W) a los valores de Y*(h) 

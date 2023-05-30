@@ -77,7 +77,7 @@ Sylvester.Matrix.prototype = {
             return 1
         }
         if (!this.isSquare()) {
-            console.log("not isSquare")
+            //remplace//console.log("not isSquare")
             return null
         }
         var M = this.toRightTriangular()
@@ -120,11 +120,11 @@ Sylvester.Matrix.prototype = {
 
     inverse: function () {
         if (this.elements.length === 0) {
-            console.log("===0")
+            //remplace//console.log("===0")
             return null
         }
         if (!this.isSquare() || this.isSingular()) {
-            console.log("isSingular:", this.isSingular(), "  isSquare:", this.isSquare())
+            //remplace//console.log("isSingular:", this.isSingular(), "  isSquare:", this.isSquare())
             return null
         }
         var n = this.elements.length,
@@ -254,7 +254,7 @@ function invMM(matriz) {
 //fin de invertir matriz
 //fin de invertir matriz
 function c(o, b) {
-    //--console.log(o, b);
+    //--//remplace//console.log(o, b);
 }
 function transpose(matrix) {
     const rows = matrix.length,
@@ -302,44 +302,46 @@ function modelExp(h, a, m_s) {
 }
 
 function estimar(lat, long, variograma, x, y, z, mvt, m_s) {
-    //console.log("estimar:",variograma.nugget,variograma.sill_parcial,modelExp((Math.pow(Math.pow(lat - x[0], 2) + Math.pow(long - y[0], 2), 0.5)) * 100000,variograma.rango,m_s))      
+    ////remplace//console.log("estimar:",variograma.nugget,variograma.sill_parcial,modelExp((Math.pow(Math.pow(lat - x[0], 2) + Math.pow(long - y[0], 2), 0.5)) * 100000,variograma.rango,m_s))      
     c(lat, long)
     let _Y = [];
     for (let i = 0; i < x.length; i++) {
         z[i] = [z[i]]
         _Y[i] = [variograma.nugget + variograma.sill_parcial * modelExp((Math.pow(Math.pow(lat - x[i], 2) + Math.pow(long - y[i], 2), 0.5)) * 100000, variograma.rango, m_s)]
-        //console.log(_Y[i])   
+        ////remplace//console.log(_Y[i])   
     }
     _Y[x.length] = [1]
-    //console.log("_Y:",_Y)
+    ////remplace//console.log("_Y:",_Y)
     //calulor de los pesos y el parametro de lagrange
-    //console.log("MVT:",mvt)
+    ////remplace//console.log("MVT:",mvt)
     let pesos = mult(mvt, _Y)
-    //console.log("pesos::",pesos)
-    //console.log("Z:",z)
+    ////remplace//console.log("pesos::",pesos)
+    ////remplace//console.log("Z:",z)
     pesos = pesos.slice(0, x.length);
     return mult(transpose(pesos), z)[0]
 }
 self.addEventListener('message', function (e) {
-    //console.log("******************************************************************8")
+    console.time("t1");
+    ////remplace//console.log("******************************************************************8")
     let variograma = e.data.semivariograma
-    //console.log("VJSCROSS:",e.data)
+    console.log("variograma:::",variograma)
+    ////remplace//console.log("VJSCROSS:",e.data)
     let v_estimados = []
-    //console.log("nugget:",variograma.nugget)
-    //console.log("sill_parcial:",variograma.sill_parcial)
-    //console.log("[rango,modelo]:",[variograma.rango,variograma.modelo])
-    let cantidad_de_puntos_a_estimar = 40
+    ////remplace//console.log("nugget:",variograma.nugget)
+    ////remplace//console.log("sill_parcial:",variograma.sill_parcial)
+    ////remplace//console.log("[rango,modelo]:",[variograma.rango,variograma.modelo])
+    let cantidad_de_puntos_a_estimar = 100
     let x = (e.data.x).splice(0, cantidad_de_puntos_a_estimar)
 
-    console.log("lengthx:", x.length)
+    //remplace//console.log("lengthx:", x.length)
     let y = e.data.y.splice(0, cantidad_de_puntos_a_estimar)
 
-    console.log("lengthy:", y.length)
+    //remplace//console.log("lengthy:", y.length)
     let z = e.data.z.splice(0, cantidad_de_puntos_a_estimar)
 
-    console.log("lengthx:", z.length)
+    //remplace//console.log("lengthx:", z.length)
     let n = x.length > cantidad_de_puntos_a_estimar ? cantidad_de_puntos_a_estimar : x.length
-    console.log("n:", n)
+    //remplace//console.log("n:", n)
     for (let k = 0; k < n; k++) {
         let lat = x.slice()
         let lat_inter = lat.splice(k, 1)[0]
@@ -348,34 +350,35 @@ self.addEventListener('message', function (e) {
         let zv = z.slice()
         zv.slice(k, 1)
         let nc = lat.length
-        //console.log("X:",lat)
-        //console.log("Y:",long)
-        //console.log("puntos_inter:",[lat_inter,long_inter])
+        ////remplace//console.log("X:",lat)
+        ////remplace//console.log("Y:",long)
+        ////remplace//console.log("puntos_inter:",[lat_inter,long_inter])
         let mvt = Array(nc + 1).fill(1).map(() => Array(nc + 1).fill(1));
         for (let i = 0; i < nc; i++) {
             zv[i] = [zv[i]]
-            //console.log("[x,y]:",[lat[i],long[i]])
+            ////remplace//console.log("[x,y]:",[lat[i],long[i]])
             for (let j = 0; j < nc; j++) {
-                //console.log(Math.sqrt(Math.pow(lat[j] - long[i], 2) + Math.pow(lat[j] - long[i], 2)) * 100000,variograma.rango,variograma.modelo)
-                //console.log("===:",modelExp(Math.sqrt(Math.pow(lat[j] - long[i], 2) + Math.pow(lat[j] - long[i], 2)) * 100000,variograma.rango,variograma.modelo))
+                ////remplace//console.log(Math.sqrt(Math.pow(lat[j] - long[i], 2) + Math.pow(lat[j] - long[i], 2)) * 100000,variograma.rango,variograma.modelo)
+                ////remplace//console.log("===:",modelExp(Math.sqrt(Math.pow(lat[j] - long[i], 2) + Math.pow(lat[j] - long[i], 2)) * 100000,variograma.rango,variograma.modelo))
                 mvt[i][j] = variograma.nugget + variograma.sill_parcial * modelExp((Math.pow(Math.pow(lat[j] - lat[i], 2) + Math.pow(long[j] - long[i], 2), 0.5)) * 100000, variograma.rango, variograma.modelo)
-                //console.log(mvt[i][j])
+                ////remplace//console.log(mvt[i][j])
             }
         }
         mvt[nc][nc] = 0;
-        //console.log("MVT"+k+":",mvt)
+        ////remplace//console.log("MVT"+k+":",mvt)
         let matriz_variograma_teorico = invM(mvt)
-        //console.log("matriz_variograma_teorico::",matriz_variograma_teorico) 
+        ////remplace//console.log("matriz_variograma_teorico::",matriz_variograma_teorico) 
         //for(let i=0;i<1;i++){
-        //console.log("zv:",zv)
+        ////remplace//console.log("zv:",zv)
         v_estimados[k] = estimar(lat_inter, long_inter, variograma, lat, long, zv, matriz_variograma_teorico, variograma.modelo)[0];
-        //console.log("v_estimados",v_estimados[k])
-        //console.log("_________________________________________________________")
+        ////remplace//console.log("v_estimados",v_estimados[k])
+        ////remplace//console.log("_________________________________________________________")
         //}
     }
     let error = []
     for (var i = 0; i < v_estimados.length; i++) {
         error[i] = v_estimados[i] - z[i]
     }
+    console.timeEnd("t1");
     postMessage({ ve: v_estimados, zv: z, error: error })
 })

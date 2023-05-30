@@ -1,5 +1,5 @@
 
-function getVariograma(x, y, z) {
+function getVariograma(x, y, z) { 
     let nugget = 0;
     let rango = 0;
     let sill = 0;
@@ -15,15 +15,15 @@ function getVariograma(x, y, z) {
             }
         }
     }
-    //--console.log("mD:",mD)
+    //--//remplace//console.log("mD:",mD)
     dist.sort((a, b) => { return a - b })
     rango = dist[dist.length - 1]//toma la distancia mas larga para obtener el rango
-    //--console.log("rango:", rango)
+    //--//remplace//console.log("rango:", rango)
     //indica la cantidad de intervalos
-    let lags = 200//((z.length*z.length-z.length)/2)>30?30:((z.length*z.length-z.length)/2);
-    ////--////--console.log("lags:::"+lags)
+    let lags = 50//((z.length*z.length-z.length)/2)>30?30:((z.length*z.length-z.length)/2);
+    ////--////--//remplace//console.log("lags:::"+lags)
     let tolerance = rango / lags;//la tolerancia crea un intervalo para buscar los pares
-    ////--////--console.log("tolerance::"+tolerance)
+    ////--////--//remplace//console.log("tolerance::"+tolerance)
     let lag = []
     let semi = []
     let par = []
@@ -41,7 +41,7 @@ function getVariograma(x, y, z) {
             for (let k = 0; k < lags; k++) {
                 if (i != j) {
                     dxij = Math.sqrt(Math.pow(x[i] - x[j], 2) + Math.pow(y[i] - y[j], 2)) * 100000;
-                    if (dxij > (k) * tolerance & dxij <= (k + 1) * tolerance && dxij <= (rango / 2.55)) {//
+                    if (dxij > (k) * tolerance & dxij <= (k + 1) * tolerance && dxij <= (rango / 1)) {//
                         lag[k] += dxij;//se suman las distancia de cada par, asi despues promeidarlas
                         semi[k] += Math.abs(z[i] - z[j])// Math.pow(z[i] - z[j],1);//se suman los Zi_Z_j en el intervalo de los puntos que estan en el intervalo de busqueda de los pares
                         par[k] += 1;//se agregan los pares encontrados dentro del intervalo, cada par encontrado aumnta en uno
@@ -61,8 +61,8 @@ function getVariograma(x, y, z) {
             semi[k] /= (2 * par[k])//par[k] //se divide los la dif de los valores entre los números de pares encontrado en el intervalo segun la formula del variograma
         }
     }
-    console.log("lag:", lag)
-    console.log("SEmivarianza....")
+    //remplace//console.log("lag:", lag)
+    //remplace//console.log("SEmivarianza....")
     for (let k = 0; k < lags; k++) {
         if (lag[k] > 0 & semi[k] > 0) {
             //se agregan los lags de distancias a lagsemi
@@ -71,9 +71,9 @@ function getVariograma(x, y, z) {
             semiva.push(semi[k])
         }
     }
-    console.log("Rango:", rango)
+    //remplace//console.log("Rango:", rango)
     rango = lagsemi[lagsemi.length - 1] - lagsemi[0]
-    console.log("Rango:", rango)
+    //remplace//console.log("Rango:", rango)
     return { rango: parseInt(rango), lags: lagsemi, semi: semiva }
 };
 self.addEventListener('message', function (e) {
@@ -88,6 +88,7 @@ self.addEventListener('message', function (e) {
         y.push(parseFloat(inf_ovi[i].latitud));
     }
     let variograma = getVariograma(x, y, z);
-    console.log("Variograma:::::", variograma);
+    
+    //remplace//console.log("Variograma:::::", variograma);
     postMessage({ variograma: variograma, x: x, y: y, z: z })
 });

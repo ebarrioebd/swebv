@@ -1,4 +1,4 @@
-console.log("mapacalor.js")
+//remplace//console.log("mapacalor.js")
 
 
 /*Prepara mapa de calor*/
@@ -34,19 +34,19 @@ const colors = ["#0f99dd", "#35bbdd", "#68dca7", "#e3f46c", "#fcfd61", "#fecf4f"
 //const colors = ["#2791c5","#8cb8a4","#f9fa64","#e87329","#f14d1e"];
 /*new code*/
 function inv(params) {
-    //console.log("get :"+params.length)
-    //console.log(params)
+    ////remplace//console.log("get :"+params.length)
+    ////remplace//console.log(params)
     let a = new Array(params.length);
     for (var i = 0; i < params.length; i++) {
         a[i] = [params[i][1], params[i][0]]
     }
-    //console.log(a)
-    //console.log("return :"+a.length)
+    ////remplace//console.log(a)
+    ////remplace//console.log("return :"+a.length)
     return a
 }
 
 function getMaxValor(z) {
-    //console.log("getV(Z):",z)
+    ////remplace//console.log("getV(Z):",z)
     var d = []
     for (var i = 0; i < z.length; i++) {
         d.push(z[i].cantidad_huevos)
@@ -89,7 +89,7 @@ function V(mD, z, wij, pZ) {
         s3_1 += Math.pow(z[i] - pZ, 2)
     }
     S1 = (1 / 2) * s1_1
-    console.log("S0:", S0)
+    //remplace//console.log("S0:", S0)
 
     var D = s3_0 / Math.pow(s3_1, 2)
     var A = N * ((Math.pow(N, 2) - 3 * N + 3) * S1 - N * S2 + 3 * Math.pow(S0, 2))
@@ -98,7 +98,7 @@ function V(mD, z, wij, pZ) {
     var EI2 = (A - B) / C
     var EI = (-1) / (N - 1)
     var varianza = EI2 - Math.pow(EI, 2)
-    console.log("EI:", EI, "EI2:", EI2, "varianza:", varianza)
+    //remplace//console.log("EI:", EI, "EI2:", EI2, "varianza:", varianza)
     return varianza
 
 }
@@ -126,19 +126,19 @@ function correlacio(mD, z) {
         sVAR2 += Math.pow(z[i] - pZ, 2);
     };
     var Imoran = ((z.length) * sWVAR_X) / (sW * sVAR2);
-    console.log("Imoran:", Imoran)
-    console.log("pZ:", pZ);
-    console.log("E:", E)
+    //remplace//console.log("Imoran:", Imoran)
+    //remplace//console.log("pZ:", pZ);
+    //remplace//console.log("E:", E)
     var Varianza = V(mD, z, wij, pZ)
     var z_score = (Imoran - E) / Math.sqrt(Varianza)
-    console.log("Z-score:", z_score)
+    //remplace//console.log("Z-score:", z_score)
 
 }
 ///crea una imagen con A,B como sus dimenciones
 //zi arrays de valores para cada cuadro dentro
 //id del canvas
 function creaImagen(A, B, zi, id) {
-    console.log("A:", A, "B::", B)
+    //remplace//console.log("A:", A, "B::", B)
     var canvas = document.getElementById(id);
     var ctx = canvas.getContext("2d");
     canvas.width = 1000;
@@ -148,9 +148,10 @@ function creaImagen(A, B, zi, id) {
         x1 = 0,
         y1 = 0;
     var k = 0;
-    console.log("Est_Des_Data.data_max:::", Est_Des_Data.data_max)
+    //remplace//console.log("Est_Des_Data.data_max:::", Est_Des_Data.data_max)
     var max = Est_Des_Data.data_max//getMaxValor(ovitrampas);
     for (var i = 0; i < A; i++) {
+        var aumentI=-0.6
         y0 = 0;
         y1 = 0;
         y1 = canvas.width
@@ -160,7 +161,7 @@ function creaImagen(A, B, zi, id) {
             y1 = canvas.height / B
             if (zi[k] !== (-1)) {
                 ctx.fillStyle = getC(zi[k], max);
-                ctx.fillRect(x0, y0, x1, y1);
+                ctx.fillRect(x0-aumentI, y0-aumentI, x1+2*aumentI, y1+2*aumentI);
                 //ctx.arc((x0+x1)/2, (y0+y1)/2, (canvas.width/A)/2 , 0,Math.PI * 2);
                 //ctx.stroke(); 
                 //ctx.strokeRect(x0, y0, x1, y1);
@@ -206,14 +207,14 @@ function updateOpacity(value) {
 }
 
 function inv(params) {
-    //console.log("get :"+params.length)
-    //console.log(params)
+    ////remplace//console.log("get :"+params.length)
+    ////remplace//console.log(params)
     let a = new Array(params.length);
     for (var i = 0; i < params.length; i++) {
         a[i] = [params[i][1], params[i][0]]
     }
-    //console.log(a)
-    //console.log("return :"+a.length)
+    ////remplace//console.log(a)
+    ////remplace//console.log("return :"+a.length)
     return a
 }
 
@@ -261,7 +262,7 @@ function crearDataSemivariograma(x, y, r) {
 }
 //funcion de error en el worker
 function onError(e) {
-    console.log('ERROR: Line ', e.lineno, ' in ', e.filename, ': ', e.message)
+    //remplace//console.log('ERROR: Line ', e.lineno, ' in ', e.filename, ': ', e.message)
     document.getElementById("imgLoading").style.display = "none";
     document.getElementById("interpolarCSV").style.display = "none";
     createVError(['ERROR: Line ', e.lineno, ' in ', e.filename, ': ', e.message].join(''))
@@ -292,7 +293,7 @@ function vt(nugget, sillPartial, rango, h, m_s) {
 //genera valores del variograma teorico que se ha ajustado 
 function dataVT(nugget, sillPartial, rango, model_semi) {
     var distRange = chartVariograma.data.datasets[0].data[chartVariograma.data.datasets[0].data.length - 1].x
-    console.log("distRange::::", distRange)
+    //remplace//console.log("distRange::::", distRange)
     var x = []; //h
     var y = []; //variogramas teorico
     var cantP = 200
@@ -337,16 +338,17 @@ function MCO() {
     const wk_mco = new Worker('/interpoladoresjs/mco.js');
     wk_mco.onerror = (event) => {
         alert("Error")
+        console.log(event)
         wk_mco.terminate();
     };
     wk_mco.postMessage([semivariograma, dat_semivariograma.modelo])
     wk_mco.onmessage = (e) => {
         let rango = semivariograma.rango
-        let nugget = Math.round(e.data[0])
-        let sill = Math.round(e.data[0] + e.data[1])
-        let sill_parcial = Math.round(e.data[1])
+        let nugget = e.data[0]////Math.round(e.data[0])
+        let sill =e.data[0] + e.data[1]//// Math.round(e.data[0] + e.data[1])
+        let sill_parcial = e.data[1]////Math.round(e.data[1])
         document.getElementById("data_mco").innerHTML = "<p>Nugget:" + nugget + "<br>Sill:" + sill + "<br>Rango:" + rango + "<br>Sill-parcial:" + sill_parcial + "</p>"
-        console.log("W:", e.data)
+        //remplace//console.log("W:", e.data)
 
         let [dataSemivaTeorico, xVT] = dataVT(nugget, sill_parcial, rango, dat_semivariograma.modelo);
         chartVariograma.data.labels = xVT;
@@ -359,30 +361,34 @@ function MCO() {
         dat_semivariograma.sill = sill
         dat_semivariograma.m = "MCO"
         wk_mco.terminate();
+        //remplace//console.log("dat_semivariograma:",dat_semivariograma)
     }
 
 }
 function ajusteManual() {
     dat_semivariograma.modelo = document.getElementById("select_model").value;
-    let sill = parseInt(document.getElementById("sill").value);
-    let nugget = parseInt(document.getElementById("nugget").value);
-    let rango = parseInt(document.getElementById("range").value);
+    let sill = parseFloat(document.getElementById("sill").value);
+    let nugget = parseFloat(document.getElementById("nugget").value);
+    let rango = parseFloat(document.getElementById("range").value);
     let [dataSemivaTeorico, xVT] = dataVT(nugget, (sill - nugget), rango, dat_semivariograma.modelo);
     chartVariograma.data.labels = xVT;
     chartVariograma.data.datasets[1].data = dataSemivaTeorico;
     chartVariograma.update();
+
     dat_semivariograma.nugget = nugget;
     dat_semivariograma.sill_parcial = sill - nugget;
     dat_semivariograma.rango = rango;
     dat_semivariograma.sill = sill;
     dat_semivariograma.m = "ajusteManual";
+    //remplace//console.log("dat_semivariograma:",dat_semivariograma)
 }
 var x = []
 var y = []
 var z = []
 function crear_SemiVariograna_Experimental() {
+    console.log(ovitrampas)
     document.getElementById("id_variograma").style.display = "";
-    console.log("dat_semivariograma::", dat_semivariograma)
+    //remplace//console.log("dat_semivariograma::", dat_semivariograma)
     //Actualizar chart del modelo teorico
     chartVariograma.data.labels = [];
     chartVariograma.data.datasets[1].data = [];
@@ -402,16 +408,17 @@ function crear_SemiVariograna_Experimental() {
     const wk_semiva = new Worker('/interpoladoresjs/variograma.js');
     wk_semiva.onerror = (event) => {
         alert("Error")
+        console.log(event)
         wk_semiva.terminate();
     };
     wk_semiva.postMessage({ ovi: ovitrampas })
     wk_semiva.onmessage = (event) => {
-        console.log(event.data)
+        //remplace//console.log(event.data)
         let lags = event.data.variograma.lags;
         let semi = event.data.variograma.semi
         var dataP = createDP(lags, semi)
         chartVariograma.data.datasets[0].data = dataP;
-        console.log(event.data)
+        //remplace//console.log(event.data)
         chartVariograma.update();
         semivariograma = event.data.variograma
         x = event.data.x
@@ -433,21 +440,22 @@ function interpolar(metodo) {
             document.getElementById("interpolarCSV").style.filter = "blur(0px)";
             document.getElementById("id_variograma").style.display = "none";
             //creamos el worker  
-            console.log("dat_semivariograma:;", dat_semivariograma)
+            //remplace//console.log("dat_semivariograma:;", dat_semivariograma)
             const wk_kriging = new Worker('/interpoladoresjs/kriging_ordinario.js');
             wk_kriging.onerror = (event) => {
                 alert("Error")
+                console.log(event)
                 document.getElementById("imgLoading").style.display = "none";
                 wk_kriging.terminate();
             };
             wk_kriging.postMessage({ x: x, y: y, z: z, semivariograma: dat_semivariograma, pi: puntos_a_interpolar, ms: dat_semivariograma.modelo })
             wk_kriging.onmessage = (event) => {
-                console.log("DataKriging:", event.data);
+                //remplace//console.log("DataKriging:", event.data);
                 dat_semivariograma.mvt = event.data.mvt
                 var zi = event.data.zi;
                 if (B != zi.length / A) {
                     B = zi.length / A;
-                    console.log("!B")
+                    //remplace//console.log("!B")
                 }
                 let opacidad_img = 1;
                 if (mapCSVInter.hasLayer(imgOpaci)) { mapCSVInter.removeLayer(imgOpaci); }
@@ -476,20 +484,21 @@ function interpolar(metodo) {
 
         document.getElementById("imgLoading").style.display = "";
         //creamos el worker  
-        console.log("dat_semivariograma:;", dat_semivariograma)
+        //remplace//console.log("dat_semivariograma:;", dat_semivariograma)
         const wk_idw = new Worker('/interpoladoresjs/idw.js');
         wk_idw.onerror = (event) => {
             alert("Error")
+            onsole.log(event)
             document.getElementById("imgLoading").style.display = "none";
             wk_idw.terminate();
         };
         wk_idw.postMessage({ ovi: ovitrampas, pi: puntos_a_interpolar })
         wk_idw.onmessage = (event) => {
             var zi = event.data.zi;
-            console.log("Zidw::", zi)
+            //remplace//console.log("Zidw::", zi)
             if (B != zi.length / A) {
                 B = zi.length / A;
-                console.log("!B")
+                //remplace//console.log("!B")
             }
             let opacidad_img = 1;
             if (mapCSVInter.hasLayer(imgOpaci)) { mapCSVInter.removeLayer(imgOpaci); }
@@ -509,9 +518,9 @@ function interpolar(metodo) {
     }
 }
 function generarPI(zonaSelect) {//genear puntos a interpolar
-    console.log("zonaSelect::", zonaSelect)
+    //console.log("zonaSelect::", zonaSelect)
     //var zonaCoord = zonaSelect[0].geometry.coordinates[0]
-    console.log("1")
+    //remplace//console.log("1")
     let positions = []
     zonaSelect[0].geometry.coordinates[0][0].forEach(function (point) {
         positions.push([point[1], point[0]]);
@@ -550,14 +559,16 @@ function generarPI(zonaSelect) {//genear puntos a interpolar
     //pi,B,A,cajaMulti
 }
 function crearXY(p, min, max) {
-    min = min - (10 * min) / 100
+    min =0// min - (10 * min) / 100
     max = max + (30 * max) / 100
-    console.log("MAXX:", max)
+    //remplace//console.log("MAXX:", max)
     let x_rect = []
     let y_rect = []
+    let k=0
     for (let i = parseInt(min); i < parseInt(max); i++) {
-        x_rect[i] = i
-        y_rect[i] = p[0] * (i) + p[1]
+        x_rect[k] = i
+        y_rect[k] = i//p[0] * (i) + p[1]
+        k++
     }
     return [x_rect, y_rect]
 }
@@ -569,31 +580,32 @@ function validacionCruzada() {
         alert("Error")
         wk_vcross.terminate();
     };
+    if(x.length>=100){wk_vcross.terminate(); alert("No es posible realizar la V.C con mas de 100 datos")}
     wk_vcross.postMessage({ x: x, y: y, z: z, semivariograma: dat_semivariograma })
     wk_vcross.onmessage = (e) => {
-        console.log("VCROSS:", e.data)
+        //remplace//console.log("VCROSS:", e.data)
         let error = e.data.error
         let promedioError = promedio(error)
-        console.log("Error medio:", promedioError)
+        //remplace//console.log("Error medio:", promedioError)
         let ve = e.data.ve
         let zv = e.data.zv
         let correlacioDeV = calcularCorrelacion(zv, ve)
         document.getElementById("errorpromedio").innerHTML = "Error medio: " + promedioError.toFixed(3)
         document.getElementById("correlaciozv").innerHTML = "Correlación entre  VR y VE :" + correlacioDeV.toFixed(5)
-        console.log("Correlacion:", correlacioDeV)
-        var dataP = createDP(ve, zv)
-        var a_xb = calcularRectaDeMejorAjuste(ve, zv)
+        //remplace//console.log("Correlacion:", correlacioDeV)
+        var dataP = createDP(zv, ve)
+        var a_xb =[]/// calcularRectaDeMejorAjuste(ve, zv)
         let minve = Math.min(...ve);
         let maxve = Math.max(...ve);
         let minzv = Math.min(...zv);
         let maxzv = Math.max(...zv);
-        console.log(minve, maxve)
-        console.log(minzv, maxzv)
+        //remplace//console.log(minve, maxve)
+        //remplace//console.log(minzv, maxzv)
         //var crearxy=crearXY(a_xb,Math.min(minve,minzv),Math.max(maxve,maxzv))
         var crearxy = crearXY(a_xb, Math.max(minve, minzv), Math.min(maxzv, maxve))
-        console.log("crearxy::", crearxy)
+        //remplace//console.log("crearxy::", crearxy)
         var xy_rect = createDP(crearxy[0], crearxy[1])
-        console.log("dataP:", dataP)
+        //remplace//console.log("dataP:", dataP)
         graf_vz.data.datasets[0].data = dataP;
         graf_vz.data.datasets[1].data = xy_rect;
         [chart_error.data.labels, chart_error.data.datasets[0].data] = createDPX(error);
@@ -610,7 +622,7 @@ function validacionCruzada() {
          `
         }
         document.getElementById("tableVC").innerHTML = tableVC
-        console.log("VIEW VALIDACION CRUZADA")
+        //remplace//console.log("VIEW VALIDACION CRUZADA")
     }
 }
 function crearMapaDeCalor(zonaV, m_i) {
@@ -669,23 +681,23 @@ function ir_url(n, c_id, type_dat, m_i) { //value
     markersCSV = [];
     circlesCSV = [];
 
-    console.log("c_id::", c_id, n);
-    console.log("OVICSV:", data_ovi_csv)
+    //remplace//console.log("c_id::", c_id, n);
+    //remplace//console.log("OVICSV:", data_ovi_csv)
     let nombreColonia = ""
     for (var i = 0; i < data_ovi_csv.length; i++) {
-        console.log(data_ovi_csv[i][0].gid)
+        //remplace//console.log(data_ovi_csv[i][0].gid)
         if (c_id === data_ovi_csv[i][0].gid) {
             ovitrampas = data_ovi_csv[i]
             nombreColonia = data_ovi_csv[i][0].name_col
             break
         }
     }
-    console.log("ovitrampas:", ovitrampas)
+    //remplace//console.log("ovitrampas:", ovitrampas)
 
     groupMakersCSV.remove(); //remueve
     groupCircleCSV.remove(); //remueve circulos de add
     for (var i = 0; i < ovitrampas.length; i++) {///RADIO=(parseInt(ovitrampas[i].cantidad_huevos)*100)/(Est_Des_Data.data_max)
-        circlesCSV[i] = L.circle([ovitrampas[i].latitud, ovitrampas[i].longitud], (parseInt(ovitrampas[i].cantidad_huevos) * 100) / (Est_Des_Data.data_max), { opacity: 1, fillOpacity: 1, fill: true, color: getC(ovitrampas[i].cantidad_huevos, Est_Des_Data.data_max) });
+        circlesCSV[i] = L.circle([ovitrampas[i].latitud, ovitrampas[i].longitud], (parseInt(ovitrampas[i].cantidad_huevos) * 100) / (Est_Des_Data.data_max), {weight: 2, opacity: 1, fillOpacity: 1, fillColor:getC(ovitrampas[i].cantidad_huevos, Est_Des_Data.data_max), fill: true, color: "black" });
         markersCSV[i] = L.marker([ovitrampas[i].latitud, ovitrampas[i].longitud], { color: "red", draggable: false, title: "Ovitrampa" + (i + 1) + ": Cantidad de Huevos : " + ovitrampas[i].cantidad_huevos });
         markersCSV[i].bindPopup("Lat:" + ovitrampas[i].latitud + "<br>Lng:" + ovitrampas[i].longitud + "<br>Colonia:" + nombreColonia + "<br> Cantidad de Huevos : " + ovitrampas[i].cantidad_huevos)
     }
@@ -703,7 +715,7 @@ function ir_url(n, c_id, type_dat, m_i) { //value
                 break;
             }
         }
-        console.log("zona despues:", zona)
+        //remplace//console.log("zona despues:", zona)
         crearMapaDeCalor(zona, m_i);
     } else {
         fetch("/getZona", {
@@ -716,20 +728,20 @@ function ir_url(n, c_id, type_dat, m_i) { //value
             .then(res => res.json())
             .then(data => {
                 zona = data.zona; ///agrega las zonas al mapa 
-                console.log("zona despues:", zona);
+                //remplace//console.log("zona despues:", zona);
                 crearMapaDeCalor(zona, m_i);
             });
     }
 };
 
 function mapaCalor(n, id, f, type_dat, m_interpolacion) {
-    console.log("mapaCalor(" + n + "," + id + "," + f + "," + type_dat + ")")
+    //remplace//console.log("mapaCalor(" + n + "," + id + "," + f + "," + type_dat + ")")
     if (type_dat === "type_bd") {//si se analiza desde la bd
-        console.log(n, id, f)
+        //remplace//console.log(n, id, f)
         ir_url(n, id, "type_bd", m_interpolacion);
         //window.open(window.location.origin + "/info?x=" + n + "&gid=" + id + "&fecha=" + f, 'popup', 'width=' + (screen.width - 100) + ', height=' + (screen.height - 100) + ', left=' + 10 + ', top=' + 10 + '');
     } else if (type_dat === "type_csv") {//si proviene de un csv y el id de zona pertenece a alguna zona del fileZonaAcapulco.json
-        console.log(n, id, f);
+        //remplace//console.log(n, id, f);
         ir_url(n, id, "", m_interpolacion);
     } else if (type_dat === "type_csv_no_zona") {//si proviene de un csv y el id no esta en filezonaaca.json
         ir_url(n, id, "type_csv_no_zona", m_interpolacion);

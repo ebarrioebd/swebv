@@ -4,7 +4,7 @@
  *prepara para generar los indicadores
  * 
  */
-console.log("funct_load_data.js")
+//remplace//console.log("funct_load_data.js")
 //funciones del boton de filtrar
 function button_inactivo(valor, c) {
     var boton = document.getElementById("bsubmit")
@@ -44,11 +44,11 @@ function getFechas(f1, f2) {
     var mes_name2 = date2.getMonth();
     //return [fecha1,fecha2] 
     return [{ d: fechaNum1, m: mes_name1, y: date1.getFullYear() }, { d: fechaNum2, m: mes_name2, y: date2.getFullYear() }]
-    //console.log(dias[date.getDay()-1] + " " + fechaNum + " de " + meses[mes_name] + " de " + date.getFullYear());     
+    ////remplace//console.log(dias[date.getDay()-1] + " " + fechaNum + " de " + meses[mes_name] + " de " + date.getFullYear());     
 }
 //Agrupa las ovitrampas por gid(identificador de colonia a la que pertenece)
 function groupOvi(arr) {
-    //console.log("arr",arr)
+    ////remplace//console.log("arr",arr)
     let a = [[]]
     let k = 0;
     for (var i = 0; i < arr.length; i++) {
@@ -179,11 +179,11 @@ var _json_notAdd = [];
 function ver_json(a) {
     var res = true;
     _json = [];
-    console.log("A:", a, a.length)
+    //remplace//console.log("A:", a, a.length)
     if (a.length >= 6) {
         for (var i = 0; i < a[0].length - 1; i++) {
             if (a[0][i + 1] == null || a[1][i + 1] == null) {
-                console.log("is null:[" + a[0][i + 1] + "] o :[" + a[1][i + 1] + "]")
+                //remplace//console.log("is null:[" + a[0][i + 1] + "] o :[" + a[1][i + 1] + "]")
             } else
                 if (checkDat(a[0][i + 1], "lat") && checkDat(a[1][i + 1], "lat") && checkDat(a[2][i + 1], "gid")) {
                     _json.push({
@@ -219,8 +219,8 @@ function ver_json(a) {
     } else {
         res = false;
     }
-    console.log("JSON:LENGTH:::", _json.length, _json)
-    console.log("_json_notAdd::", _json_notAdd)
+    //remplace//console.log("JSON:LENGTH:::", _json.length, _json)
+    //remplace//console.log("_json_notAdd::", _json_notAdd)
     return res;
 }
 function parseCSV(text) {
@@ -233,7 +233,7 @@ function parseCSV(text) {
     });
 }
 function reverseMatrixCSV(matrix) {
-    //console.log("Matrix:",matrix)
+    ////remplace//console.log("Matrix:",matrix)
     let outputCSV = [];
     // Por cada fila
     matrix.forEach((values, row) => {
@@ -254,9 +254,9 @@ function readFile(evt) {
     reader.onload = (e) => {
         // Cuando el archivo se terminó de cargar
         let lines = parseCSV(e.target.result);
-        //console.log("lines::",lines);
+        ////remplace//console.log("lines::",lines);
         let output = reverseMatrixCSV(lines);
-        console.log("Terminado csv...", output)
+        //remplace//console.log("Terminado csv...", output)
         if (ver_json(output)) {
             ver_csv_table(output);
             getArrayNomCol();
@@ -285,7 +285,7 @@ function getDataCSV() {
         _jsonGrp = _json.sort(GetSortOrder("gid"))//ordenena las ovitrampas respecto a su gid
         _jsonGrp = groupOvi(_json)// agrupa las ovitrampas por gid
         data_ovi_csv = [];
-        console.log("_jsonGrp::", _jsonGrp)
+        //remplace//console.log("_jsonGrp::", _jsonGrp)
         for (var i = 0; i < _jsonGrp.length; i++) {
             //analizar solo las colonias seleccionadas
             if (checkselect.indexOf(_jsonGrp[i][0].gid) != -1) {
