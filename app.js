@@ -1,24 +1,12 @@
 const express = require("express");
 const app = express();
-app.use(express.json());
-const mongoose = require('mongoose');
+app.use(express.json()); 
 const bodyParser = require('body-parser');
 //Parsear el body usando body parser
 app.use(bodyParser.json()); // body en formato json
 app.use(bodyParser.urlencoded({ extended: false })); //body formulario
 const port = process.env.PORT || 3000;
-/*"mongodb+srv://ebarriosebd:awYo0bsX5UoTguf7@leaflet.kcui8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority */
-//const bd='mongodb://localhost/baseOvi'
-const bd = "mongodb+srv://ebarriosebd:awYo0bsX5UoTguf7@leaflet.kcui8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-mongoose
-    .connect(bd, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(x => {
-        console.log(`Conectado a Mongo, Nombre de la bd: "${x.connections[0].name}"`)
-    })
-    .catch(err => {
-        console.error('Error al conectar a Mongodb', err)
-    });
-//
+ 
 var eng = 'ejs' //'pug'
 //var eng = 'pug'
 app.set('view engine', eng);

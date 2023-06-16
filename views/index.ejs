@@ -42,7 +42,7 @@
                 <div class="map" style="height: 56vh" id="map_c1"></div>
             </div>
             <div class="col-md-2" class="col-sm-12" id="sect13">
-                <div style="height:80%">
+                <div style="height:70%">
                     <p>Porcentaje de Huevos por Colonia </p>
                     <hr><canvas id="graf_ph"></canvas>
                 </div>
@@ -81,21 +81,21 @@
         <div class="row" style="height: 15vh;margin-left: 10px;">
             <div style="text-align: end;"><button id="b" onclick="closedivCSV()"
                     style="border: none;background: none;"><img src="/images/close-button.png" height="35"
-                        width="35"></button></div><strong style="font-size: x-large;font-family: monospace;">Seleccionar
+                        width="35"></button></div><strong style="font-size: 14px;font-family: monospace;">Seleccionar
                 Archivo .csv</strong>
             <form class="form-inline"><input type="file" id="files" accept=".csv" required=""></form>
         </div>
         <div id="csv_tr"></div>
-        <div class="row" style="height:55vh;margin: 10px">
-            <div class="col-md-10" id="csv_table" style="height: -webkit-fill-available;overflow:scroll"></div>
-            <div class="col-md-2" style="height: -webkit-fill-available;">
+        <div class="row" style="height:65%;margin: 10px">
+            <div class="col-md-9" id="csv_table" style="height: -webkit-fill-available;overflow:scroll"></div>
+            <div class="col-md-3" style="height: -webkit-fill-available;">
                 <div class="scrollbar" style="height: -webkit-fill-available;" id="style-15">
                     <div id="selectCSV"></div>
                 </div>
             </div>
         </div>
         <div class="row" style="height:10vh;">
-            <div class="col-md-2"><button id="ver_csv_map" style="font-size: large;margin-left: 10px;width: 60%;"
+            <div class="col-md-2"><button id="ver_csv_map" style="font-size: large;margin-left: 10px;"
                     onclick="getDataCSV()">Analizar</button></div>
         </div><textarea name="" style="display:none" cols="200" row="600" id="area"></textarea>
     </div>
@@ -237,8 +237,7 @@
                     <th>Total de Huevos Registrados</th>
                     <th>Promedio</th>
                     <th>Varianza</th>
-                    <th>Desviación Estándar</th>
-                    <th>Coeficiente de Variación</th>
+                    <th>Desviación Estándar</th> 
                     <th>Mínimo </th>
                     <th>Máximo</th>
                     <th>Rango</th>
@@ -327,6 +326,7 @@
     <script src="/jsIndex.js/addZonaMapa.js"></script>
     <script src="/jsIndex.js/mapacalor.js"></script>
     <script src="/jsIndex.js/promediarMesDia.js"></script>
+    <script type="text/javascript" src="/js/verificarpantalla.js"></script>
 
 </body>
 

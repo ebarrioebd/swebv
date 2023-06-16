@@ -55,9 +55,7 @@ var colonias = new L.TileLayer.WMS('https://www.gits.igg.unam.mx/wmsproxy/wms', 
     crs: L.CRS.EPSG4326
 })
 var capasBase = {
-    "colonias": colonias,
-    "roadMap": roadmap,
-    "OpenStreetMap": capaOSM,
+    "colonias": colonias, 
     "sat_text": sat_text
 };
 var capasBaseCSV = {

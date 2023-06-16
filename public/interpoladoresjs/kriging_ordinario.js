@@ -317,13 +317,13 @@ function estimar(lat, long, variograma, x, y, z, mvt, m_s) {
 }
 
 self.addEventListener('message', function (e) {
-    let m_s = e.data.ms//modelo del semivariograma
+    let m_s =e.data.semivariograma.modelo// e.data.ms//modelo del semivariograma
     let x = e.data.x
     let y = e.data.y
     let z = e.data.z
     let puntos_i = e.data.pi
     let variograma = e.data.semivariograma;
-    console.log("e.data.semivariograma:", e.data.semivariograma)
+    console.log("e.data.semivariograma:", e.data)
     //crear Matriz de variograma Teorico
     let n = x.length;
     //conseguir la Matriz del Variograma Teorico de los puntos de muestra
@@ -334,8 +334,10 @@ self.addEventListener('message', function (e) {
             mvt[i][j] = variograma.nugget + variograma.sill_parcial * modelExp(Math.sqrt(Math.pow(x[j] - x[i], 2) + Math.pow(y[j] - y[i], 2)) * 100000, variograma.rango, m_s)
         }
     }
-    mvt[n][n] = 0;
+    console.log(mvt)
+    //mvt[n][n] = 0;
     let matriz_variograma_teorico = invM(mvt)
+    console.log(matriz_variograma_teorico)
     let x_c = 0;//centro punto x
     let y_c = 0;//centro punto y
     let zi = [], k = 0;
