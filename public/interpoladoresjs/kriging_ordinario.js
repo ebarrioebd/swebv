@@ -332,18 +332,11 @@ self.addEventListener('message', function (e) {
             mvt[i][j] = variograma.nugget + variograma.sill_parcial * modelExp(Math.sqrt(Math.pow(x[i] - x[j], 2) + Math.pow(y[i] - y[j], 2)) * 100000, variograma.rango, m_s)
         }
     }
-<<<<<<< HEAD
     
     mvt[n][n] = 0;
     //console.log(mvt)
     let matriz_variograma_teorico = invM(mvt)
     //console.log(matriz_variograma_teorico)
-=======
-    console.log(mvt)
-    //mvt[n][n] = 0;
-    let matriz_variograma_teorico = invM(mvt)
-    console.log(matriz_variograma_teorico)
->>>>>>> 06a96435c1e5a5ef2a99cd3f501b943aea042f01
     let x_c = 0;//centro punto x
     let y_c = 0;//centro punto y
     let zi = [], k = 0;

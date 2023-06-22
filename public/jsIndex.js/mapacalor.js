@@ -374,12 +374,7 @@ function ajusteManual() {
 var x = []
 var y = []
 var z = []
-<<<<<<< HEAD
 function crear_SemiVariograna_Experimental() { 
-=======
-function crear_SemiVariograna_Experimental() {
-     
->>>>>>> 06a96435c1e5a5ef2a99cd3f501b943aea042f01
     document.getElementById("id_variograma").style.display = "";
     //remplace//console.log("dat_semivariograma::", dat_semivariograma)
     //Actualizar chart del modelo teorico
