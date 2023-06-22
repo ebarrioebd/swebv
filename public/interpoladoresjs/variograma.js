@@ -1,4 +1,14 @@
 
+function calcularAzimut(latitud1, longitud1, latitud2, longitud2) {
+  const y = Math.sin(longitud2 - longitud1) * Math.cos(latitud2);
+  const x =
+    Math.cos(latitud1) * Math.sin(latitud2) -
+    Math.sin(latitud1) * Math.cos(latitud2) * Math.cos(longitud2 - longitud1);
+  const azimut = Math.atan2(y, x);
+  const azimutGrados = (azimut * 180) / Math.PI;
+  return (azimutGrados + 360) % 360; // Asegurarse de que el resultado esté entre 0 y 360 grados
+}
+
 function getVariograma(x, y, z) { 
     let nugget = 0;
     let rango = 0;
@@ -6,9 +16,10 @@ function getVariograma(x, y, z) {
     let disij = [];
     let dist = [];
     var mD = []
+    //Cambio j=0, a j=i
     for (let i = 0; i < z.length; i++) {
         mD[i] = []
-        for (let j = 0; j < z.length; j++) {
+        for (let j = i; j < z.length; j++) {
             mD[i][j] = Math.sqrt(Math.pow(x[i] - x[j], 2) + Math.pow(y[i] - y[j], 2)) * 100000
             if (i != j) {
                 dist.push(Math.sqrt(Math.pow(x[i] - x[j], 2) + Math.pow(y[i] - y[j], 2)) * 100000); //todas las distancias que nos son el mismo punto !== 0
@@ -36,14 +47,17 @@ function getVariograma(x, y, z) {
     }
     let dxij = 0
     let disMax = 0
+    let azimut=0
     for (let i = 0; i < x.length; i++) {
-        for (let j = 0; j < x.length; j++) {
+        for (let j = i; j < x.length; j++) {
             for (let k = 0; k < lags; k++) {
-                if (i != j) {
+                //azimut=calcularAzimut(y[i], x[i], y[j],  x[j]) //&& azimut >=0 && azimut<=90 
+                if (i != j ) {
                     dxij = Math.sqrt(Math.pow(x[i] - x[j], 2) + Math.pow(y[i] - y[j], 2)) * 100000;
-                    if (dxij > (k) * tolerance & dxij <= (k + 1) * tolerance && dxij <= (rango / 1)) {//
+                    if (dxij > (k) * tolerance & dxij <= (k + 1) * tolerance && dxij <= rango  ) {//
                         lag[k] += dxij;//se suman las distancia de cada par, asi despues promeidarlas
-                        semi[k] += Math.abs(z[i] - z[j])// Math.pow(z[i] - z[j],1);//se suman los Zi_Z_j en el intervalo de los puntos que estan en el intervalo de busqueda de los pares
+                        semi[k] += Math.abs(z[i] - z[j])////se suman los Zi_Z_j en el intervalo de los puntos que estan en el intervalo de busqueda de los pares
+                        //semi[k]+= Math.pow(z[i] - z[j],2);
                         par[k] += 1;//se agregan los pares encontrados dentro del intervalo, cada par encontrado aumnta en uno
                     }
                     //if(disMax<=dxij){
@@ -79,7 +93,7 @@ function getVariograma(x, y, z) {
 self.addEventListener('message', function (e) {
     let inf_ovi = e.data.ovi;
     let x = []
-    let y = []
+    let y = [] 
     let z = []
     for (let i = 0; i < inf_ovi.length; i++) {
         //ovitrampas.push(inf_ovi[i])
@@ -89,6 +103,6 @@ self.addEventListener('message', function (e) {
     }
     let variograma = getVariograma(x, y, z);
     
-    //remplace//console.log("Variograma:::::", variograma);
+    console.log("Variograma:::::", variograma);
     postMessage({ variograma: variograma, x: x, y: y, z: z })
 });

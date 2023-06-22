@@ -46,7 +46,7 @@ function createZonaBBOX(gidEnBD) {//crea ua caja para los puntos seleccionado
                 //puntosCSV_zona_bbox.push([puntos_OVI[i][j].longitud, puntos_OVI[i][j].latitud]);
             }
             //remplace//console.log(xlat, ylong)
-            let tS = 0.001
+            let tS = 0.0005
             let xmax = Math.max(...xlat) + tS
             let xmin = Math.min(...xlat) - tS
             let ymax = Math.max(...ylong) + tS
@@ -128,32 +128,33 @@ function addZonaSelect(zona_, pop, type_dat, gids) {//funcion que agrega las zon
     geoZona.addTo(map);
     map.setView(new L.LatLng(zonaGeneral[0].geometry.coordinates[0][0][0][1], zonaGeneral[0].geometry.coordinates[0][0][0][0]));
 }
-function getZonas(zona, pop, type_dat) {//obtiene las zonas segun su gid
-    let json = zona// {...zonas}; 
-    //remplace//console.log("ZONA:", zona)
+function getZonas(zona, pop, type_dat) {//obtiene las zonas segun su gid\
+    //console.log("zona, pop, type_dat",zona, pop, type_dat)
+    
+    //console.log("ZONA:", zona)
     fetch("/getZona", {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(
             {
-                gid: json
+                gid: zona
             })
     })
         .then(res => res.json())
         .then(data => {
             if (data.zona.length == 0) {
                 try {
-                    addZonaSelect(data.zona, pop, "type_csv_no_zona", json)//agrega las zonas al mapa 
+                    addZonaSelect(data.zona, pop, "type_csv_no_zona", zona)//agrega las zonas al mapa 
                 } catch (err) {
                     alert("Error al Generar Zona");
-                    //remplace//console.log("Err:", err)
+                    console.log("Err:", err)
                 }
             } else {
                 try {
-                    addZonaSelect(data.zona, pop, type_dat, json)//agrega las zonas al mapa
+                    addZonaSelect(data.zona, pop, type_dat, zona)//agrega las zonas al mapa
                 } catch (err) {
                     alert("Error al Obtener Zona");
-                    //remplace//console.log("Err:", err)
+                    console.log("Err:", err)
                 }
             }
 

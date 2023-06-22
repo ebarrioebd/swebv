@@ -14,7 +14,7 @@ mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
 
 //L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
 //L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', { minZoom: minZoom, maxZoom: maxZoom, attribution: '&copy; ' + mapLink + ' Contributors', subdomains: ['mt0', 'mt1', 'mt2', 'mt3'] }).addTo(mapCSVInter);
-//L.control.scale({ metric: true, imperial: false }).addTo(map);
+L.control.scale({ metric: true, imperial: false }).addTo(mapCSVInter);
 
 var capaOSM = new L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     minZoom: minZoom,
@@ -55,9 +55,7 @@ var colonias = new L.TileLayer.WMS('https://www.gits.igg.unam.mx/wmsproxy/wms', 
     crs: L.CRS.EPSG4326
 })
 var capasBase = {
-    "colonias": colonias,
-    "roadMap": roadmap,
-    "OpenStreetMap": capaOSM,
+    "colonias": colonias, 
     "sat_text": sat_text
 };
 var capasBaseCSV = {

@@ -301,7 +301,7 @@ function modelExp(h, a, m_s) {
 //minimos cuadrados ordinarios
 function OrdinaryLeastsquares(X, Y, h, a, m_s) {
     //funcion exponencial
-    console.log(h, a, m_s)
+    console.log( a, m_s)
     //genera valores del variogrma teorico del valor de Xs
     for (var i = 0; i < Y.length; i++) {
         X[i][1] = modelExp(h[i], a, m_s)
@@ -329,5 +329,6 @@ self.addEventListener('message', function (e) {
     let X = Array(Y.length).fill().map(() => Array(2).fill(1));
     //W0,W1 son los valores que minimizan el error (Y(h,W)-Y*(h))^2 y w0,w1 ajustan  Y(h,W) a los valores de Y*(h) 
     let W = OrdinaryLeastsquares(X, Y, e.data[0].lags, e.data[0].rango, e.data[1]);
+    console.log(W[0][0],W[1][0])
     postMessage([W[0][0], W[1][0]])
 });

@@ -1,6 +1,7 @@
-.easyPrintHolder .a3CssClass { 
-  background-image: url(data:image/svg+xml;utf8;base64,PD9...go=);
+.easyPrintHolder .a3CssClass {
+    background-image: url(data:image/svg+xml;utf8;base64,PD9...go=);
 }
+
 @import url("https://fonts.googleapis.com/css2?family=Fredoka&display=swap");
 
 /*.map {
@@ -278,11 +279,11 @@ b {
     border-radius: 10px;
     background-color: #fff;
     background-image: -webkit-gradient(linear,
-            40% 0%,
-            75% 84%,
-            from(#4d9c41),
-            to(#19911d),
-            color-stop(0.6, #54de5d));
+        40% 0%,
+        75% 84%,
+        from(#4d9c41),
+        to(#19911d),
+        color-stop(0.6, #54de5d));
 }
 
 .scrollbar {
@@ -367,7 +368,10 @@ b {
 #selectCasillas {
     height: 75%;
 }
-
+#sect0:hover {
+    border: outset #d8d8d8 0.5vh;
+    background: #9595958c;
+}
 #sect11,
 #sect12,
 #sect13,
@@ -490,8 +494,8 @@ td {
     padding-left: 10px;
 }
 
-tr { 
-    border:solid 2px #313030;
+tr {
+    border: solid 2px #313030;
 }
 
 #td_color {
@@ -558,9 +562,9 @@ body {
 
 #rango {
     padding: 0px 0px 0px 31px;
-    height: 3vh; 
+    height: 3vh;
     font-size: 15px;
-    font-family: fantasy; 
+    font-family: fantasy;
 }
 
 #id_radio {
@@ -648,7 +652,8 @@ body {
     border: outset #b3b3b3 5px;
     background: #ffffff;
 }
-#ventanaHistogramaDeFrecuencias{
+
+#ventanaHistogramaDeFrecuencias {
     font-size: medium;
     display: block;
     width: 80%;
@@ -659,20 +664,25 @@ body {
     font-family: monospace;
     height: 80vh;
     border: outset #fffefe 5px;
-    background:#f1f1f1;
+    background: #f1f1f1;
 }
-#histogramaChart{
+
+#histogramaChart {
     height: -webkit-fill-available !important;
     /*width: -webkit-fill-available !important;*/
 }
-#metDiv{
+
+#metDiv {
     padding: 5px 4px 3px 4px;
     border: outset #cdcdcd;
 }
-#icon_inter{
-    height: 21px;padding-right: 5px;
+
+#icon_inter {
+    height: 21px;
+    padding-right: 5px;
 }
-#validacioncruzada{ 
+
+#validacioncruzada {
     font-size: medium;
     display: block;
     width: 80%;
@@ -685,7 +695,34 @@ body {
     border: outset #fffefe 5px;
     background: #f1f1f1;
 }
-#n_rango{
+
+#n_rango {
     background: white;
     color: black;
+}
+
+#button_descriptivos {
+    position: relative;
+    border: 1px solid #ccc;
+}
+
+#b_descriptivos {
+    color: white;
+    border-radius: 7px;
+    background: #313030;
+    font-family: sans-serif;
+    width: -webkit-fill-available;
+    height: 31px;
+    font-size: initial;
+}
+
+#b_descriptivos:hover ,#b_infocolonias:hover {
+    background-color: white;
+    color: black;
+}
+
+#b_infocolonias {
+    width: 100%;
+    color: white;
+    background: #313030;
 }

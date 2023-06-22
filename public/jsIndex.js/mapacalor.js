@@ -28,11 +28,7 @@ botonesControlCSV.onAdd = function () { // creación de los botones
     return botones;
 };
 botonesControlCSV.addTo(mapCSVInter); // adición del contenedor dentro del mapa
-const colors = ["#0f99dd", "#35bbdd", "#68dca7", "#e3f46c", "#fcfd61", "#fecf4f", "#fea43d", "#fa4815", "#fa4815"];
-//const colors = ["#2791c5","#5fa2b3","#8cb8a4","#d6e37d","#f9fa64","#fbce52","#fba440","#f14d1e","#e71914"];
-//const colors = ["#2791c5","#5fa2b3","#8cb8a4","#d6e37d","#f9fa64","#fbce52","#fba440","#e87329","#f14d1e","#e71914"];
-//const colors = ["#2791c5","#8cb8a4","#f9fa64","#e87329","#f14d1e"];
-/*new code*/
+const colors = ["#0f99dd", "#35bbdd", "#68dca7", "#e3f46c", "#fcfd61", "#fecf4f", "#fea43d", "#fa4815", "#fa4815"]; 
 function inv(params) {
     ////remplace//console.log("get :"+params.length)
     ////remplace//console.log(params)
@@ -149,9 +145,9 @@ function creaImagen(A, B, zi, id) {
         y1 = 0;
     var k = 0;
     //remplace//console.log("Est_Des_Data.data_max:::", Est_Des_Data.data_max)
-    var max = Est_Des_Data.data_max//getMaxValor(ovitrampas);
+    var max =data_ovi_max//getMaxValor(ovitrampas);
     for (var i = 0; i < A; i++) {
-        var aumentI=-0.6
+        var aumentI=-0.8
         y0 = 0;
         y1 = 0;
         y1 = canvas.width
@@ -219,7 +215,7 @@ function inv(params) {
 }
 
 function addTablaIndicador(data) {
-    var max = Est_Des_Data.data_max //getMaxValor(data);
+    var max = data_ovi_max //getMaxValor(data);
     var v1 = 0;
     var v2 = "";
     var divRango = "<div class='col-md-12'  style='color: black;font-family: revert;background: whitesmoke;'>Densidad de Mosquitos</div>";
@@ -280,16 +276,9 @@ function modelExp(h, a, m_s) {
         case "esf":
             return h > a ? 1 : ((3 / 2) * (h / a) - (1 / 2) * Math.pow(h / a, 3))//esferico
             break
-    }
-    //return (1.0-Math.pow(Math.exp(-1*(h/a)),2))//gaussiano
-    //return (1.0-Math.exp(-3*(h/a)))//exponecial
-    //return h>a?1:((3/2)*(h/a)-(1/2)*Math.pow(h/a,3))//esferico
+    } 
 }
-function vt(nugget, sillPartial, rango, h, m_s) {
-    //*********return beta*(1.0 - Math.exp(-(1.0 / (1 / 3)) * h / rango))//con solo betaa
-    //return nugget + sillPartial * (1.0 - Math.exp(-(1.0 / (1 / 3)) * h / rango))
-    return nugget + sillPartial * modelExp(h, rango)
-}
+  
 //genera valores del variograma teorico que se ha ajustado 
 function dataVT(nugget, sillPartial, rango, model_semi) {
     var distRange = chartVariograma.data.datasets[0].data[chartVariograma.data.datasets[0].data.length - 1].x
@@ -385,8 +374,7 @@ function ajusteManual() {
 var x = []
 var y = []
 var z = []
-function crear_SemiVariograna_Experimental() {
-    console.log(ovitrampas)
+function crear_SemiVariograna_Experimental() { 
     document.getElementById("id_variograma").style.display = "";
     //remplace//console.log("dat_semivariograma::", dat_semivariograma)
     //Actualizar chart del modelo teorico
@@ -424,7 +412,7 @@ function crear_SemiVariograna_Experimental() {
         x = event.data.x
         y = event.data.y
         z = event.data.z
-        wk_semiva.terminate();
+        //wk_semiva.terminate();
     }
 
 }
@@ -432,6 +420,7 @@ function crear_SemiVariograna_Experimental() {
 //pi,B,A,cajaMulti
 var puntos_a_interpolar, A, B, cajaMulti;
 function interpolar(metodo) {
+    console.log(z)
     document.getElementById("interpolarCSV").style.display = "";
     document.getElementById("interpolarCSV").style.top = 0 + "%";
     if (metodo == "kriging") {
@@ -488,7 +477,7 @@ function interpolar(metodo) {
         const wk_idw = new Worker('/interpoladoresjs/idw.js');
         wk_idw.onerror = (event) => {
             alert("Error")
-            onsole.log(event)
+            console.log(event)
             document.getElementById("imgLoading").style.display = "none";
             wk_idw.terminate();
         };
@@ -512,7 +501,7 @@ function interpolar(metodo) {
             imgOpaci.addTo(mapCSVInter);
             addTablaIndicador(ovitrampas);
             document.getElementById("imgLoading").style.display = "none";
-            wk_idw.terminate();
+            //wk_idw.terminate();
         }
 
     }
@@ -534,7 +523,7 @@ function generarPI(zonaSelect) {//genear puntos a interpolar
     let line = turf.lineString(inv(positions));
     let bbox = turf.bbox(line);
     let dcuadro = turf.distance([bbox[0], bbox[1]], [bbox[0], bbox[3]], options);
-    let cantidad_de_cuadrados_por_ladao = 80
+    let cantidad_de_cuadrados_por_ladao = 50
     let tamCuadro = Math.ceil(dcuadro / cantidad_de_cuadrados_por_ladao) //80
     let squareGrid = turf.squareGrid(bbox, tamCuadro, options);
     cajaMulti = turf.bbox(squareGrid); //cuadro dlimitador del poligono 
@@ -559,18 +548,15 @@ function generarPI(zonaSelect) {//genear puntos a interpolar
     //pi,B,A,cajaMulti
 }
 function crearXY(p, min, max) {
-    min =0// min - (10 * min) / 100
-    max = max + (30 * max) / 100
-    //remplace//console.log("MAXX:", max)
-    let x_rect = []
-    let y_rect = []
-    let k=0
+    min = 0; // min - (10 * min) / 100
+    max = max + (0.3 * max); // max + (30 * max) / 100 
+    const x_rect = [];
+    const y_rect = [];
     for (let i = parseInt(min); i < parseInt(max); i++) {
-        x_rect[k] = i
-        y_rect[k] = i//p[0] * (i) + p[1]
-        k++
+        x_rect.push(i);
+        y_rect.push(i); // p[0] * (i) + p[1]
     }
-    return [x_rect, y_rect]
+    return [x_rect, y_rect];
 }
 function validacionCruzada() {
     document.getElementById("validacioncruzada").style.top = 2 + "%"
@@ -641,6 +627,20 @@ function crearMapaDeCalor(zonaV, m_i) {
         interpolar(m_i)
     }
 }
+
+function mapaCalor(n, id, f, type_dat, m_interpolacion) {
+    //remplace//console.log("mapaCalor(" + n + "," + id + "," + f + "," + type_dat + ")")
+    if (type_dat === "type_bd") {//si se analiza desde la bd
+        //remplace//console.log(n, id, f)
+        ir_url(n, id, "type_bd", m_interpolacion);
+        //window.open(window.location.origin + "/info?x=" + n + "&gid=" + id + "&fecha=" + f, 'popup', 'width=' + (screen.width - 100) + ', height=' + (screen.height - 100) + ', left=' + 10 + ', top=' + 10 + '');
+    } else if (type_dat === "type_csv") {//si proviene de un csv y el id de zona pertenece a alguna zona del fileZonaAcapulco.json
+        //remplace//console.log(n, id, f);
+        ir_url(n, id, "", m_interpolacion);
+    } else if (type_dat === "type_csv_no_zona") {//si proviene de un csv y el id no esta en filezonaaca.json
+        ir_url(n, id, "type_csv_no_zona", m_interpolacion);
+    }
+}
 //ocular / mostrar puntos
 function ocultarPuntos() {
     groupCircleCSV.remove();
@@ -657,6 +657,8 @@ function addMarcadores() {
 function ocultarMarcadores() {
     groupMakersCSV.remove();
 }
+
+
 //redireccionar a Ventana de Mapa de calor
 function ir_url(n, c_id, type_dat, m_i) { //value 
     document.getElementById("interpolarCSV").style.display = "";
@@ -682,22 +684,22 @@ function ir_url(n, c_id, type_dat, m_i) { //value
     circlesCSV = [];
 
     //remplace//console.log("c_id::", c_id, n);
-    //remplace//console.log("OVICSV:", data_ovi_csv)
-    let nombreColonia = ""
+    console.log("OVICSV:", data_ovi_csv)
+    var nombreColonia = ""
     for (var i = 0; i < data_ovi_csv.length; i++) {
         //remplace//console.log(data_ovi_csv[i][0].gid)
         if (c_id === data_ovi_csv[i][0].gid) {
             ovitrampas = data_ovi_csv[i]
-            nombreColonia = data_ovi_csv[i][0].name_col
+            nombreColonia = data_ovi_csv[i][0]["nom_col"]
             break
         }
     }
-    //remplace//console.log("ovitrampas:", ovitrampas)
+    console.log(nombreColonia)
 
     groupMakersCSV.remove(); //remueve
     groupCircleCSV.remove(); //remueve circulos de add
     for (var i = 0; i < ovitrampas.length; i++) {///RADIO=(parseInt(ovitrampas[i].cantidad_huevos)*100)/(Est_Des_Data.data_max)
-        circlesCSV[i] = L.circle([ovitrampas[i].latitud, ovitrampas[i].longitud], (parseInt(ovitrampas[i].cantidad_huevos) * 100) / (Est_Des_Data.data_max), {weight: 2, opacity: 1, fillOpacity: 1, fillColor:getC(ovitrampas[i].cantidad_huevos, Est_Des_Data.data_max), fill: true, color: "black" });
+        circlesCSV[i] = L.circle([ovitrampas[i].latitud, ovitrampas[i].longitud], (parseInt(ovitrampas[i].cantidad_huevos) * 100) / (data_ovi_max), {weight: 2, opacity: 1, fillOpacity: 1, fillColor:getC(ovitrampas[i].cantidad_huevos, data_ovi_max), fill: true, color: "black" });
         markersCSV[i] = L.marker([ovitrampas[i].latitud, ovitrampas[i].longitud], { color: "red", draggable: false, title: "Ovitrampa" + (i + 1) + ": Cantidad de Huevos : " + ovitrampas[i].cantidad_huevos });
         markersCSV[i].bindPopup("Lat:" + ovitrampas[i].latitud + "<br>Lng:" + ovitrampas[i].longitud + "<br>Colonia:" + nombreColonia + "<br> Cantidad de Huevos : " + ovitrampas[i].cantidad_huevos)
     }
@@ -733,21 +735,6 @@ function ir_url(n, c_id, type_dat, m_i) { //value
             });
     }
 };
-
-function mapaCalor(n, id, f, type_dat, m_interpolacion) {
-    //remplace//console.log("mapaCalor(" + n + "," + id + "," + f + "," + type_dat + ")")
-    if (type_dat === "type_bd") {//si se analiza desde la bd
-        //remplace//console.log(n, id, f)
-        ir_url(n, id, "type_bd", m_interpolacion);
-        //window.open(window.location.origin + "/info?x=" + n + "&gid=" + id + "&fecha=" + f, 'popup', 'width=' + (screen.width - 100) + ', height=' + (screen.height - 100) + ', left=' + 10 + ', top=' + 10 + '');
-    } else if (type_dat === "type_csv") {//si proviene de un csv y el id de zona pertenece a alguna zona del fileZonaAcapulco.json
-        //remplace//console.log(n, id, f);
-        ir_url(n, id, "", m_interpolacion);
-    } else if (type_dat === "type_csv_no_zona") {//si proviene de un csv y el id no esta en filezonaaca.json
-        ir_url(n, id, "type_csv_no_zona", m_interpolacion);
-    }
-}
-
 
 //document.getElementById('mostrarIMG').addEventListener("click", function () {
 //layerGroup.addTo(map);

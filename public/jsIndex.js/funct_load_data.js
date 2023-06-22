@@ -107,122 +107,86 @@ function getArrayNomCol() {
 }
 //LEER UN CSV//
 function ver_csv_table(a) {
-    var csv_table = "<table class='default'>"
+    var csv_table = "<table class='default'>";
     var th_csv = "";
-    var tr_csv = ""
+    var tr_csv = "";
+    var cantShowCsv = Math.min(a[0].length - 1, 30);
+
     for (var i = 0; i < a.length; i++) {
-        tr_csv += "<th>" + a[i][0] + "</th>"
+        tr_csv += "<th>" + a[i][0] + "</th>";
     }
+
     var td_csv = "";
-    var cantShowCsv = 30;
-    if (a[0].length <= cantShowCsv) {
-        cantShowCsv = a[0].length-1;
-    }
     for (var i = 0; i < cantShowCsv; i++) {
-        td_csv += "<tr>"
+        td_csv += "<tr>";
         for (var j = 0; j < a.length; j++) {
-            td_csv += "<td>" + a[j][i + 1] + "</td>"
+            td_csv += "<td>" + a[j][i + 1] + "</td>";
         }
         td_csv += "</tr>";
     }
-    let tr_punt="";
-    if(cantShowCsv>=30){
+
+    var tr_punt = "";
+    if (cantShowCsv >= 30) {
         tr_punt = "<tr><td> ..... </td><td> ..... </td><td> ..... </td><td> ..... </td><td> ..... </td><td> ..... </td></tr>";
     }
-    //document.getElementById("csv_tr").innerHTML="";
-    document.getElementById("csv_table").innerHTML = "<table><thead>" + "<tr>" + tr_csv + "</tr></thead><tbody>" + td_csv + tr_punt+tr_punt+tr_punt+"</tbody></table>";
+    var tableHTML = "<table><thead><tr>" + tr_csv + "</tr></thead><tbody>" + td_csv + tr_punt + tr_punt + tr_punt + "</tbody></table>";
+
+    document.getElementById("csv_table").innerHTML = tableHTML;
 }
+ 
 function checkDat(obj, params_id) {
     switch (params_id) {
         case "lat":
-            if (isNaN(parseFloat(obj))) {
-                return false;
-                break;
-            }
-            else {
-                return true;
-                break;
-            }
-        case "long":
-            break;
+            return !isNaN(parseFloat(obj)); 
         case "gid":
-            if (obj.length > 0) {
-                return true;
-                break;
-            } else {
-                return false;
-                break;
-            }
-
-            break;
+            return obj.length > 0;
         case "nom_col":
-            if (obj.length <= 0) {
-                return "SN";
-                break;
-            } else {
-                return obj;
-                break;
-            }
+            return obj.length > 0 ? obj : "SN";
         case "cant_h":
-            if (obj.length <= 0 || isNaN(parseInt(obj)) || parseInt(obj) <= 0) {
-                return 0;
-                break;
-            } else {
-                return obj;
-                break;
-            }
-            break;
-    }
+            return obj.length > 0 || !isNaN(parseInt(obj)) || parseInt(obj) > 0 ? obj : 0;
+    } 
 }
-var _json = [];
-var _json_notAdd = [];
+
+let _json = [];
+let _json_notAdd = [];
+
 function ver_json(a) {
-    var res = true;
     _json = [];
-    //remplace//console.log("A:", a, a.length)
+    // remplace//console.log("A:", a, a.length)
     if (a.length >= 6) {
-        for (var i = 0; i < a[0].length - 1; i++) {
+        for (let i = 0; i < a[0].length - 1; i++) {
             if (a[0][i + 1] == null || a[1][i + 1] == null) {
-                //remplace//console.log("is null:[" + a[0][i + 1] + "] o :[" + a[1][i + 1] + "]")
-            } else
-                if (checkDat(a[0][i + 1], "lat") && checkDat(a[1][i + 1], "lat") && checkDat(a[2][i + 1], "gid")) {
-                    _json.push({
-                        latitud: a[0][i + 1],
-                        longitud: a[1][i + 1],
-                        gid: a[2][i + 1],
-                        nom_col: checkDat(a[3][i + 1], "nom_col"),
-                        cantidad_huevos: checkDat(parseInt(a[4][i + 1]), "cant_h"),
-                        fecha:a[5][i + 1] /*{
-                            y: parseInt(a[5][i + 1].split("-")[0]),
-                            m: parseInt(a[5][i + 1].split("-")[1]),
-                            d: parseInt(a[5][i + 1].split("-")[2])
-                        }*/
-                    })
-                }
-                else {
-                    _json_notAdd.push(
-                        {
-                            latitud: a[0][i + 1],
-                            longitud: a[1][i + 1],
-                            gid: a[2][i + 1],
-                            nom_col: checkDat(a[3][i + 1], "nom_col"),
-                            cantidad_huevos: checkDat(parseInt(a[4][i + 1]), "cant_h"),
-                            fecha: a[5][i + 1] /*{
-                            y: parseInt(a[5][i + 1].split("-")[0]),
-                            m: parseInt(a[5][i + 1].split("-")[1]),
-                            d: parseInt(a[5][i + 1].split("-")[2])
-                        }*/
-                        }
-                    )
-                }
+                // remplace//console.log("is null:[" + a[0][i + 1] + "] o :[" + a[1][i + 1] + "]")
+            } else if (
+                checkDat(a[0][i + 1], "lat") &&
+                checkDat(a[1][i + 1], "lat") &&
+                checkDat(a[2][i + 1], "gid")
+            ) {
+                _json.push({
+                    latitud: a[0][i + 1],
+                    longitud: a[1][i + 1],
+                    gid: a[2][i + 1],
+                    nom_col: checkDat(a[3][i + 1], "nom_col"),
+                    cantidad_huevos: checkDat(parseInt(a[4][i + 1]), "cant_h"),
+                    fecha: a[5][i + 1]
+                });
+            } else {
+                _json_notAdd.push({
+                    latitud: a[0][i + 1],
+                    longitud: a[1][i + 1],
+                    gid: a[2][i + 1],
+                    nom_col: checkDat(a[3][i + 1], "nom_col"),
+                    cantidad_huevos: checkDat(parseInt(a[4][i + 1]), "cant_h"),
+                    fecha: a[5][i + 1]
+                });
+            }
         }
     } else {
-        res = false;
+        return false;
     }
-    //remplace//console.log("JSON:LENGTH:::", _json.length, _json)
-    //remplace//console.log("_json_notAdd::", _json_notAdd)
-    return res;
+    return true;
 }
+
 function parseCSV(text) {
     // Obtenemos las lineas del texto
     let lines = text.replace(/\r/g, '').split('\n');

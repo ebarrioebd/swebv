@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/jquery.tooltip.css">
     <link rel="stylesheet" href="/css/css_responsive.css">
@@ -20,29 +19,25 @@
             <div class="col-md-2" class="col-xs-6" id="sect01">
                 <p>SISTEMA DE VIGILANCIA</p>
             </div>
-            <div class="col-md-8" class="col-xs-6" id="sect02" style="cursor: pointer;" onclick="fileSelect()">
+            <div class="col-md-6" class="col-xs-6" id="sect02" style="cursor: pointer;" onclick="fileSelect()">
                 <div class="row" style="align-items: center">
-                    <div class="col-4" style="text-align-last: end;align-self: center;"><img src="/images/icon-csv.png"
-                            style="height:3vh"></div>
+                    <div class="col-4" style="text-align-last: end;align-self: center;"><img src="/images/icon-csv.png" style="height:3vh"></div>
                     <div class="col-8" style="text-align-last: start;">
-                        <p id="bCSV">Abrir .CSV</p>
+                        <p id="bCSV">Abrir archivo csv</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-2" class="col-xs-0" id="sect0">
-                <input type="button" onclick="abrirColoniasInfo()" placeholder="Muestra la información de cada Colonia"
-                    value="Mostrar la información de cada Colonia">
+            <div class="col-md-4" class="col-xs-0" style="padding: 0;text-align: center; font-size: 14px;" id="sect0" onclick="abrirColoniasInfo()" placeholder="Muestra la información de cada Colonia">
+                Mostrar la información de cada Colonia
             </div>
         </div>
-
         <div class="row" id="center_main" style="height:59.5vh">
-
             <div class="col-md-7" class="col-sm-12" id="sect12" style="padding: 8px;  margin: 0;">
                 <canvas id="canvasMap" style="display: none;"></canvas>
                 <div class="map" style="height: 56vh" id="map_c1"></div>
             </div>
             <div class="col-md-2" class="col-sm-12" id="sect13">
-                <div style="height:80%">
+                <div style="height:70%">
                     <p>Porcentaje de Huevos por Colonia </p>
                     <hr><canvas id="graf_ph"></canvas>
                 </div>
@@ -58,65 +53,52 @@
                     <p>Zonas</p>
                     <hr>
                 </div>
-                <div class="row" id="style-15" style="overflow: scroll;height:86%">
+                <div class="row" id="style-15" style="overflow: scroll;height:84%">
                     <div id="zona_name"></div>
                 </div>
-                <div>
-                    <button
-                        style="width: -webkit-fill-available;height: 31px;font-size: initial;font-family: 'Fredoka';"
-                        onclick="mostrarVentanaEstDesc()">Estadisticos Descriptivos</button>
+                <div class="row" id="button_descriptivos">
+                    <button id="b_descriptivos" onclick="mostrarVentanaEstDesc()">Estadística descriptiva</button>
                 </div>
             </div>
         </div>
         <div class="row" style="height:35vh">
-            <div class="col-md-7" id="sect2"><canvas id="graph_pop"
-                    style="width: -webkit-fill-available; height: 34vh;"></canvas>
+            <div class="col-md-7" id="sect2"><canvas id="graph_pop" style="width: -webkit-fill-available; height: 34vh;"></canvas>
                 <!--input(type="text", name="cvegeoedo", value="01", id="cvegeoedo"  accept=".csv" required)-->
             </div>
-            <div class="col-md-5" id="sect2"><canvas id="graphPM"
-                    style="width: -webkit-fill-available; height: 34vh"></canvas></div>
+            <div class="col-md-5" id="sect2"><canvas id="graphPM" style="width: -webkit-fill-available; height: 34vh"></canvas></div>
         </div>
     </div>
     <div id="filecsv" style="display:none">
         <div class="row" style="height: 15vh;margin-left: 10px;">
-            <div style="text-align: end;"><button id="b" onclick="closedivCSV()"
-                    style="border: none;background: none;"><img src="/images/close-button.png" height="35"
-                        width="35"></button></div><strong style="font-size: x-large;font-family: monospace;">Seleccionar
+            <div style="text-align: end;"><button id="b" onclick="closedivCSV()" style="border: none;background: none;"><img src="/images/close-button.png" height="35" width="35"></button></div><strong style="font-size: 14px;font-family: monospace;">Seleccionar
                 Archivo .csv</strong>
             <form class="form-inline"><input type="file" id="files" accept=".csv" required=""></form>
         </div>
         <div id="csv_tr"></div>
-        <div class="row" style="height:55vh;margin: 10px">
-            <div class="col-md-10" id="csv_table" style="height: -webkit-fill-available;overflow:scroll"></div>
-            <div class="col-md-2" style="height: -webkit-fill-available;">
+        <div class="row" style="height:65%;margin: 10px">
+            <div class="col-md-9" id="csv_table" style="height: -webkit-fill-available;overflow:scroll"></div>
+            <div class="col-md-3" style="height: -webkit-fill-available;">
                 <div class="scrollbar" style="height: -webkit-fill-available;" id="style-15">
                     <div id="selectCSV"></div>
                 </div>
             </div>
         </div>
         <div class="row" style="height:10vh;">
-            <div class="col-md-2"><button id="ver_csv_map" style="font-size: large;margin-left: 10px;width: 60%;"
-                    onclick="getDataCSV()">Analizar</button></div>
+            <div class="col-md-2"><button id="ver_csv_map" style="font-size: large;margin-left: 10px;" onclick="getDataCSV()">Analizar</button></div>
         </div><textarea name="" style="display:none" cols="200" row="600" id="area"></textarea>
     </div>
     <div id="interpolarCSV" style="top: -150%;">
-        <div style="text-align: end"><button onclick="closeWCSVInter()" style="border: none;background: #444444;"><img
-                    src="/images/close-button.png" height="35" width="35"></button></div>
+        <div style="text-align: end"><button onclick="closeWCSVInter()" style="border: none;background: #444444;"><img src="/images/close-button.png" height="35" width="35"></button></div>
         <div id="nomColInter">
             <p id="nomColInterp"></p>
             <div id="muestra_button_v_interpolar"></div>
-
         </div>
         <div id="contendCSV">
-            <div class="map" id="map_c2"></div><img src="/images/loading2.gif"
-                style="display: none; left: 40%;position: relative;width: 20%;height: 40%;margin-top: -50%;"
-                id="imgLoading">
+            <div class="map" id="map_c2"></div><img src="/images/loading2.gif" style="display: none; left: 40%;position: relative;width: 20%;height: 40%;margin-top: -50%;" id="imgLoading">
         </div>
     </div>
     <div id="divHistoMes" style="display:none">
-        <div id="close_div" style="text-align:end;"><button onclick="closeDivHistoMes()"
-                style="border: none;background: none;"><img src="/images/close-button.png" height="35"
-                    width="35"></button></div>
+        <div id="close_div" style="text-align:end;"><button onclick="closeDivHistoMes()" style="border: none;background: none;"><img src="/images/close-button.png" height="35" width="35"></button></div>
         <div class="row">
             <div class="col-md-4" style="  height: 50vh; padding-right: 0;padding-left: 2%;">
                 <div style="padding-left: 5%; padding-right: 5%;" id="col4Mes">
@@ -129,19 +111,14 @@
                                 <p>MOSTRAR POR :</p>
                             </div>
                             <div class="col-md-6">
-                                <p>MES</p><input class="optMesDia" type="checkbox" id="checkMes" name="optMesDiaN"
-                                    onchange="javascript:optMoD()">
+                                <p>MES</p><input class="optMesDia" type="checkbox" id="checkMes" name="optMesDiaN" onchange="javascript:optMoD()">
                             </div>
                             <div class="col-md-6">
-                                <p>DIA</p><input class="optMesDia" type="checkbox" id="checkDia" name="optMesDiaN"
-                                    onchange="javascript:optMoD()">
+                                <p>DIA</p><input class="optMesDia" type="checkbox" id="checkDia" name="optMesDiaN" onchange="javascript:optMoD()">
                             </div>
                         </div>
-                        <p>Seleccione el Rango de Fecha:</p><input type="date" id="fecha1Mes" value="2022-04-01"
-                            required="">
-                        <p>-</p><input type="date" id="fecha2Mes" value="2022-04-03" required=""><br><button
-                            onclick="getDatMes()"
-                            style="color: white;background: #494949; margin-top:3%;display: block;border: inset #ffffff;font-size: 1rem;">Hecho</button>
+                        <p>Seleccione el Rango de Fecha:</p><input type="date" id="fecha1Mes" value="2022-04-01" required="">
+                        <p>-</p><input type="date" id="fecha2Mes" value="2022-04-03" required=""><br><button onclick="getDatMes()" style="color: white;background: #494949; margin-top:3%;display: block;border: inset #ffffff;font-size: 1rem;">Hecho</button>
                     </div>
                 </div>
             </div>
@@ -153,9 +130,7 @@
         </div>
     </div>
     <div id="id_variograma" style="display:none;">
-        <div style="text-align: end;cursor: move;" id="moveVario"><button onclick="closeVariograma()"
-                style="border: none;background: #444444;"><img src="/images/close-button.png" height="35"
-                    width="35"></button></div>
+        <div style="text-align: end;cursor: move;" id="moveVario"><button onclick="closeVariograma()" style="border: none;background: #444444;"><img src="/images/close-button.png" height="35" width="35"></button></div>
         <p id="VARIO_TITLE">Ajuste del Semivariograma</p>
         <div class="row" style="padding: 23px;">
             <div class="col-md-3">
@@ -172,62 +147,58 @@
                 <div id="metDiv">
                     <p>Ajuste por Mínimos Cuadrados Ordinarios(MCO) <br>
                         <hr>
-                    <div id="data_mco">
-                        <p>Nugget:<br>Sill:<br>Rango:<br>Sill-parcial:</p>
-                    </div>
-                    <button onclick="MCO()" style="border-radius: 14px;width: -webkit-fill-available">
-                        <p>Ajustar MCO</p>
-                    </button><br><br>
+                        <div id="data_mco">
+                            <p>Nugget:<br>Sill:<br>Rango:<br>Sill-parcial:</p>
+                        </div>
+                        <button onclick="MCO()" style="border-radius: 14px;width: -webkit-fill-available">
+                            <p>Ajustar MCO</p>
+                        </button><br><br>
                 </div>
                 <br>
                 <div id="metDiv">
                     <p>Ajuste manual
-                    <p>
-                        <hr>
-                    <table>
-                        <tr>
-                            <td>
-                                <p>Nugget</p>
-                            </td>
-                            <td><input id="nugget" type="text" name=""></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Sill</p>
-                            </td>
-                            <td><input id="sill" type="text" name=""></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Rango</p>
-                            </td>
-                            <td><input id="range" type="text" name=""></td>
-                        </tr>
-                    </table>
-                    <button onclick="ajusteManual()" style=" border-radius: 14px;width:-webkit-fill-available">
-                        <p>Ajustar</p>
-                    </button>
+                        <p>
+                            <hr>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <p>Nugget</p>
+                                    </td>
+                                    <td><input id="nugget" type="text" name=""></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Sill</p>
+                                    </td>
+                                    <td><input id="sill" type="text" name=""></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Rango</p>
+                                    </td>
+                                    <td><input id="range" type="text" name=""></td>
+                                </tr>
+                            </table>
+                            <button onclick="ajusteManual()" style=" border-radius: 14px;width:-webkit-fill-available">
+                                <p>Ajustar</p>
+                            </button>
                 </div>
                 <br>
                 <button onclick="interpolar('kriging')">
                     <p>Generar superficie</p>
                 </button>
-
             </div>
             <div id="grafdiv" class="col-md-9"> <canvas id="variograma"></canvas></div>
         </div>
     </div>
     <div style="display:none" id="divError">
-        <div style="text-align: end"><button onclick="closeVerror()" style="border: none;background: red;"><img
-                    src="/images/close-button.png" height="35" width="35"></button></div>
+        <div style="text-align: end"><button onclick="closeVerror()" style="border: none;background: red;"><img src="/images/close-button.png" height="35" width="35"></button></div>
         <h2>Error</h2>
         <br>
         <p id="msg"></p>
     </div>
     <div id="ventanaEstDesc" style="display: none;">
-        <div style="text-align: end;cursor: move;" id="moveVario"><button onclick="closeTableDescri()"
-                style="border: none;background: #ffffff;"><img src="/images/close-button.png" height="35"
-                    width="35"></button></div>
+        <div style="text-align: end;cursor: move;" id="moveVario"><button onclick="closeTableDescri()" style="border: none;background: #ffffff;"><img src="/images/close-button.png" height="35" width="35"></button></div>
         <div style="height: 90%;width: 100%; overflow-y: scroll;">
             <table class="default" style="width: 100%;">
                 <tr>
@@ -238,7 +209,6 @@
                     <th>Promedio</th>
                     <th>Varianza</th>
                     <th>Desviación Estándar</th>
-                    <th>Coeficiente de Variación</th>
                     <th>Mínimo </th>
                     <th>Máximo</th>
                     <th>Rango</th>
@@ -250,17 +220,13 @@
         </div>
     </div>
     <div id="ventanaHistogramaDeFrecuencias" style="display: none;">
-        <div style="text-align: end;" id="moveVario"><button onclick="closeHistograma()"
-                style="border: none;background: #44444400;"><img src="/images/close-button.png" height="35"
-                    width="35"></button></div>
+        <div style="text-align: end;" id="moveVario"><button onclick="closeHistograma()" style="border: none;background: #44444400;"><img src="/images/close-button.png" height="35" width="35"></button></div>
         <div style=" height: 90%;  text-align: -webkit-center;">
             <canvas id="histogramaChart"></canvas>
         </div>
     </div>
     <div id="validacioncruzada" style="top: -100%;">
-        <div style="text-align: end;" id="cerrar_error"><button onclick="closeError()"
-                style="border: none;background: #44444400;"><img src="/images/close-button.png" height="35"
-                    width="35"></button></div>
+        <div style="text-align: end;" id="cerrar_error"><button onclick="closeError()" style="border: none;background: #44444400;"><img src="/images/close-button.png" height="35" width="35"></button></div>
         <div class="row">
             <div class="col-md-5">
                 <div style=" color: black; height: 75vh; overflow-y: scroll; ">
@@ -277,12 +243,10 @@
                         </tr>
                     </table>
                 </div>
-
                 <div style="color:black;">
                     <p id="errorpromedio">Promedio:</p>
                     <p id="correlaciozv">Correlacion:</p>
                 </div>
-
             </div>
             <div class="col-md-7" style="height: 83vh;">
                 <div class="row" style=" height: 93vh;">
@@ -293,9 +257,7 @@
                         <canvas style="height: 40vh !important " id="z_v"></canvas>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
@@ -307,15 +269,9 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <!--<script src="/interpoladoresjs/idw.js"></script>-->
     <!--<script src="/interpoladoresjs/krigingMy.js"></script>-->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="/jsIndex.js/variables_g.js"></script>
     <script src="/jsIndex.js/cargar_name_colonias.js"></script>
     <script src="/jsIndex.js/bundle.js"></script>
@@ -327,7 +283,7 @@
     <script src="/jsIndex.js/addZonaMapa.js"></script>
     <script src="/jsIndex.js/mapacalor.js"></script>
     <script src="/jsIndex.js/promediarMesDia.js"></script>
-
+    <script type="text/javascript" src="/js/verificarpantalla.js"></script>
 </body>
 
 </html>

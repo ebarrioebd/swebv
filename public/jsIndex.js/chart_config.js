@@ -27,7 +27,7 @@ let config = {
         }
     }
 };
-const myLineChart = new Chart(ctx, config);
+const porcentaje_por_colonia = new Chart(ctx, config);
 /**
  * grafica porcentaje de ovitrampa positiva
  */
@@ -98,7 +98,10 @@ let config_pop = {
         }
     },
 };
-const chart_pop = new Chart(ctx_pop, config_pop);
+const chart_porcentaje_ovi_positiva = new Chart(ctx_pop, config_pop);
+
+
+
 /**
  * promedio de huevos por hovtrampas
  */
@@ -163,7 +166,7 @@ const config_pm = {
     },
 };
 const chart_pm = document.getElementById("graphPM").getContext("2d");
-const c_pm = new Chart(chart_pm, config_pm);
+const chart_promedio_huevos = new Chart(chart_pm, config_pm);
 
 
 /**

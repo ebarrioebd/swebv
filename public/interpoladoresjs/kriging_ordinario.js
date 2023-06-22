@@ -299,31 +299,29 @@ function modelExp(h, a, m_s) {
             break
     }
 }
-function estimar(lat, long, variograma, x, y, z, mvt, m_s) {
+function estimar(lat, long, variograma, x, y, z, mvt_inv, m_s) {
     ////remplace//console.log("estimar:",variograma.nugget,variograma.sill_parcial,modelExp((Math.pow(Math.pow(lat - x[0], 2) + Math.pow(long - y[0], 2), 0.5)) * 100000,variograma.rango))      
-    //c(lat,long)
+    
     let _Y = [];
     for (let i = 0; i < x.length; i++) {
         _Y[i] = [variograma.nugget + variograma.sill_parcial * modelExp((Math.pow(Math.pow(lat - x[i], 2) + Math.pow(long - y[i], 2), 0.5)) * 100000, variograma.rango, m_s)]
-        ////remplace//console.log(_Y[i])   
+       // console.log(_Y[i],"d:",Math.pow(Math.pow(lat - x[i], 2) + Math.pow(long - y[i], 2), 0.5)* 100000,"c0",variograma.nugget,"c1:",variograma.sill_parcial,"a:",variograma.rango)   
     }
-    _Y[x.length] = [1]
-    ////remplace//console.log("_Y:",_Y)
+    _Y[x.length] = [1] 
     //calulor de los pesos y el parametro de lagrange
-    let pesos = mult(mvt, _Y)
-    ////remplace//console.log("pesos::",pesos)
-    pesos = pesos.slice(0, x.length);
+    let pesos = mult(mvt_inv, _Y) 
+    pesos = pesos.slice(0, x.length); 
     return mult(transpose(pesos), z)[0]
 }
 
 self.addEventListener('message', function (e) {
-    let m_s = e.data.ms//modelo del semivariograma
+    let m_s =e.data.semivariograma.modelo// e.data.ms//modelo del semivariograma
     let x = e.data.x
     let y = e.data.y
     let z = e.data.z
     let puntos_i = e.data.pi
     let variograma = e.data.semivariograma;
-    console.log("e.data.semivariograma:", e.data.semivariograma)
+    console.log("e.data.semivariograma:", e.data)
     //crear Matriz de variograma Teorico
     let n = x.length;
     //conseguir la Matriz del Variograma Teorico de los puntos de muestra
@@ -331,19 +329,23 @@ self.addEventListener('message', function (e) {
     for (let i = 0; i < n; i++) {
         z[i] = [z[i]]
         for (let j = 0; j < n; j++) {
-            mvt[i][j] = variograma.nugget + variograma.sill_parcial * modelExp(Math.sqrt(Math.pow(x[j] - x[i], 2) + Math.pow(y[j] - y[i], 2)) * 100000, variograma.rango, m_s)
+            mvt[i][j] = variograma.nugget + variograma.sill_parcial * modelExp(Math.sqrt(Math.pow(x[i] - x[j], 2) + Math.pow(y[i] - y[j], 2)) * 100000, variograma.rango, m_s)
         }
     }
+    
     mvt[n][n] = 0;
+    //console.log(mvt)
     let matriz_variograma_teorico = invM(mvt)
+    //console.log(matriz_variograma_teorico)
     let x_c = 0;//centro punto x
     let y_c = 0;//centro punto y
     let zi = [], k = 0;
     for (let i = 0; i < puntos_i.length; i++) {
         x_c = puntos_i[i][0][0];
         y_c = puntos_i[i][0][1];
-        if (puntos_i[i][1]) {
+        if (puntos_i[i][1] ) {
             zi[k] = estimar(x_c, y_c, variograma, x, y, z, matriz_variograma_teorico, m_s)[0];
+            
         } else {
             zi[k] = -1;
         }
