@@ -726,3 +726,18 @@ body {
     color: white;
     background: #313030;
 }
+
+#ventana_seleccionar_p {
+    color: black;
+    font-size: medium;
+    /* display: none; */
+    width: 40%;
+    height: 510px;
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    font-family: monospace;
+    height: 25vh;
+    border: outset #b3b3b3 5px;
+    background: #ffffff;
+}

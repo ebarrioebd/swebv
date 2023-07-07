@@ -267,7 +267,7 @@ function closeHistograma() { document.getElementById("ventanaHistogramaDeFrecuen
 function promedio(lista) {
     var suma = 0;
     for (var i = 0; i < lista.length; i++) {
-        suma += Math.abs(lista[i]);
+        suma += (lista[i]);
     }
     var promedio = suma / lista.length;
     return promedio;

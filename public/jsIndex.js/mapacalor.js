@@ -322,14 +322,15 @@ var dat_semivariograma = {
     mvt: []
 }
 //ajuste mediante minimos cuadrados ordinario
-function MCO() {
+function MCO(isAuto) {
     dat_semivariograma.modelo = document.getElementById("select_model").value
+    console.log("dat_semivariograma ::",dat_semivariograma) 
     const wk_mco = new Worker('/interpoladoresjs/mco.js');
-    wk_mco.onerror = (event) => {
-        alert("Error")
-        console.log(event)
-        wk_mco.terminate();
-    };
+    //wk_mco.onerror = (event) => {
+    //    alert("Error")
+    //    console.log(event)
+    //    wk_mco.terminate();
+    //};
     wk_mco.postMessage([semivariograma, dat_semivariograma.modelo])
     wk_mco.onmessage = (e) => {
         let rango = semivariograma.rango
@@ -351,6 +352,8 @@ function MCO() {
         dat_semivariograma.m = "MCO"
         wk_mco.terminate();
         //remplace//console.log("dat_semivariograma:",dat_semivariograma)
+        if(isAuto){interpolar("kriging")}
+
     }
 
 }
@@ -374,8 +377,8 @@ function ajusteManual() {
 var x = []
 var y = []
 var z = []
-function crear_SemiVariograna_Experimental() { 
-    document.getElementById("id_variograma").style.display = "";
+function crear_SemiVariograna_Experimental(){ 
+    //document.getElementById("id_variograma").style.display = "";
     //remplace//console.log("dat_semivariograma::", dat_semivariograma)
     //Actualizar chart del modelo teorico
     chartVariograma.data.labels = [];
@@ -412,9 +415,10 @@ function crear_SemiVariograna_Experimental() {
         x = event.data.x
         y = event.data.y
         z = event.data.z
-        //wk_semiva.terminate();
+        wk_semiva.terminate();
+        MCO(true)
     }
-
+     
 }
 //var zonaSelect;
 //pi,B,A,cajaMulti
@@ -464,13 +468,13 @@ function interpolar(metodo) {
                 ////
 
             }
-        } else {
+        } 
+        else {
             alert("Ajuste el semivariograma")
         }
 
     }
     else if (metodo == "idw") {
-
         document.getElementById("imgLoading").style.display = "";
         //creamos el worker  
         //remplace//console.log("dat_semivariograma:;", dat_semivariograma)
@@ -481,7 +485,7 @@ function interpolar(metodo) {
             document.getElementById("imgLoading").style.display = "none";
             wk_idw.terminate();
         };
-        wk_idw.postMessage({ ovi: ovitrampas, pi: puntos_a_interpolar })
+        wk_idw.postMessage({ ovi: ovitrampas, pi: puntos_a_interpolar,p:document.getElementById("valor_potencia_p").value })
         wk_idw.onmessage = (event) => {
             var zi = event.data.zi;
             //remplace//console.log("Zidw::", zi)
@@ -497,7 +501,13 @@ function interpolar(metodo) {
             ], {
                 opacity: opacidad_img
             });
-            imgOpaci = img_idw
+            imgOpaci = L.imageOverlay(creaImagen(A, B, zi, "canvasMap"), [
+                [cajaMulti[1], cajaMulti[0]],
+                [cajaMulti[3], cajaMulti[2]]
+            ], {
+                opacity: opacidad_img
+            });
+            //imgOpaci = img_idw
             imgOpaci.addTo(mapCSVInter);
             addTablaIndicador(ovitrampas);
             document.getElementById("imgLoading").style.display = "none";
@@ -558,26 +568,31 @@ function crearXY(p, min, max) {
     }
     return [x_rect, y_rect];
 }
-function validacionCruzada() {
+function validacionCruzada(metodo_interpolador) {
+    console.log("metodo_interpolador:::",metodo_interpolador)
+    var file_vc_path=metodo_interpolador=="kriging"?"/interpoladoresjs/validacionCruzada.js":"/interpoladoresjs/validacionCruzadaIDW.js"
     document.getElementById("validacioncruzada").style.top = 2 + "%"
     document.getElementById("validacioncruzada").style.display = "";
-    const wk_vcross = new Worker("/interpoladoresjs/validacionCruzada.js")
+    const wk_vcross = new Worker(file_vc_path)
     wk_vcross.onerror = (event) => {
         alert("Error")
-        wk_vcross.terminate();
+        console.log(event)
+        //wk_vcross.terminate();
     };
+    var valor_potencia_p=document.getElementById("valor_potencia_p").value
     if(x.length>=100){wk_vcross.terminate(); alert("No es posible realizar la V.C con mas de 100 datos")}
-    wk_vcross.postMessage({ x: x, y: y, z: z, semivariograma: dat_semivariograma })
+    var datos_vc=metodo_interpolador=="kriging"?{ x: x, y: y, z: z, semivariograma: dat_semivariograma }:{ovi:ovitrampas,p:valor_potencia_p}
+    wk_vcross.postMessage(datos_vc)
     wk_vcross.onmessage = (e) => {
         //remplace//console.log("VCROSS:", e.data)
         let error = e.data.error
-        let promedioError = promedio(error)
+        let promedioError = promedio(error) 
         //remplace//console.log("Error medio:", promedioError)
         let ve = e.data.ve
         let zv = e.data.zv
         let correlacioDeV = calcularCorrelacion(zv, ve)
         document.getElementById("errorpromedio").innerHTML = "Error medio: " + promedioError.toFixed(3)
-        document.getElementById("correlaciozv").innerHTML = "Correlación entre  VR y VE :" + correlacioDeV.toFixed(5)
+        document.getElementById("correlaciozv").innerHTML = "Correlación(VR,VE):" + correlacioDeV.toFixed(5) 
         //remplace//console.log("Correlacion:", correlacioDeV)
         var dataP = createDP(zv, ve)
         var a_xb =[]/// calcularRectaDeMejorAjuste(ve, zv)
@@ -616,13 +631,13 @@ function crearMapaDeCalor(zonaV, m_i) {
     //zonaSelect=zonaV
     generarPI(zonaV)//generar puntos a interpolar
     if (m_i == "kriging") {
-        let button_view = '<button onclick="showVariograma()"><img src="/images/graf.png" id="icon_inter">Ver Semivariograma</button><button  onclick="ocultarIMG()" id="ocultarIMG"><img src="/images/oculto.png" id="icon_inter">Ocultar IMG</button><button onclick="mostrarIMG()" id="mostrarIMG"><img src="/images/ojo.png" id="icon_inter">Mostrar IMG</button><button onclick="dIMG()"><img src="/images/salvar.png" id="icon_inter">Descargar IMG</button><button id="ocultarPuntos" onclick="ocultarPuntos()"><img src="/images/oculto.png" id="icon_inter">Ocultar Puntos</button><button id="mostrarPuntos" onclick="mostrarPuntos()"><img src="/images/ojo.png" id="icon_inter">Mostrar Puntos</button><button onclick="validacionCruzada()"><img src="/images/graf.png" id="icon_inter">validacion cruzada</button><button onclick="showError()"><img src="/images/ojo.png" id="icon_inter">Mostrar Res. validacion cruzada</button>'
+        let button_view = '<button onclick="showVariograma()"><img src="/images/graf.png" id="icon_inter">Ver Semivariograma</button><button  onclick="ocultarIMG()" id="ocultarIMG"><img src="/images/oculto.png" id="icon_inter">Ocultar IMG</button><button onclick="mostrarIMG()" id="mostrarIMG"><img src="/images/ojo.png" id="icon_inter">Mostrar IMG</button><button onclick="dIMG()"><img src="/images/salvar.png" id="icon_inter">Descargar IMG</button><button id="ocultarPuntos" onclick="ocultarPuntos()"><img src="/images/oculto.png" id="icon_inter">Ocultar Puntos</button><button id="mostrarPuntos" onclick="mostrarPuntos()"><img src="/images/ojo.png" id="icon_inter">Mostrar Puntos</button><button onclick="validacionCruzada('+'\'kriging\''+')"><img src="/images/graf.png" id="icon_inter">validacion cruzada</button><button onclick="showError()"><img src="/images/ojo.png" id="icon_inter">Mostrar Res. validacion cruzada</button>'
         document.getElementById("muestra_button_v_interpolar").innerHTML = button_view
         document.getElementById("interpolarCSV").style.filter = "blur(5px)";
         crear_SemiVariograna_Experimental()
 
     } else if (m_i == "idw") {
-        let button_view = '<button  onclick="ocultarIMG()" id="ocultarIMG"><img src="/images/oculto.png" id="icon_inter">Ocultar IMG</button><button onclick="mostrarIMG()" id="mostrarIMG"><img src="/images/ojo.png" id="icon_inter">Mostrar IMG</button><button onclick="dIMG()"><img src="/images/salvar.png" id="icon_inter">Descargar IMG</button><button id="ocultarPuntos" onclick="ocultarPuntos()"><img src="/images/oculto.png" id="icon_inter">Ocultar Puntos</button><button id="mostrarPuntos" onclick="mostrarPuntos()"><img src="/images/ojo.png" id="icon_inter">Mostrar Puntos</button>'
+        let button_view = '<button onclick="ajustarP()"> <img src="/images/graf.png" id="icon_inter">Seleccionar parametro <strong>p</strong></button><button  onclick="ocultarIMG()" id="ocultarIMG"><img src="/images/oculto.png" id="icon_inter">Ocultar IMG</button><button onclick="mostrarIMG()" id="mostrarIMG"><img src="/images/ojo.png" id="icon_inter">Mostrar IMG</button><button onclick="dIMG()"><img src="/images/salvar.png" id="icon_inter">Descargar IMG</button><button id="ocultarPuntos" onclick="ocultarPuntos()"><img src="/images/oculto.png" id="icon_inter">Ocultar Puntos</button><button id="mostrarPuntos" onclick="mostrarPuntos()"><img src="/images/ojo.png" id="icon_inter">Mostrar Puntos</button>'
         document.getElementById("muestra_button_v_interpolar").innerHTML = button_view
         interpolar(m_i)
     }
@@ -774,4 +789,10 @@ function closeError() {
 }
 function showError() {
     document.getElementById("validacioncruzada").style.display = "";
+}
+function closeSelectP(){
+    document.getElementById("ventana_seleccionar_p").style.display="none"
+}
+function ajustarP(){
+    document.getElementById("ventana_seleccionar_p").style.display=""
 }

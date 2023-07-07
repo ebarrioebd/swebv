@@ -324,7 +324,7 @@ function OrdinaryLeastsquares(X, Y, h, a, m_s) {
     return mult(xinvxt, ya);
 }
 self.addEventListener('message', function (e) {
-    //remplace//console.log("MCDDATA::", e.data)
+    console.log("MCDDATA::", e.data)
     let Y = e.data[0].semi;
     let X = Array(Y.length).fill().map(() => Array(2).fill(1));
     //W0,W1 son los valores que minimizan el error (Y(h,W)-Y*(h))^2 y w0,w1 ajustan  Y(h,W) a los valores de Y*(h) 

@@ -15,6 +15,7 @@ function Zi(centro, puntos, exp, maxDistance) {
 self.addEventListener('message', function(e) {
     let inf_ovi = e.data.ovi;
     let puntos_i = e.data.pi
+    let p=e.data.p
     let k = 0,
         zidw = [];
     let x_c = 0; //centro punto x
@@ -23,7 +24,7 @@ self.addEventListener('message', function(e) {
         x_c = puntos_i[i][0][0];
         y_c = puntos_i[i][0][1]
         if (puntos_i[i][1]) {
-            zidw[k] = Zi([x_c, y_c], inf_ovi, 2, 200); //metodo idw  
+            zidw[k] = Zi([x_c, y_c], inf_ovi, p, 200); //metodo idw  
         } else {
             zidw[k] = -1;
         }

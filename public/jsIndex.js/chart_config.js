@@ -313,12 +313,12 @@ const graf_vz = new Chart(ctx_error,{
                 label: ['Modelo Kriging ordinario'],
                 data: [],
                 backgroundColor: "rgb(0, 0, 255)",
-                display: true,
+                display: false,
 
                 },
                 {
                     type: 'line',
-                    label: 'Recta ajustada',
+                    label: '',
                     data: [], //add
                     fill: false,
                     pointHitRadius: 0,
@@ -337,7 +337,7 @@ const graf_vz = new Chart(ctx_error,{
                 display: true,
                 title: {
                     display: true,
-                    text: 'Valor Real'
+                    text: 'Valor Real(VR)'
                 },
                 beginAtZero: false
             },
@@ -345,7 +345,7 @@ const graf_vz = new Chart(ctx_error,{
                 display: true,
                 title: {
                     display: true,
-                    text: 'Valor estimado'
+                    text: 'Valor Estimado(VE)'
                 },
                 beginAtZero: false
             }

@@ -1,13 +1,12 @@
-
 //invertir MAtriz
 var Sylvester = {}
-Sylvester.Matrix = function () { }
-Sylvester.Matrix.create = function (elements) {
+Sylvester.Matrix = function() {}
+Sylvester.Matrix.create = function(elements) {
     var M = new Sylvester.Matrix()
     return M.setElements(elements)
 }
 
-Sylvester.Matrix.I = function (n) {
+Sylvester.Matrix.I = function(n) {
     var els = [],
         i = n,
         j
@@ -21,16 +20,16 @@ Sylvester.Matrix.I = function (n) {
     return Sylvester.Matrix.create(els)
 }
 Sylvester.Matrix.prototype = {
-    dup: function () {
+    dup: function() {
         return Sylvester.Matrix.create(this.elements)
     },
 
-    isSquare: function () {
+    isSquare: function() {
         var cols = this.elements.length === 0 ? 0 : this.elements[0].length
         return this.elements.length === cols
     },
 
-    toRightTriangular: function () {
+    toRightTriangular: function() {
         if (this.elements.length === 0) return Sylvester.Matrix.create([])
         var M = this.dup(),
             els
@@ -72,7 +71,7 @@ Sylvester.Matrix.prototype = {
         return M
     },
 
-    determinant: function () {
+    determinant: function() {
         if (this.elements.length === 0) {
             return 1
         }
@@ -89,11 +88,11 @@ Sylvester.Matrix.prototype = {
         return det
     },
 
-    isSingular: function () {
+    isSingular: function() {
         return this.isSquare() && this.determinant() === 0
     },
 
-    augment: function (matrix) {
+    augment: function(matrix) {
         if (this.elements.length === 0) {
             return this.dup()
         }
@@ -118,7 +117,7 @@ Sylvester.Matrix.prototype = {
         return T
     },
 
-    inverse: function () {
+    inverse: function() {
         if (this.elements.length === 0) {
             //remplace//console.log("===0")
             return null
@@ -168,7 +167,7 @@ Sylvester.Matrix.prototype = {
         return Sylvester.Matrix.create(inverse_elements)
     },
 
-    setElements: function (els) {
+    setElements: function(els) {
         var i,
             j,
             elements = els.elements || els
@@ -256,6 +255,7 @@ function invMM(matriz) {
 function c(o, b) {
     //--//remplace//console.log(o, b);
 }
+
 function transpose(matrix) {
     const rows = matrix.length,
         cols = matrix[0].length;
@@ -270,6 +270,7 @@ function transpose(matrix) {
     }
     return grid;
 }
+
 function mult(a, b) {
     var aNumRows = a.length,
         aNumCols = a[0].length,
@@ -287,16 +288,17 @@ function mult(a, b) {
     }
     return m;
 }
+
 function modelExp(h, a, m_s) {
     switch (m_s) {
         case "exp":
-            return (1.0 - Math.exp(-3 * (h / a)))//exponecial
+            return (1.0 - Math.exp(-3 * (h / a))) //exponecial
             break;
         case "gauss":
-            return (1.0 - Math.exp(-3 * Math.pow(h / a, 2)))//gaussiano
+            return (1.0 - Math.exp(-3 * Math.pow(h / a, 2))) //gaussiano
             break
         case "esf":
-            return h > a ? 1 : ((3 / 2) * (h / a) - (1 / 2) * Math.pow(h / a, 3))//esferico
+            return h > a ? 1 : ((3 / 2) * (h / a) - (1 / 2) * Math.pow(h / a, 3)) //esferico
             break
     }
 }
@@ -320,16 +322,12 @@ function estimar(lat, long, variograma, x, y, z, mvt, m_s) {
     pesos = pesos.slice(0, x.length);
     return mult(transpose(pesos), z)[0]
 }
-self.addEventListener('message', function (e) {
+self.addEventListener('message', function(e) {
     console.time("t1");
     ////remplace//console.log("******************************************************************8")
     let variograma = e.data.semivariograma
-    console.log("variograma:::",variograma)
-    ////remplace//console.log("VJSCROSS:",e.data)
+    console.log("variograma:::", variograma)
     let v_estimados = []
-    ////remplace//console.log("nugget:",variograma.nugget)
-    ////remplace//console.log("sill_parcial:",variograma.sill_parcial)
-    ////remplace//console.log("[rango,modelo]:",[variograma.rango,variograma.modelo])
     let cantidad_de_puntos_a_estimar = 100
     let x = (e.data.x).splice(0, cantidad_de_puntos_a_estimar)
 
@@ -348,11 +346,8 @@ self.addEventListener('message', function (e) {
         let long = y.slice()
         let long_inter = long.splice(k, 1)[0]
         let zv = z.slice()
-        zv.slice(k, 1)
+        zv.splice(k, 1)
         let nc = lat.length
-        ////remplace//console.log("X:",lat)
-        ////remplace//console.log("Y:",long)
-        ////remplace//console.log("puntos_inter:",[lat_inter,long_inter])
         let mvt = Array(nc + 1).fill(1).map(() => Array(nc + 1).fill(1));
         for (let i = 0; i < nc; i++) {
             zv[i] = [zv[i]]
@@ -365,19 +360,14 @@ self.addEventListener('message', function (e) {
             }
         }
         mvt[nc][nc] = 0;
-        ////remplace//console.log("MVT"+k+":",mvt)
         let matriz_variograma_teorico = invM(mvt)
-        ////remplace//console.log("matriz_variograma_teorico::",matriz_variograma_teorico) 
-        //for(let i=0;i<1;i++){
-        ////remplace//console.log("zv:",zv)
         v_estimados[k] = estimar(lat_inter, long_inter, variograma, lat, long, zv, matriz_variograma_teorico, variograma.modelo)[0];
-        ////remplace//console.log("v_estimados",v_estimados[k])
-        ////remplace//console.log("_________________________________________________________")
-        //}
+
     }
     let error = []
+    let erro_sm = []
     for (var i = 0; i < v_estimados.length; i++) {
-        error[i] = v_estimados[i] - z[i]
+        error[i] = v_estimados[i] - z[i] 
     }
     console.timeEnd("t1");
     postMessage({ ve: v_estimados, zv: z, error: error })
