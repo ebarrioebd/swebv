@@ -147,7 +147,7 @@ function creaImagen(A, B, zi, id) {
     //remplace//console.log("Est_Des_Data.data_max:::", Est_Des_Data.data_max)
     var max =data_ovi_max//getMaxValor(ovitrampas);
     for (var i = 0; i < A; i++) {
-        var aumentI=-0.8
+        var aumentI=0;//-0.8
         y0 = 0;
         y1 = 0;
         y1 = canvas.width
@@ -533,7 +533,7 @@ function generarPI(zonaSelect) {//genear puntos a interpolar
     let line = turf.lineString(inv(positions));
     let bbox = turf.bbox(line);
     let dcuadro = turf.distance([bbox[0], bbox[1]], [bbox[0], bbox[3]], options);
-    let cantidad_de_cuadrados_por_ladao = 50
+    let cantidad_de_cuadrados_por_ladao = 100
     let tamCuadro = Math.ceil(dcuadro / cantidad_de_cuadrados_por_ladao) //80
     let squareGrid = turf.squareGrid(bbox, tamCuadro, options);
     cajaMulti = turf.bbox(squareGrid); //cuadro dlimitador del poligono 
