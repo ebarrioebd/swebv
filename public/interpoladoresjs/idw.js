@@ -15,21 +15,22 @@ function Zi(centro, puntos, exp, maxDistance) {
 self.addEventListener('message', function(e) {
     let inf_ovi = e.data.ovi;
     let puntos_i = e.data.pi
-    let p=e.data.p
+    let p = e.data.p
     let k = 0,
         zidw = [];
+    let ipi = parseInt(puntos_i.length / 10)//numero postMSG al gui
     let x_c = 0; //centro punto x
     let y_c = 0; //centro punto y 
     for (let i = 0; i < puntos_i.length; i++) {
-        x_c = puntos_i[i][0][0];
-        y_c = puntos_i[i][0][1]
-        if (puntos_i[i][1]) {
+        x_c = puntos_i[i][0];
+        y_c = puntos_i[i][1]
+        if (puntos_i[i].length > 0) {
             zidw[k] = Zi([x_c, y_c], inf_ovi, p, 200); //metodo idw  
         } else {
             zidw[k] = -1;
         }
         k++;
+        if (i % ipi == 0) { self.postMessage({ type: "progress", p: (i * 100) / puntos_i.length }) }
     }
-    console.log(zidw)
-    postMessage({ zi: zidw })
+    self.postMessage({ type: "result", zi: zidw })
 });

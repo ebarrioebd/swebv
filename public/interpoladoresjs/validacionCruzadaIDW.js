@@ -39,6 +39,7 @@
          ve[k] = Zi([lat_inter, long_inter], lat, long, zv, p, 200)
          vr[k] = z[k]
          err[k] = ve[k] - vr[k]
+         postMessage({type:"progress",p:(k*100)/n})
      }
      let error = []
      let erro_sm = []
@@ -46,5 +47,5 @@
          error[i] = ve[i] - z[i]
      }
      console.timeEnd("t1");
-     postMessage({ ve: ve, zv: z, error: error })
+     postMessage({type:"result", ve: ve, zv: z, error: error })
  })

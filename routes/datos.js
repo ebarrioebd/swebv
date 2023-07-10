@@ -11,5 +11,7 @@ router.post("/filtrar", dat.searchDat)
 ///ventanas de informacio,muestra mapa de calor
 router.post("/info/?", dat.interpolarDataBD)
 router.get("/info",(req,res)=>{res.render("info_zona")})
-
+router.post("/serverAct",(req,res)=>{
+	console.log("Server actualizado......")
+})
 module.exports = router;

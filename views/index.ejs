@@ -88,13 +88,18 @@
         </div><textarea name="" style="display:none" cols="200" row="600" id="area"></textarea>
     </div>
     <div id="interpolarCSV" style="top: -150%;">
-        <div style="text-align: end"><button onclick="closeWCSVInter()" style="border: none;background: #444444;"><img src="/images/close-button.png" height="35" width="35"></button></div>
+        <div style="text-align: end"><button onclick="closeWCSVInter()" style="border: none;background: #444444;"><img src="/images/close-button.png" height="35" width="35"></button></div> 
         <div id="nomColInter">
             <p id="nomColInterp"></p>
             <div id="muestra_button_v_interpolar"></div>
         </div>
         <div id="contendCSV">
             <div class="map" id="map_c2"></div><img src="/images/loading2.gif" style="display: none; left: 40%;position: relative;width: 20%;height: 40%;margin-top: -50%;" id="imgLoading">
+        </div>
+         <div id="divProgressInterpolar" style="display:none;">
+            <h4>Generando superficie...</h4>
+            <progress id="progressInter" style="width: 100%;height: 50px;" max="100" value="10"></progress>
+            <button id="button_cancel_inter" value="" onclick="cancelar_interpolacion()">Cancelar</button>
         </div>
     </div>
     <div id="divHistoMes" style="display:none">
@@ -258,6 +263,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div id="divProgressVC" style="display:none;">
+            <h4>Generando datos...</h4>
+            <progress id="progressVC" style="width: 100%;height: 50px;" max="100" value="0"></progress>
+            <button id="button_cancel_vc" value="" onclick="cancelar_vc()">Cancelar</button>
         </div>
     </div>
     <div id="ventana_seleccionar_p" style="display:none;">

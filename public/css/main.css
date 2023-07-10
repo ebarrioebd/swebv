@@ -683,13 +683,13 @@ body {
 }
 
 #validacioncruzada {
-    font-size: medium;
+font-size: medium; */
     display: block;
-    width: 80%;
+    width: 87%;
     height: 510px;
     position: fixed;
-    top: 2%;
-    left: 10%;
+    top: 0%;
+    left: 8%;
     font-family: monospace;
     height: 94vh;
     border: outset #fffefe 5px;
@@ -738,6 +738,50 @@ body {
     left: 30%;
     font-family: monospace;
     height: 25vh;
+    border: outset #b3b3b3 5px;
+    background: #ffffff;
+}
+#divProgressInterpolar{
+    padding: 11px;
+    color: black;
+    font-size: medium;
+    /* display: none; */
+    width: 40%;
+    /* height: 510px; */
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    font-family: monospace;
+    /* height: 12vh; */
+    border: outset #b3b3b3 5px;
+    background: #ffffff;
+}
+#button_cancel_inter{
+     border: solid 4px black; 
+     font-family: sans-serif;
+    font-size: large;
+    border-radius: 7px;
+}
+#button_cancel_inter:hover {
+    background-color: red; 
+    color: white;
+    border: solid 4px black;
+}
+button:hover{
+    border: 2px solid red;
+}
+#divProgressVC{
+    padding: 11px;
+    color: black;
+    font-size: medium;
+    /* display: none; */
+    width: 40%;
+    /* height: 510px; */
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    font-family: monospace;
+    /* height: 12vh; */
     border: outset #b3b3b3 5px;
     background: #ffffff;
 }

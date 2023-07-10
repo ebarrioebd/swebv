@@ -1,13 +1,12 @@
-
 //invertir MAtriz
 var Sylvester = {}
-Sylvester.Matrix = function () { }
-Sylvester.Matrix.create = function (elements) {
+Sylvester.Matrix = function() {}
+Sylvester.Matrix.create = function(elements) {
     var M = new Sylvester.Matrix()
     return M.setElements(elements)
 }
 
-Sylvester.Matrix.I = function (n) {
+Sylvester.Matrix.I = function(n) {
     var els = [],
         i = n,
         j
@@ -21,16 +20,16 @@ Sylvester.Matrix.I = function (n) {
     return Sylvester.Matrix.create(els)
 }
 Sylvester.Matrix.prototype = {
-    dup: function () {
+    dup: function() {
         return Sylvester.Matrix.create(this.elements)
     },
 
-    isSquare: function () {
+    isSquare: function() {
         var cols = this.elements.length === 0 ? 0 : this.elements[0].length
         return this.elements.length === cols
     },
 
-    toRightTriangular: function () {
+    toRightTriangular: function() {
         if (this.elements.length === 0) return Sylvester.Matrix.create([])
         var M = this.dup(),
             els
@@ -72,7 +71,7 @@ Sylvester.Matrix.prototype = {
         return M
     },
 
-    determinant: function () {
+    determinant: function() {
         if (this.elements.length === 0) {
             return 1
         }
@@ -89,11 +88,11 @@ Sylvester.Matrix.prototype = {
         return det
     },
 
-    isSingular: function () {
+    isSingular: function() {
         return this.isSquare() && this.determinant() === 0
     },
 
-    augment: function (matrix) {
+    augment: function(matrix) {
         if (this.elements.length === 0) {
             return this.dup()
         }
@@ -118,7 +117,7 @@ Sylvester.Matrix.prototype = {
         return T
     },
 
-    inverse: function () {
+    inverse: function() {
         if (this.elements.length === 0) {
             //remplace//console.log("===0")
             return null
@@ -168,7 +167,7 @@ Sylvester.Matrix.prototype = {
         return Sylvester.Matrix.create(inverse_elements)
     },
 
-    setElements: function (els) {
+    setElements: function(els) {
         var i,
             j,
             elements = els.elements || els
@@ -193,7 +192,7 @@ Sylvester.Matrix.prototype = {
     },
 }
 
-function invM(elements) {
+function invMx(elements) {
     const mat = Sylvester.Matrix.create(elements).inverse()
     if (mat !== null) {
         return mat.elements
@@ -204,7 +203,7 @@ function invM(elements) {
 
 //invertir matriz
 
-function invMM(matriz) {
+function invM(matriz) {
     // Obtener el tamaño de la matriz
     let n = matriz.length;
 
@@ -255,6 +254,7 @@ function invMM(matriz) {
 function c(o, b) {
     //--//remplace//console.log(o, b);
 }
+
 function transpose(matrix) {
     const rows = matrix.length,
         cols = matrix[0].length;
@@ -269,6 +269,7 @@ function transpose(matrix) {
     }
     return grid;
 }
+
 function mult(a, b) {
     var aNumRows = a.length,
         aNumCols = a[0].length,
@@ -286,36 +287,38 @@ function mult(a, b) {
     }
     return m;
 }
+
 function modelExp(h, a, m_s) {
     switch (m_s) {
         case "exp":
-            return (1.0 - Math.exp(-3 * (h / a)))//exponecial
+            return (1.0 - Math.exp(-3 * (h / a))) //exponecial
             break;
         case "gauss":
-            return (1.0 - Math.exp(-3 * Math.pow(h / a, 2)))//gaussiano
+            return (1.0 - Math.exp(-3 * Math.pow(h / a, 2))) //gaussiano
             break
         case "esf":
-            return h > a ? 1 : ((3 / 2) * (h / a) - (1 / 2) * Math.pow(h / a, 3))//esferico
+            return h > a ? 1 : ((3 / 2) * (h / a) - (1 / 2) * Math.pow(h / a, 3)) //esferico
             break
     }
 }
+
 function estimar(lat, long, variograma, x, y, z, mvt_inv, m_s) {
     ////remplace//console.log("estimar:",variograma.nugget,variograma.sill_parcial,modelExp((Math.pow(Math.pow(lat - x[0], 2) + Math.pow(long - y[0], 2), 0.5)) * 100000,variograma.rango))      
-    
+
     let _Y = [];
     for (let i = 0; i < x.length; i++) {
         _Y[i] = [variograma.nugget + variograma.sill_parcial * modelExp((Math.pow(Math.pow(lat - x[i], 2) + Math.pow(long - y[i], 2), 0.5)) * 100000, variograma.rango, m_s)]
-       // console.log(_Y[i],"d:",Math.pow(Math.pow(lat - x[i], 2) + Math.pow(long - y[i], 2), 0.5)* 100000,"c0",variograma.nugget,"c1:",variograma.sill_parcial,"a:",variograma.rango)   
+        // console.log(_Y[i],"d:",Math.pow(Math.pow(lat - x[i], 2) + Math.pow(long - y[i], 2), 0.5)* 100000,"c0",variograma.nugget,"c1:",variograma.sill_parcial,"a:",variograma.rango)   
     }
-    _Y[x.length] = [1] 
+    _Y[x.length] = [1]
     //calulor de los pesos y el parametro de lagrange
-    let pesos = mult(mvt_inv, _Y) 
-    pesos = pesos.slice(0, x.length); 
+    let pesos = mult(mvt_inv, _Y)
+    pesos = pesos.slice(0, x.length);
     return mult(transpose(pesos), z)[0]
 }
 
-self.addEventListener('message', function (e) {
-    let m_s =e.data.semivariograma.modelo// e.data.ms//modelo del semivariograma
+self.addEventListener('message', function(e) {
+    let m_s = e.data.semivariograma.modelo // e.data.ms//modelo del semivariograma
     let x = e.data.x
     let y = e.data.y
     let z = e.data.z
@@ -325,31 +328,43 @@ self.addEventListener('message', function (e) {
     //crear Matriz de variograma Teorico
     let n = x.length;
     //conseguir la Matriz del Variograma Teorico de los puntos de muestra
+    console.time("mvt")
     let mvt = Array(n + 1).fill(1).map(() => Array(n + 1).fill(1));
     for (let i = 0; i < n; i++) {
         z[i] = [z[i]]
-        for (let j = 0; j < n; j++) {
+        for (let j = i; j < n; j++) {
             mvt[i][j] = variograma.nugget + variograma.sill_parcial * modelExp(Math.sqrt(Math.pow(x[i] - x[j], 2) + Math.pow(y[i] - y[j], 2)) * 100000, variograma.rango, m_s)
+            mvt[j][i] = mvt[i][j]
         }
     }
-    
-    mvt[n][n] = 0;
-    //console.log(mvt)
+    console.timeEnd("mvt")
+    mvt[n][n] = 0; 
+    const progreso = 0;
+    console.time("invM")
     let matriz_variograma_teorico = invM(mvt)
+    console.timeEnd("invM")
     //console.log(matriz_variograma_teorico)
-    let x_c = 0;//centro punto x
-    let y_c = 0;//centro punto y
-    let zi = [], k = 0;
+    let x_c = 0; //centro punto x
+    let y_c = 0; //centro punto y
+    let zi = [],
+        k = 0;
+    console.log("puntos_i.length:",puntos_i.length)
+    console.time("estimar")
+    let ipi=parseInt(puntos_i.length/10)
     for (let i = 0; i < puntos_i.length; i++) {
-        x_c = puntos_i[i][0][0];
-        y_c = puntos_i[i][0][1];
-        if (puntos_i[i][1] ) {
+        x_c = puntos_i[i][0];
+        y_c = puntos_i[i][1];
+        zi[k] = -1;
+        if (puntos_i[i].length > 0) {
             zi[k] = estimar(x_c, y_c, variograma, x, y, z, matriz_variograma_teorico, m_s)[0];
-            
-        } else {
-            zi[k] = -1;
         }
+        // else {
+         //   zi[k] = -1;
+        //}
+        if(i%ipi==0){self.postMessage({ type: "progress", p: (i * 100) / puntos_i.length })}
         k++;
-    }//findefor
-    postMessage({ zi: zi, mvt: [] })
+    } //findefor
+    console.timeEnd("estimar")
+    self.postMessage({ type: "result", zi: zi, mvt: [] })
+
 })

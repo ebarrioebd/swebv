@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Worker Example</title>
+  <script>
+    var worker = new Worker('workers.js');
+
+    worker.onmessage = function(event) {
+      if (event.data.type === 'progress') {
+        var progress = event.data.progress;
+        console.log('Progreso:', progress);
+        // Actualizar la interfaz de usuario con el progreso
+      } else if (event.data.type === 'result') {
+        var result = event.data.result;
+        console.log('Resultado:', result);
+        // Mostrar el resultado en la interfaz de usuario
+      }
+    };
+
+    worker.postMessage('start');
+  </script>
+</head>
+<body>
+  <!-- Contenido de la página -->
+</body>
+</html>

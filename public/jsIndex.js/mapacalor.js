@@ -15,20 +15,21 @@ var scope = new L.polyline([0, 0]);
 var botonesControlCSV = L.control({ position: 'bottomleft' });
 var botonesControlInfo = L.control({ position: 'topright' });
 var botonesControlRango = L.control({ position: 'topleft' });
-botonesControlRango.onAdd = function () { // creación de los botones
+botonesControlRango.onAdd = function() { // creación de los botones
     var botones = L.DomUtil.create('div', 'class-css-botones');
     botones.innerHTML = "<div style='color: black;background:#34c234b5'>Porcentaje Bajo</div><div style='color: black;background:#d3d331b5'>Porcentaje Medio</div><div style='color: black;background:#ff0000b5'>Porcentaje Alto</div>"
     return botones;
 };
 
-botonesControlCSV.onAdd = function () { // creación de los botones
+botonesControlCSV.onAdd = function() { // creación de los botones
     var botones = L.DomUtil.create('div', 'class-css-botones');
     botones.innerHTML = `<buttom  id="agregar-marcadoresCSV" class="btn btn-primary" style="background:'green'">Mostrar Marcadores</buttom>`;
     botones.innerHTML += `<buttom  id="remover-marcadoresCSV" class="btn btn-warning">Ocultar Marcadores</buttom>`;
     return botones;
 };
 botonesControlCSV.addTo(mapCSVInter); // adición del contenedor dentro del mapa
-const colors = ["#0f99dd", "#35bbdd", "#68dca7", "#e3f46c", "#fcfd61", "#fecf4f", "#fea43d", "#fa4815", "#fa4815"]; 
+const colors = ["#0f99dd", "#35bbdd", "#68dca7", "#e3f46c", "#fcfd61", "#fecf4f", "#fea43d", "#fa4815", "#fa4815"];
+
 function inv(params) {
     ////remplace//console.log("get :"+params.length)
     ////remplace//console.log(params)
@@ -81,7 +82,7 @@ function V(mD, z, wij, pZ) {
         }
         s1_1 += s1_0
         S2 += Math.pow(s2_0 + s2_1, 2)
-        s3_0 += Math.pow(z[i] - pZ, 4)//*(1/N)
+        s3_0 += Math.pow(z[i] - pZ, 4) //*(1/N)
         s3_1 += Math.pow(z[i] - pZ, 2)
     }
     S1 = (1 / 2) * s1_1
@@ -98,6 +99,7 @@ function V(mD, z, wij, pZ) {
     return varianza
 
 }
+
 function correlacio(mD, z) {
     var pZ = 0;
     var E = (-1) / (z.length - 1)
@@ -105,7 +107,7 @@ function correlacio(mD, z) {
     for (var i = 0; i < z.length; i++) {
         pZ += z[i][0];
     };
-    pZ /= z.length;//promedio o media
+    pZ /= z.length; //promedio o media
     var sW = 0;
     var sWVAR_X = 0,
         sVAR2 = 0;
@@ -145,9 +147,9 @@ function creaImagen(A, B, zi, id) {
         y1 = 0;
     var k = 0;
     //remplace//console.log("Est_Des_Data.data_max:::", Est_Des_Data.data_max)
-    var max =data_ovi_max//getMaxValor(ovitrampas);
+    var max = data_ovi_max //getMaxValor(ovitrampas);
     for (var i = 0; i < A; i++) {
-        var aumentI=0;//-0.8
+        var aumentI = 0; //-0.8
         y0 = 0;
         y1 = 0;
         y1 = canvas.width
@@ -157,7 +159,7 @@ function creaImagen(A, B, zi, id) {
             y1 = canvas.height / B
             if (zi[k] !== (-1)) {
                 ctx.fillStyle = getC(zi[k], max);
-                ctx.fillRect(x0-aumentI, y0-aumentI, x1+2*aumentI, y1+2*aumentI);
+                ctx.fillRect(x0 - aumentI, y0 - aumentI, x1 + 2 * aumentI, y1 + 2 * aumentI);
                 //ctx.arc((x0+x1)/2, (y0+y1)/2, (canvas.width/A)/2 , 0,Math.PI * 2);
                 //ctx.stroke(); 
                 //ctx.strokeRect(x0, y0, x1, y1);
@@ -177,6 +179,7 @@ function creaImagen(A, B, zi, id) {
 
 function closeWCSVInter() {
     document.getElementById("interpolarCSV").style.top = "";
+    document.getElementById("ventana_seleccionar_p").style.display = "none";
 }
 
 function ck() {
@@ -239,7 +242,7 @@ function addTablaIndicador(data) {
         //divRango += "<div id='rango' style='color:black;background:" + colors[i] + "'>" + v2 + "</div>";
         v2 = "";
     }
-    botonesControlInfo.onAdd = function () { // creación de los botones
+    botonesControlInfo.onAdd = function() { // creación de los botones
         var botones = L.DomUtil.create('div', 'class-css-botones');
         //botones.style.width=22+"%"
         botones.innerHTML += "<div class='row' style='width: 200px;'>" + divRango + "</div>"
@@ -268,17 +271,17 @@ function onError(e) {
 function modelExp(h, a, m_s) {
     switch (m_s) {
         case "exp":
-            return (1.0 - Math.exp(-3 * (h / a)))//exponecial
+            return (1.0 - Math.exp(-3 * (h / a))) //exponecial
             break;
         case "gauss":
-            return (1.0 - Math.exp(-3 * Math.pow(h / a, 2)))//gaussiano
+            return (1.0 - Math.exp(-3 * Math.pow(h / a, 2))) //gaussiano
             break
         case "esf":
-            return h > a ? 1 : ((3 / 2) * (h / a) - (1 / 2) * Math.pow(h / a, 3))//esferico
+            return h > a ? 1 : ((3 / 2) * (h / a) - (1 / 2) * Math.pow(h / a, 3)) //esferico
             break
-    } 
+    }
 }
-  
+
 //genera valores del variograma teorico que se ha ajustado 
 function dataVT(nugget, sillPartial, rango, model_semi) {
     var distRange = chartVariograma.data.datasets[0].data[chartVariograma.data.datasets[0].data.length - 1].x
@@ -288,7 +291,7 @@ function dataVT(nugget, sillPartial, rango, model_semi) {
     var cantP = 200
     var aument = distRange / cantP
     for (var i = 1; i < cantP + 1; i++) {
-        y[i] = nugget + sillPartial * modelExp(i * aument, rango, model_semi)// vt(nugget, sillPartial, rango, i * aument,model_semi);
+        y[i] = nugget + sillPartial * modelExp(i * aument, rango, model_semi) // vt(nugget, sillPartial, rango, i * aument,model_semi);
         x[i] = i * aument;
     }
     return [y, x]
@@ -301,6 +304,7 @@ function createDP(x, y) {
     }
     return points
 }
+
 function createDPX(x) {
     let Y = []
     let X = []
@@ -324,7 +328,7 @@ var dat_semivariograma = {
 //ajuste mediante minimos cuadrados ordinario
 function MCO(isAuto) {
     dat_semivariograma.modelo = document.getElementById("select_model").value
-    console.log("dat_semivariograma ::",dat_semivariograma) 
+    console.log("dat_semivariograma ::", dat_semivariograma)
     const wk_mco = new Worker('/interpoladoresjs/mco.js');
     //wk_mco.onerror = (event) => {
     //    alert("Error")
@@ -334,9 +338,9 @@ function MCO(isAuto) {
     wk_mco.postMessage([semivariograma, dat_semivariograma.modelo])
     wk_mco.onmessage = (e) => {
         let rango = semivariograma.rango
-        let nugget = e.data[0]////Math.round(e.data[0])
-        let sill =e.data[0] + e.data[1]//// Math.round(e.data[0] + e.data[1])
-        let sill_parcial = e.data[1]////Math.round(e.data[1])
+        let nugget = e.data[0] ////Math.round(e.data[0])
+        let sill = e.data[0] + e.data[1] //// Math.round(e.data[0] + e.data[1])
+        let sill_parcial = e.data[1] ////Math.round(e.data[1])
         document.getElementById("data_mco").innerHTML = "<p>Nugget:" + nugget + "<br>Sill:" + sill + "<br>Rango:" + rango + "<br>Sill-parcial:" + sill_parcial + "</p>"
         //remplace//console.log("W:", e.data)
 
@@ -352,11 +356,12 @@ function MCO(isAuto) {
         dat_semivariograma.m = "MCO"
         wk_mco.terminate();
         //remplace//console.log("dat_semivariograma:",dat_semivariograma)
-        if(isAuto){interpolar("kriging")}
+        if (isAuto) { interpolar("kriging") }
 
     }
 
 }
+
 function ajusteManual() {
     dat_semivariograma.modelo = document.getElementById("select_model").value;
     let sill = parseFloat(document.getElementById("sill").value);
@@ -377,7 +382,8 @@ function ajusteManual() {
 var x = []
 var y = []
 var z = []
-function crear_SemiVariograna_Experimental(){ 
+
+function crear_SemiVariograna_Experimental() {
     //document.getElementById("id_variograma").style.display = "";
     //remplace//console.log("dat_semivariograma::", dat_semivariograma)
     //Actualizar chart del modelo teorico
@@ -418,23 +424,37 @@ function crear_SemiVariograna_Experimental(){
         wk_semiva.terminate();
         MCO(true)
     }
-     
+
 }
 //var zonaSelect;
 //pi,B,A,cajaMulti
 var puntos_a_interpolar, A, B, cajaMulti;
+var wk_kriging, wk_idw;
+var metodo_aplicado = "";
+
+function cancelar_interpolacion() {
+    //document.getElementById("interpolarCSV").style.top = "";
+    document.getElementById("divProgressInterpolar").style.display = "none";
+    if (metodo_aplicado == "kriging") { wk_kriging.terminate(); } else if (metodo_aplicado == "idw") { wk_idw.terminate(); }
+    console.log("Interpolacion Cancelada......")
+}
+
 function interpolar(metodo) {
-    console.log(z)
+    document.getElementById("ventana_seleccionar_p").style.display = "none"
+    document.getElementById("progressInter").value = 0 //reinicira progreso
+
     document.getElementById("interpolarCSV").style.display = "";
     document.getElementById("interpolarCSV").style.top = 0 + "%";
     if (metodo == "kriging") {
+        metodo_aplicado = metodo
         if (dat_semivariograma.m !== "") {
-            document.getElementById("imgLoading").style.display = "";
+            document.getElementById("divProgressInterpolar").style.display = ""
+            //document.getElementById("imgLoading").style.display = "";
             document.getElementById("interpolarCSV").style.filter = "blur(0px)";
             document.getElementById("id_variograma").style.display = "none";
             //creamos el worker  
             //remplace//console.log("dat_semivariograma:;", dat_semivariograma)
-            const wk_kriging = new Worker('/interpoladoresjs/kriging_ordinario.js');
+            wk_kriging = new Worker('/interpoladoresjs/kriging_ordinario.js');
             wk_kriging.onerror = (event) => {
                 alert("Error")
                 console.log(event)
@@ -443,85 +463,97 @@ function interpolar(metodo) {
             };
             wk_kriging.postMessage({ x: x, y: y, z: z, semivariograma: dat_semivariograma, pi: puntos_a_interpolar, ms: dat_semivariograma.modelo })
             wk_kriging.onmessage = (event) => {
-                //remplace//console.log("DataKriging:", event.data);
-                dat_semivariograma.mvt = event.data.mvt
+                if (event.data.type == "result") {
+                    //remplace//console.log("DataKriging:", event.data);
+                    dat_semivariograma.mvt = event.data.mvt
+                    var zi = event.data.zi;
+                    if (B != zi.length / A) {
+                        B = zi.length / A;
+                        //remplace//console.log("!B")
+                    }
+                    let opacidad_img = 1;
+                    if (mapCSVInter.hasLayer(imgOpaci)) { mapCSVInter.removeLayer(imgOpaci); }
+                    var imgk = L.imageOverlay(creaImagen(A, B, zi, "canvasMap"), [
+                        [cajaMulti[1], cajaMulti[0]],
+                        [cajaMulti[3], cajaMulti[2]]
+                    ], {
+                        opacity: opacidad_img
+                    });
+                    imgOpaci = imgk
+                    imgOpaci.addTo(mapCSVInter);
+                    addTablaIndicador(ovitrampas);
+                    //document.getElementById("imgLoading").style.display = "none";
+                    document.getElementById("divProgressInterpolar").style.display = "none"
+                    ////
+                } else if (event.data.type == "progress") {
+                    document.getElementById("progressInter").value = parseInt(event.data.p)
+                }
+
+                ////
+
+            }
+        } else {
+            alert("Ajuste el semivariograma")
+        }
+
+    } else if (metodo == "idw") {
+        metodo_aplicado = metodo
+        document.getElementById("divProgressInterpolar").style.display = ""
+        //document.getElementById("imgLoading").style.display = "";
+        //creamos el worker  
+        //remplace//console.log("dat_semivariograma:;", dat_semivariograma)
+        wk_idw = new Worker('/interpoladoresjs/idw.js');
+
+        wk_idw.onerror = (event) => {
+            alert("Error")
+            console.log(event)
+            //document.getElementById("imgLoading").style.display = "none";
+            document.getElementById("divProgressInterpolar").style.display = "none"
+            wk_idw.terminate();
+        };
+        wk_idw.postMessage({ ovi: ovitrampas, pi: puntos_a_interpolar, p: document.getElementById("valor_potencia_p").value })
+        wk_idw.onmessage = (event) => {
+            if (event.data.type == "result") {
                 var zi = event.data.zi;
+                //remplace//console.log("Zidw::", zi)
                 if (B != zi.length / A) {
                     B = zi.length / A;
                     //remplace//console.log("!B")
                 }
                 let opacidad_img = 1;
                 if (mapCSVInter.hasLayer(imgOpaci)) { mapCSVInter.removeLayer(imgOpaci); }
-                var imgk = L.imageOverlay(creaImagen(A, B, zi, "canvasMap"), [
+                var img_idw = L.imageOverlay(creaImagen(A, B, zi, "canvasMap"), [
                     [cajaMulti[1], cajaMulti[0]],
                     [cajaMulti[3], cajaMulti[2]]
                 ], {
                     opacity: opacidad_img
                 });
-                imgOpaci = imgk
+                imgOpaci = L.imageOverlay(creaImagen(A, B, zi, "canvasMap"), [
+                    [cajaMulti[1], cajaMulti[0]],
+                    [cajaMulti[3], cajaMulti[2]]
+                ], {
+                    opacity: opacidad_img
+                });
+                //imgOpaci = img_idw
                 imgOpaci.addTo(mapCSVInter);
                 addTablaIndicador(ovitrampas);
-                document.getElementById("imgLoading").style.display = "none";
-                ////
-
-
-                ////
-
+                //document.getElementById("imgLoading").style.display = "none";
+                document.getElementById("divProgressInterpolar").style.display = "none"
+                wk_idw.terminate();
+            } else if (event.data.type == "progress") {
+                document.getElementById("progressInter").value = parseInt(event.data.p)
             }
-        } 
-        else {
-            alert("Ajuste el semivariograma")
-        }
-
-    }
-    else if (metodo == "idw") {
-        document.getElementById("imgLoading").style.display = "";
-        //creamos el worker  
-        //remplace//console.log("dat_semivariograma:;", dat_semivariograma)
-        const wk_idw = new Worker('/interpoladoresjs/idw.js');
-        wk_idw.onerror = (event) => {
-            alert("Error")
-            console.log(event)
-            document.getElementById("imgLoading").style.display = "none";
-            wk_idw.terminate();
-        };
-        wk_idw.postMessage({ ovi: ovitrampas, pi: puntos_a_interpolar,p:document.getElementById("valor_potencia_p").value })
-        wk_idw.onmessage = (event) => {
-            var zi = event.data.zi;
-            //remplace//console.log("Zidw::", zi)
-            if (B != zi.length / A) {
-                B = zi.length / A;
-                //remplace//console.log("!B")
-            }
-            let opacidad_img = 1;
-            if (mapCSVInter.hasLayer(imgOpaci)) { mapCSVInter.removeLayer(imgOpaci); }
-            var img_idw = L.imageOverlay(creaImagen(A, B, zi, "canvasMap"), [
-                [cajaMulti[1], cajaMulti[0]],
-                [cajaMulti[3], cajaMulti[2]]
-            ], {
-                opacity: opacidad_img
-            });
-            imgOpaci = L.imageOverlay(creaImagen(A, B, zi, "canvasMap"), [
-                [cajaMulti[1], cajaMulti[0]],
-                [cajaMulti[3], cajaMulti[2]]
-            ], {
-                opacity: opacidad_img
-            });
-            //imgOpaci = img_idw
-            imgOpaci.addTo(mapCSVInter);
-            addTablaIndicador(ovitrampas);
-            document.getElementById("imgLoading").style.display = "none";
-            //wk_idw.terminate();
         }
 
     }
 }
-function generarPI(zonaSelect) {//genear puntos a interpolar
+
+function generarPI(zonaSelect) { //genear puntos a interpolar
     //console.log("zonaSelect::", zonaSelect)
     //var zonaCoord = zonaSelect[0].geometry.coordinates[0]
     //remplace//console.log("1")
     let positions = []
-    zonaSelect[0].geometry.coordinates[0][0].forEach(function (point) {
+    zonaSelect[0].geometry.coordinates[0][0].forEach(function(point) {
         positions.push([point[1], point[0]]);
     });
     mapCSVInter.removeLayer(scope);
@@ -533,7 +565,7 @@ function generarPI(zonaSelect) {//genear puntos a interpolar
     let line = turf.lineString(inv(positions));
     let bbox = turf.bbox(line);
     let dcuadro = turf.distance([bbox[0], bbox[1]], [bbox[0], bbox[3]], options);
-    let cantidad_de_cuadrados_por_ladao = 100
+    let cantidad_de_cuadrados_por_ladao = 80
     let tamCuadro = Math.ceil(dcuadro / cantidad_de_cuadrados_por_ladao) //80
     let squareGrid = turf.squareGrid(bbox, tamCuadro, options);
     cajaMulti = turf.bbox(squareGrid); //cuadro dlimitador del poligono 
@@ -553,10 +585,16 @@ function generarPI(zonaSelect) {//genear puntos a interpolar
     let poligonoDeZona = turf.lineToPolygon(line);
     for (let i = 0; i < squareGrid.features.length; i++) {
         centro = turf.centerOfMass(squareGrid.features[i]).geometry.coordinates;
-        puntos_a_interpolar.push([centro, turf.booleanWithin(turf.point(centro), poligonoDeZona)])
+        if (turf.booleanWithin(turf.point(centro), poligonoDeZona)) {
+            puntos_a_interpolar.push(centro)
+        } else {
+            puntos_a_interpolar.push([])
+        }
+
     }
     //pi,B,A,cajaMulti
 }
+
 function crearXY(p, min, max) {
     min = 0; // min - (10 * min) / 100
     max = max + (0.3 * max); // max + (30 * max) / 100 
@@ -568,72 +606,94 @@ function crearXY(p, min, max) {
     }
     return [x_rect, y_rect];
 }
+var wk_vcross;
+
+function cancelar_vc() {
+    document.getElementById("validacioncruzada").style.display = "none";
+    wk_vcross.terminate();
+    console.log("Validación cruzada Cancelada.....")
+}
+
 function validacionCruzada(metodo_interpolador) {
-    console.log("metodo_interpolador:::",metodo_interpolador)
-    var file_vc_path=metodo_interpolador=="kriging"?"/interpoladoresjs/validacionCruzada.js":"/interpoladoresjs/validacionCruzadaIDW.js"
-    document.getElementById("validacioncruzada").style.top = 2 + "%"
-    document.getElementById("validacioncruzada").style.display = "";
-    const wk_vcross = new Worker(file_vc_path)
-    wk_vcross.onerror = (event) => {
-        alert("Error")
-        console.log(event)
-        //wk_vcross.terminate();
-    };
-    var valor_potencia_p=document.getElementById("valor_potencia_p").value
-    if(x.length>=100){wk_vcross.terminate(); alert("No es posible realizar la V.C con mas de 100 datos")}
-    var datos_vc=metodo_interpolador=="kriging"?{ x: x, y: y, z: z, semivariograma: dat_semivariograma }:{ovi:ovitrampas,p:valor_potencia_p}
-    wk_vcross.postMessage(datos_vc)
-    wk_vcross.onmessage = (e) => {
-        //remplace//console.log("VCROSS:", e.data)
-        let error = e.data.error
-        let promedioError = promedio(error) 
-        //remplace//console.log("Error medio:", promedioError)
-        let ve = e.data.ve
-        let zv = e.data.zv
-        let correlacioDeV = calcularCorrelacion(zv, ve)
-        document.getElementById("errorpromedio").innerHTML = "Error medio: " + promedioError.toFixed(3)
-        document.getElementById("correlaciozv").innerHTML = "Correlación(VR,VE):" + correlacioDeV.toFixed(5) 
-        //remplace//console.log("Correlacion:", correlacioDeV)
-        var dataP = createDP(zv, ve)
-        var a_xb =[]/// calcularRectaDeMejorAjuste(ve, zv)
-        let minve = Math.min(...ve);
-        let maxve = Math.max(...ve);
-        let minzv = Math.min(...zv);
-        let maxzv = Math.max(...zv);
-        //remplace//console.log(minve, maxve)
-        //remplace//console.log(minzv, maxzv)
-        //var crearxy=crearXY(a_xb,Math.min(minve,minzv),Math.max(maxve,maxzv))
-        var crearxy = crearXY(a_xb, Math.max(minve, minzv), Math.min(maxzv, maxve))
-        //remplace//console.log("crearxy::", crearxy)
-        var xy_rect = createDP(crearxy[0], crearxy[1])
-        //remplace//console.log("dataP:", dataP)
-        graf_vz.data.datasets[0].data = dataP;
-        graf_vz.data.datasets[1].data = xy_rect;
-        [chart_error.data.labels, chart_error.data.datasets[0].data] = createDPX(error);
-        graf_vz.update();
-        chart_error.update()
-        var tableVC = "<tr><th>Valor Real(VR)</th> <th>Valor Estimado(VE)</th><th>Error</th></tr>"
-        for (var i = 0; i < error.length; i++) {
-            tableVC += `
+    document.getElementById("ventana_seleccionar_p").style.display = "none" //cerrar div de seleccionar paramatro p en IDW
+    document.getElementById("divProgressVC").style.display = "" //div que contiene a process bar
+    console.log("ovitrampas.length:", ovitrampas.length)
+    console.log("metodo_interpolador:::", metodo_interpolador)
+    var file_vc_path = metodo_interpolador == "kriging" ? "/interpoladoresjs/validacionCruzada.js" : "/interpoladoresjs/validacionCruzadaIDW.js"
+    wk_vcross = new Worker(file_vc_path)
+    if (ovitrampas.length >= 500 && metodo_interpolador == "kriging") {
+        wk_vcross.terminate();
+        alert("No es posible realizar la V.C con mas de 150 datos")
+    } else {
+        document.getElementById("validacioncruzada").style.top = 2 + "%"
+        document.getElementById("validacioncruzada").style.display = "";
+        wk_vcross.onerror = (event) => {
+            alert("Error")
+            console.log(event)
+            wk_vcross.terminate();
+        };
+        var valor_potencia_p = document.getElementById("valor_potencia_p").value
+        var datos_vc = metodo_interpolador == "kriging" ? { x: x, y: y, z: z, semivariograma: dat_semivariograma } : { ovi: ovitrampas, p: valor_potencia_p }
+        wk_vcross.postMessage(datos_vc)
+        wk_vcross.onmessage = (e) => {
+            if (e.data.type == "result") {
+                //remplace//console.log("VCROSS:", e.data)
+                let error = e.data.error
+                let promedioError = promedio(error)
+                //remplace//console.log("Error medio:", promedioError)
+                let ve = e.data.ve
+                let zv = e.data.zv
+                let correlacioDeV = calcularCorrelacion(zv, ve)
+                document.getElementById("errorpromedio").innerHTML = "Error medio: " + promedioError.toFixed(3)
+                document.getElementById("correlaciozv").innerHTML = "Correlación(VR,VE):" + correlacioDeV.toFixed(5)
+                //remplace//console.log("Correlacion:", correlacioDeV)
+                var dataP = createDP(zv, ve)
+                var a_xb = [] /// calcularRectaDeMejorAjuste(ve, zv)
+                let minve = Math.min(...ve);
+                let maxve = Math.max(...ve);
+                let minzv = Math.min(...zv);
+                let maxzv = Math.max(...zv);
+                //remplace//console.log(minve, maxve)
+                //remplace//console.log(minzv, maxzv)
+                //var crearxy=crearXY(a_xb,Math.min(minve,minzv),Math.max(maxve,maxzv))
+                var crearxy = crearXY(a_xb, Math.max(minve, minzv), Math.min(maxzv, maxve))
+                //remplace//console.log("crearxy::", crearxy)
+                var xy_rect = createDP(crearxy[0], crearxy[1])
+                //remplace//console.log("dataP:", dataP)
+                graf_vz.data.datasets[0].data = dataP;
+                graf_vz.data.datasets[1].data = xy_rect;
+                [chart_error.data.labels, chart_error.data.datasets[0].data] = createDPX(error);
+                graf_vz.update();
+                chart_error.update()
+                var tableVC = "<tr><th>Valor Real(VR)</th> <th>Valor Estimado(VE)</th><th>Error</th></tr>"
+                for (var i = 0; i < error.length; i++) {
+                    tableVC += `
             <tr>
                 <td>${zv[i]}</td>
                 <td>${ve[i].toFixed(3)}</td>
                 <td>${error[i].toFixed(3)}</td>
             </tr>
          `
+                }
+                document.getElementById("tableVC").innerHTML = tableVC
+                document.getElementById("divProgressVC").style.display = "none" //cerrar div que contiene a process bar
+                //remplace//console.log("VIEW VALIDACION CRUZADA")
+            }
+            if (e.data.type == "progress") {
+                document.getElementById("progressVC").value = parseInt(event.data.p)
+            }
         }
-        document.getElementById("tableVC").innerHTML = tableVC
-        //remplace//console.log("VIEW VALIDACION CRUZADA")
     }
 }
+
 function crearMapaDeCalor(zonaV, m_i) {
-    document.getElementById("muestra_button_v_interpolar").innerHTML = ""//borra botones de ventana de interpolar
+    document.getElementById("muestra_button_v_interpolar").innerHTML = "" //borra botones de ventana de interpolar
     //zonaSelect=zonaV
-    generarPI(zonaV)//generar puntos a interpolar
+    generarPI(zonaV) //generar puntos a interpolar
     if (m_i == "kriging") {
-        let button_view = '<button onclick="showVariograma()"><img src="/images/graf.png" id="icon_inter">Ver Semivariograma</button><button onclick="validacionCruzada('+'\'kriging\''+')"><img src="/images/graf.png" id="icon_inter">Validación cruzada</button><button  onclick="ocultarIMG()" id="ocultarIMG"><img src="/images/oculto.png" id="icon_inter">Ocultar IMG</button><button onclick="mostrarIMG()" id="mostrarIMG"><img src="/images/ojo.png" id="icon_inter">Mostrar IMG</button><button onclick="dIMG()"><img src="/images/salvar.png" id="icon_inter">Descargar IMG</button><button id="ocultarPuntos" onclick="ocultarPuntos()"><img src="/images/oculto.png" id="icon_inter">Ocultar Puntos</button><button id="mostrarPuntos" onclick="mostrarPuntos()"><img src="/images/ojo.png" id="icon_inter">Mostrar Puntos</button>';//<button onclick="showError()"><img src="/images/ojo.png" id="icon_inter">Mostrar Res. validacion cruzada</button>'
+        let button_view = '<button onclick="showVariograma()"><img src="/images/graf.png" id="icon_inter">Ver Semivariograma</button><button onclick="validacionCruzada(' + '\'kriging\'' + ')"><img src="/images/graf.png" id="icon_inter">Validación cruzada</button><button  onclick="ocultarIMG()" id="ocultarIMG"><img src="/images/oculto.png" id="icon_inter">Ocultar IMG</button><button onclick="mostrarIMG()" id="mostrarIMG"><img src="/images/ojo.png" id="icon_inter">Mostrar IMG</button><button onclick="dIMG()"><img src="/images/salvar.png" id="icon_inter">Descargar IMG</button><button id="ocultarPuntos" onclick="ocultarPuntos()"><img src="/images/oculto.png" id="icon_inter">Ocultar Puntos</button><button id="mostrarPuntos" onclick="mostrarPuntos()"><img src="/images/ojo.png" id="icon_inter">Mostrar Puntos</button>'; //<button onclick="showError()"><img src="/images/ojo.png" id="icon_inter">Mostrar Res. validacion cruzada</button>'
         document.getElementById("muestra_button_v_interpolar").innerHTML = button_view
-        document.getElementById("interpolarCSV").style.filter = "blur(5px)";
+        //document.getElementById("interpolarCSV").style.filter = "blur(5px)";
         crear_SemiVariograna_Experimental()
 
     } else if (m_i == "idw") {
@@ -645,14 +705,14 @@ function crearMapaDeCalor(zonaV, m_i) {
 
 function mapaCalor(n, id, f, type_dat, m_interpolacion) {
     //remplace//console.log("mapaCalor(" + n + "," + id + "," + f + "," + type_dat + ")")
-    if (type_dat === "type_bd") {//si se analiza desde la bd
+    if (type_dat === "type_bd") { //si se analiza desde la bd
         //remplace//console.log(n, id, f)
         ir_url(n, id, "type_bd", m_interpolacion);
         //window.open(window.location.origin + "/info?x=" + n + "&gid=" + id + "&fecha=" + f, 'popup', 'width=' + (screen.width - 100) + ', height=' + (screen.height - 100) + ', left=' + 10 + ', top=' + 10 + '');
-    } else if (type_dat === "type_csv") {//si proviene de un csv y el id de zona pertenece a alguna zona del fileZonaAcapulco.json
+    } else if (type_dat === "type_csv") { //si proviene de un csv y el id de zona pertenece a alguna zona del fileZonaAcapulco.json
         //remplace//console.log(n, id, f);
         ir_url(n, id, "", m_interpolacion);
-    } else if (type_dat === "type_csv_no_zona") {//si proviene de un csv y el id no esta en filezonaaca.json
+    } else if (type_dat === "type_csv_no_zona") { //si proviene de un csv y el id no esta en filezonaaca.json
         ir_url(n, id, "type_csv_no_zona", m_interpolacion);
     }
 }
@@ -678,10 +738,10 @@ function ocultarMarcadores() {
 function ir_url(n, c_id, type_dat, m_i) { //value 
     document.getElementById("interpolarCSV").style.display = "";
     //document.getElementById("imgLoading").style.display = "";
-    document.getElementById('agregar-marcadoresCSV').addEventListener('click', function () {
+    document.getElementById('agregar-marcadoresCSV').addEventListener('click', function() {
         groupMakersCSV.addTo(mapCSVInter)
     })
-    document.getElementById('remover-marcadoresCSV').addEventListener('click', function () {
+    document.getElementById('remover-marcadoresCSV').addEventListener('click', function() {
         groupMakersCSV.remove();
     })
 
@@ -713,8 +773,8 @@ function ir_url(n, c_id, type_dat, m_i) { //value
 
     groupMakersCSV.remove(); //remueve
     groupCircleCSV.remove(); //remueve circulos de add
-    for (var i = 0; i < ovitrampas.length; i++) {///RADIO=(parseInt(ovitrampas[i].cantidad_huevos)*100)/(Est_Des_Data.data_max)
-        circlesCSV[i] = L.circle([ovitrampas[i].latitud, ovitrampas[i].longitud], (parseInt(ovitrampas[i].cantidad_huevos) * 100) / (data_ovi_max), {weight: 2, opacity: 1, fillOpacity: 1, fillColor:getC(ovitrampas[i].cantidad_huevos, data_ovi_max), fill: true, color: "black" });
+    for (var i = 0; i < ovitrampas.length; i++) { ///RADIO=(parseInt(ovitrampas[i].cantidad_huevos)*100)/(Est_Des_Data.data_max)
+        circlesCSV[i] = L.circle([ovitrampas[i].latitud, ovitrampas[i].longitud], (parseInt(ovitrampas[i].cantidad_huevos) * 100) / (data_ovi_max), { weight: 2, opacity: 1, fillOpacity: 1, fillColor: getC(ovitrampas[i].cantidad_huevos, data_ovi_max), fill: true, color: "black" });
         markersCSV[i] = L.marker([ovitrampas[i].latitud, ovitrampas[i].longitud], { color: "red", draggable: false, title: "Ovitrampa" + (i + 1) + ": Cantidad de Huevos : " + ovitrampas[i].cantidad_huevos });
         markersCSV[i].bindPopup("Lat:" + ovitrampas[i].latitud + "<br>Lng:" + ovitrampas[i].longitud + "<br>Colonia:" + nombreColonia + "<br> Cantidad de Huevos : " + ovitrampas[i].cantidad_huevos)
     }
@@ -736,12 +796,12 @@ function ir_url(n, c_id, type_dat, m_i) { //value
         crearMapaDeCalor(zona, m_i);
     } else {
         fetch("/getZona", {
-            method: "POST",
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                gid: [c_id] //[paramsValue[0].zona_id]
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    gid: [c_id] //[paramsValue[0].zona_id]
+                })
             })
-        })
             .then(res => res.json())
             .then(data => {
                 zona = data.zona; ///agrega las zonas al mapa 
@@ -773,6 +833,7 @@ function showVariograma() {
     document.getElementById("id_variograma").style.display = "";
     document.getElementById("interpolarCSV").style.filter = "blur(5px)";
 }
+
 function dIMG() {
     const canvas = document.querySelector("#canvasMap")
     let enlace = document.createElement('a');
@@ -784,15 +845,19 @@ function dIMG() {
     // Hacer click en él
     enlace.click();
 }
+
 function closeError() {
     document.getElementById("validacioncruzada").style.display = "none";
 }
+
 function showError() {
     document.getElementById("validacioncruzada").style.display = "";
 }
-function closeSelectP(){
-    document.getElementById("ventana_seleccionar_p").style.display="none"
+
+function closeSelectP() {
+    document.getElementById("ventana_seleccionar_p").style.display = "none"
 }
-function ajustarP(){
-    document.getElementById("ventana_seleccionar_p").style.display=""
+
+function ajustarP() {
+    document.getElementById("ventana_seleccionar_p").style.display = ""
 }

@@ -192,7 +192,7 @@ Sylvester.Matrix.prototype = {
     },
 }
 
-function invM(elements) {
+function invMx(elements) {
     const mat = Sylvester.Matrix.create(elements).inverse()
     if (mat !== null) {
         return mat.elements
@@ -203,7 +203,7 @@ function invM(elements) {
 
 //invertir matriz
 
-function invMM(matriz) {
+function invM(matriz) {
     // Obtener el tamaño de la matriz
     let n = matriz.length;
 
@@ -323,12 +323,12 @@ function estimar(lat, long, variograma, x, y, z, mvt, m_s) {
     return mult(transpose(pesos), z)[0]
 }
 self.addEventListener('message', function(e) {
-    console.time("t1");
+    console.time("VCtime");
     ////remplace//console.log("******************************************************************8")
     let variograma = e.data.semivariograma
     console.log("variograma:::", variograma)
     let v_estimados = []
-    let cantidad_de_puntos_a_estimar = 100
+    let cantidad_de_puntos_a_estimar =130// e.data.x.length
     let x = (e.data.x).splice(0, cantidad_de_puntos_a_estimar)
 
     //remplace//console.log("lengthx:", x.length)
@@ -339,7 +339,8 @@ self.addEventListener('message', function(e) {
 
     //remplace//console.log("lengthx:", z.length)
     let n = x.length > cantidad_de_puntos_a_estimar ? cantidad_de_puntos_a_estimar : x.length
-    //remplace//console.log("n:", n)
+    console.log("cantidad_de_puntos_a_estimar:::", n)
+    let ipn=parseInt(n/10)
     for (let k = 0; k < n; k++) {
         let lat = x.slice()
         let lat_inter = lat.splice(k, 1)[0]
@@ -351,24 +352,25 @@ self.addEventListener('message', function(e) {
         let mvt = Array(nc + 1).fill(1).map(() => Array(nc + 1).fill(1));
         for (let i = 0; i < nc; i++) {
             zv[i] = [zv[i]]
-            ////remplace//console.log("[x,y]:",[lat[i],long[i]])
-            for (let j = 0; j < nc; j++) {
+            for (let j = i; j < nc; j++) {
                 ////remplace//console.log(Math.sqrt(Math.pow(lat[j] - long[i], 2) + Math.pow(lat[j] - long[i], 2)) * 100000,variograma.rango,variograma.modelo)
                 ////remplace//console.log("===:",modelExp(Math.sqrt(Math.pow(lat[j] - long[i], 2) + Math.pow(lat[j] - long[i], 2)) * 100000,variograma.rango,variograma.modelo))
                 mvt[i][j] = variograma.nugget + variograma.sill_parcial * modelExp((Math.pow(Math.pow(lat[j] - lat[i], 2) + Math.pow(long[j] - long[i], 2), 0.5)) * 100000, variograma.rango, variograma.modelo)
+                mvt[j][i] = mvt[i][j]
                 ////remplace//console.log(mvt[i][j])
+
             }
         }
         mvt[nc][nc] = 0;
         let matriz_variograma_teorico = invM(mvt)
         v_estimados[k] = estimar(lat_inter, long_inter, variograma, lat, long, zv, matriz_variograma_teorico, variograma.modelo)[0];
-
+        if(k%ipn==0){postMessage({ type: "progress", p: (k * 100) / n })}
     }
     let error = []
     let erro_sm = []
     for (var i = 0; i < v_estimados.length; i++) {
-        error[i] = v_estimados[i] - z[i] 
+        error[i] = v_estimados[i] - z[i]
     }
-    console.timeEnd("t1");
-    postMessage({ ve: v_estimados, zv: z, error: error })
+    console.timeEnd("VCtime");
+    postMessage({ type: "result", ve: v_estimados, zv: z, error: error })
 })

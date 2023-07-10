@@ -191,7 +191,7 @@ Sylvester.Matrix.prototype = {
     },
 }
 
-function invM(elements) {
+function invMx(elements) {
     const mat = Sylvester.Matrix.create(elements).inverse()
     if (mat !== null) {
         return mat.elements
@@ -202,7 +202,7 @@ function invM(elements) {
 
 //invertir matriz
 
-function invMM(matriz) {
+function invM(matriz) {
     // Obtener el tamaño de la matriz
     let n = matriz.length;
 
@@ -325,10 +325,12 @@ function OrdinaryLeastsquares(X, Y, h, a, m_s) {
 }
 self.addEventListener('message', function (e) {
     console.log("MCDDATA::", e.data)
+    console.time("mcoTime")
     let Y = e.data[0].semi;
     let X = Array(Y.length).fill().map(() => Array(2).fill(1));
     //W0,W1 son los valores que minimizan el error (Y(h,W)-Y*(h))^2 y w0,w1 ajustan  Y(h,W) a los valores de Y*(h) 
     let W = OrdinaryLeastsquares(X, Y, e.data[0].lags, e.data[0].rango, e.data[1]);
     console.log(W[0][0],W[1][0])
+    console.timeEnd("mcoTime")
     postMessage([W[0][0], W[1][0]])
 });

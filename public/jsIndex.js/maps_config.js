@@ -24,13 +24,13 @@ var capaOSM = new L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.pn
 var satellite = new L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
     minZoom: minZoom,
     maxZoom: maxZoom,
-    attribution: '&copy; ' + mapLink + ' Contributors',
+    //attribution: '&copy; ' + mapLink + ' Contributors',
     subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
 });
 var sat_text = new L.tileLayer('https://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
     minZoom: minZoom,
     maxZoom: maxZoom,
-    attribution: '&copy; ' + mapLink + ' Contributors',
+    //attribution: '&copy; ' + mapLink + ' Contributors',
     subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
 });
 var roadmap = L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
@@ -63,7 +63,7 @@ var capasBaseCSV = {
     "satelite": satellite
 }
 sat_text.addTo(map)
-
+satellite.addTo(mapCSVInter)
 var selectorCapas = new L.control.layers(capasBase);
 selectorCapas.addTo(map);
 
