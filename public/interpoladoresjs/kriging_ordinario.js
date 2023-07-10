@@ -343,20 +343,16 @@ self.addEventListener('message', function(e) {
     console.time("invM")
     let matriz_variograma_teorico = invM(mvt)
     console.timeEnd("invM")
-    //console.log(matriz_variograma_teorico)
-    let x_c = 0; //centro punto x
-    let y_c = 0; //centro punto y
+    //console.log(matriz_variograma_teorico) 
     let zi = [],
         k = 0;
     console.log("puntos_i.length:",puntos_i.length)
     console.time("estimar")
     let ipi=parseInt(puntos_i.length/10)
-    for (let i = 0; i < puntos_i.length; i++) {
-        x_c = puntos_i[i][0];
-        y_c = puntos_i[i][1];
+    for (let i = 0; i < puntos_i.length; i++) { 
         zi[k] = -1;
         if (puntos_i[i].length > 0) {
-            zi[k] = estimar(x_c, y_c, variograma, x, y, z, matriz_variograma_teorico, m_s)[0];
+            zi[k] = estimar(puntos_i[i][0], puntos_i[i][1], variograma, x, y, z, matriz_variograma_teorico, m_s)[0];
         }
         // else {
          //   zi[k] = -1;

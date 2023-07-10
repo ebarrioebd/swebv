@@ -330,11 +330,11 @@ function MCO(isAuto) {
     dat_semivariograma.modelo = document.getElementById("select_model").value
     console.log("dat_semivariograma ::", dat_semivariograma)
     const wk_mco = new Worker('/interpoladoresjs/mco.js');
-    //wk_mco.onerror = (event) => {
-    //    alert("Error")
-    //    console.log(event)
-    //    wk_mco.terminate();
-    //};
+    wk_mco.onerror = (event) => {
+        alert("Error Al ajustar datos")
+        console.log(event)
+        wk_mco.terminate();
+    };
     wk_mco.postMessage([semivariograma, dat_semivariograma.modelo])
     wk_mco.onmessage = (e) => {
         let rango = semivariograma.rango
@@ -565,7 +565,7 @@ function generarPI(zonaSelect) { //genear puntos a interpolar
     let line = turf.lineString(inv(positions));
     let bbox = turf.bbox(line);
     let dcuadro = turf.distance([bbox[0], bbox[1]], [bbox[0], bbox[3]], options);
-    let cantidad_de_cuadrados_por_ladao = 80
+    let cantidad_de_cuadrados_por_ladao = 100
     let tamCuadro = Math.ceil(dcuadro / cantidad_de_cuadrados_por_ladao) //80
     let squareGrid = turf.squareGrid(bbox, tamCuadro, options);
     cajaMulti = turf.bbox(squareGrid); //cuadro dlimitador del poligono 
