@@ -249,7 +249,8 @@ function crearHistogramaDeFrecuencias(od) {
         }
     }
     frecuencia.push(sumClass(contador.slice(tamClases * (inter - 1))));
-    interClass.push(">" + dataVal[tamClases * (inter - 1)]);
+    //interClass.push(">" + dataVal[tamClases * (inter - 1)]);
+    interClass.push("["+dataVal[tamClases * (inter - 1)]+" , "+od[od.length-1]+"]");
 
     return { frec: frecuencia, labelClass: interClass };
 }
