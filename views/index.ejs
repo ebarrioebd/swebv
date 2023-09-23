@@ -34,6 +34,7 @@
         <div class="row" id="center_main" style="height:59.5vh">
             <div class="col-md-7" class="col-sm-12" id="sect12" style="padding: 8px;  margin: 0;">
                 <canvas id="canvasMap" style="display: none;"></canvas>
+                <canvas id="canvasMapZonaAlta" style="display: none;"></canvas>
                 <div class="map" style="height: 56vh" id="map_c1"></div>
             </div>
             <div class="col-md-2" class="col-sm-12" id="sect13">
@@ -75,9 +76,9 @@
             <form class="form-inline"><input type="file" id="files" accept=".csv" required=""></form>
         </div>
         <div id="csv_tr"></div>
-        <div class="row" style="height:65%;margin: 10px">
+        <div id="csv_div_table" class="row" style="height:65%;margin: 10px">
             <div class="col-md-9" id="csv_table" style="height: -webkit-fill-available;overflow:scroll"></div>
-            <div class="col-md-3" style="height: -webkit-fill-available;">
+            <div id="col_select" class="col-md-3" style="height: -webkit-fill-available;">
                 <div class="scrollbar" style="height: -webkit-fill-available;" id="style-15">
                     <div id="selectCSV"></div>
                 </div>
