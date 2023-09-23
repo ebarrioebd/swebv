@@ -5,8 +5,8 @@ console.log("chart_config.js")
  * Porcentaje de Huevos por Colonia
  */
 const ctx = document.getElementById('graf_ph').getContext('2d');
-let config = { 
-    type: 'doughnut', 
+let config = {
+    type: 'doughnut',
     data: {
         labels: [],
         datasets: [{
@@ -16,7 +16,7 @@ let config = {
             hoverOffset: 4
         }]
     },
-    options: { 
+    options: {
         plugins: {
             legend: {
                 display: false,
@@ -171,7 +171,7 @@ const chart_promedio_huevos = new Chart(chart_pm, config_pm);
 
 /**
  * Chart Variograma
- * 
+ *
  */
 const ctxVariograma = document.getElementById('variograma').getContext('2d');
 const chartVariograma = new Chart(ctxVariograma, {
@@ -222,7 +222,7 @@ const chartVariograma = new Chart(ctxVariograma, {
 });
 var charHistograma = document.getElementById("histogramaChart");
 var densityData = {
-    label: 'Cantidad de Huevos',
+    label: 'Frecuencia',
     data: [],//hist.frec,
     backgroundColor: ['rgba(0, 0, 255, 0.8)']
 };
@@ -265,7 +265,7 @@ var barChartHistograma = new Chart(charHistograma, {
                     text: 'Frecuencia',
                     size: 32
                 },
-                beginAtZero: true, 
+                beginAtZero: true,
                 ticks: {
                     font: {
                         size: 20
@@ -287,6 +287,7 @@ var barChartHistograma = new Chart(charHistograma, {
         },
     }
 });
+
 Chart.defaults.font.size = 15;
 /*
 const ctxVariograma = document.getElementById("variograma").getContext("2d");
@@ -306,7 +307,7 @@ const chartVariograma = new Chart(ctxVariograma, configVariograma);*/
 const ctx_error = document.getElementById("z_v").getContext("2d");
 const graf_vz = new Chart(ctx_error,{
     type: 'scatter',
-    data: 
+    data:
          {
             datasets: [{
                 type: 'bubble',
@@ -351,11 +352,11 @@ const graf_vz = new Chart(ctx_error,{
             }
         }
     }
-}); 
+});
 
 ///charError
 const error_graf = document.getElementById('error_prediccion').getContext('2d');
- 
+
 const chart_error = new Chart(error_graf, {
     type: 'line',
     data: {
@@ -392,4 +393,4 @@ const chart_error = new Chart(error_graf, {
             }
         }
     }
-}); 
+});

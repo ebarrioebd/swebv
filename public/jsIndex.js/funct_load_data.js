@@ -1,8 +1,8 @@
 /**
- * 
- * Prepara los datos antes de ser analizados 
+ *
+ * Prepara los datos antes de ser analizados
  *prepara para generar los indicadores
- * 
+ *
  */
 //remplace//console.log("funct_load_data.js")
 //funciones del boton de filtrar
@@ -23,16 +23,16 @@ function GetSortOrder(prop) {
         return 0;
     }
 }
-//laamada para extraer datos desde la BD 
+//laamada para extraer datos desde la BD
 /**
- * 
- * 
+ *
+ *
  * Cargar DAtos desde MongoDB Atlas
- * 
- * 
+ *
+ *
 */
 var data_ovi_csv=[]
- 
+
 function getFechas(f1, f2) {
     var fecha1 = document.getElementById(f1).value
     var fecha2 = document.getElementById(f2).value
@@ -42,9 +42,9 @@ function getFechas(f1, f2) {
     var mes_name1 = date1.getMonth();
     var fechaNum2 = date2.getDate();
     var mes_name2 = date2.getMonth();
-    //return [fecha1,fecha2] 
+    //return [fecha1,fecha2]
     return [{ d: fechaNum1, m: mes_name1, y: date1.getFullYear() }, { d: fechaNum2, m: mes_name2, y: date2.getFullYear() }]
-    ////remplace//console.log(dias[date.getDay()-1] + " " + fechaNum + " de " + meses[mes_name] + " de " + date.getFullYear());     
+    ////remplace//console.log(dias[date.getDay()-1] + " " + fechaNum + " de " + meses[mes_name] + " de " + date.getFullYear());
 }
 //Agrupa las ovitrampas por gid(identificador de colonia a la que pertenece)
 function groupOvi(arr) {
@@ -61,11 +61,11 @@ function groupOvi(arr) {
     }
     return a;
 }
- 
+
 /**
  * Prepara datos de un archivo .csv
  * Cargar datos desde Archivo csv
- * 
+ *
  */
 //abre un div flotante para seleccionar el file.csv
 function fileSelect() {
@@ -74,18 +74,18 @@ function fileSelect() {
 }//colors//rango
 function closedivCSV() {
     document.getElementById("cont").style.filter = "blur(0px)";
-    document.getElementById("filecsv").style.display = "none";
+    document.getElementById("filecsv").style.display = "none"; 
 }
 //shows NomCol SELECT
 let jsCSV = [];
 function getArrayNomCol() {
     jsCSV = [];
     jsCSB = _json.sort(GetSortOrder("gid"))//ordenena las ovitrampas respecto a su gid
-    jsCSV = groupOvi(_json)// agrupa las ovitrampas por gid 
+    jsCSV = groupOvi(_json)// agrupa las ovitrampas por gid
     let selectZonaCSV = "";
     for (var i = 0; i < jsCSV.length; i++) {
         selectZonaCSV += `
-    <div class="row"> 
+    <div class="row">
         <div class="col-2" style="    padding-top: 4px;" ><input class="boxCSV" checked type="checkbox" value="${jsCSV[i][0].gid}" id=""></div>
         <div class="col-9" style="padding: 0">
         <select id="${jsCSV[i][0].gid}-CSV" class="cCSV" onChange="ir_url(this)">
@@ -133,18 +133,18 @@ function ver_csv_table(a) {
 
     document.getElementById("csv_table").innerHTML = tableHTML;
 }
- 
+
 function checkDat(obj, params_id) {
     switch (params_id) {
         case "lat":
-            return !isNaN(parseFloat(obj)); 
+            return !isNaN(parseFloat(obj));
         case "gid":
             return obj.length > 0;
         case "nom_col":
             return obj.length > 0 ? obj : "SN";
         case "cant_h":
             return obj.length > 0 || !isNaN(parseInt(obj)) || parseInt(obj) > 0 ? obj : 0;
-    } 
+    }
 }
 
 let _json = [];
@@ -212,7 +212,7 @@ function reverseMatrixCSV(matrix) {
 }
 function readFile(evt) {
     document.getElementById("csv_table").innerHTML = "";//vacia la tabla que visualiza los datos del archivo csv
-    document.getElementById("selectCSV").innerHTML = "";//vacia la tabal que muestra las zonas del archivo csv 
+    document.getElementById("selectCSV").innerHTML = "";//vacia la tabal que muestra las zonas del archivo csv
     let file = evt.target.files[0];
     let reader = new FileReader();
     reader.onload = (e) => {
@@ -237,7 +237,7 @@ document.getElementById('files').addEventListener('change', readFile, false);
 //funcion para mostrar el archivo cargado en el mapa
 
 
-function getDataCSV() { 
+function getDataCSV() {
     let _jsonGrp = [];
     let checkselect = []
     $('input:checkbox.boxCSV').each(function () {
@@ -254,7 +254,7 @@ function getDataCSV() {
             //analizar solo las colonias seleccionadas
             if (checkselect.indexOf(_jsonGrp[i][0].gid) != -1) {
                  data_ovi_csv.push(_jsonGrp[i])
-            }  
+            }
         }
         document.getElementById("cont").style.filter = "blur(0px)";
         document.getElementById("filecsv").style.display = "none";
@@ -266,12 +266,8 @@ function getDataCSV() {
     }
 
 }
-//fin de leer un CSV 
+//fin de leer un CSV
 //mostrar datos del archivo de colonias(Acapulco)
 function abrirColoniasInfo(){
     window.open(window.location.origin + "/info_colonias_acapulco_inegi_2010", 'popup', 'width=' + (screen.width - 300) + ', height=' + (screen.height - 100) + ', left=' + 10 + ', top=' + 10 + '');
 }
-
-
-
-

@@ -19,12 +19,25 @@ function addOvi(ovi_i) {
     }
     groupMakers = L.layerGroup(markers);
 }
-
-
+function verZona(gid){
+    //console.log("GID:"+gid)
+    //console.log("zonaGeneral::",zonaGeneral)
+    const foundZona = zonaGeneral.find(elem => elem.properties.gid == gid)
+    //map.setView(new L.LatLng(zonaGeneral[0].geometry.coordinates[0][0][0][1], zonaGeneral[0].geometry.coordinates[0][0][0][0]));
+    try{  
+        const centroZona = turf.centerOfMass(foundZona).geometry.coordinates;
+        //console.log("CentorZona::",centroZona)
+        map.setView(new L.LatLng(centroZona[1], centroZona[0]));
+    }catch(err){
+        //console.log("foundZona::",foundZona)
+        map.setView(new L.LatLng(foundZona.geometry.coordinates[0][0][0][1], foundZona.geometry.coordinates[0][0][0][0]));
+        
+    }
+}
 function addZonaName(data) {
-    var doc_ = "";
+    var doc_ = ""; 
     for (var i = 0; i < data.length; i++) {
-        doc_ += '<tr><td id="td_color" style="background:' + data[i].color + ' ;text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black, 1px 1px black, -1px -1px black, -1px 1px black, 1px -1px black;font-size: 18px;width: 2px;" >' + data[i].cant_h.length + '</td><td style="text-align: initial">' + data[i].nom_col + '</td><td>' + parseInt(data[i].suma) + '</td></tr>';
+        doc_ += '<tr><td id="td_color" style="background:' + data[i].color + ' ;text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black, 1px 1px black, -1px -1px black, -1px 1px black, 1px -1px black;font-size: 18px;width: 2px;" >' + data[i].cant_h.length + '</td><td style="text-align: initial"><button style="width: 100%;background: transparent;text-align: left;color: white;" onclick="verZona('+'\''+data[i].gid+'\''+')">' + data[i].nom_col + '</button> </td><td>' + parseInt(data[i].suma) + '</td></tr>';
     }
     document.getElementById("zona_name").innerHTML = '<table style="width:100%"><thead><th>#Ovit</th><th>Colonia</th> <th>#Huevos</th></thead><tbody>' + doc_ + '<tbody></table>';
 }
@@ -237,6 +250,7 @@ function crearHistogramaDeFrecuencias(od) {
     const cant_inter = 9;
     var inter = Math.ceil(Math.sqrt(od.length)) > cant_inter ? cant_inter : Math.ceil(Math.sqrt(od.length));
     var tamClases = Math.round(dataVal.length / inter);
+    //var tamClases = Math.floor(dataVal.length / inter);
     var frecuencia = [];
     var interClass = [];
 

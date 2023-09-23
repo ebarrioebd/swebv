@@ -4,7 +4,8 @@
 /*Prepara mapa de calor*/
 var imgOpaci = "",
     imgKrig = "",
-    imgIDW = "";
+    imgIDW = "",
+    imgZonaAlta = "";
 var ovitrampas;
 
 var positions = [];
@@ -15,13 +16,13 @@ var scope = new L.polyline([0, 0]);
 var botonesControlCSV = L.control({ position: 'bottomleft' });
 var botonesControlInfo = L.control({ position: 'topright' });
 var botonesControlRango = L.control({ position: 'topleft' });
-botonesControlRango.onAdd = function() { // creación de los botones
+botonesControlRango.onAdd = function () { // creación de los botones
     var botones = L.DomUtil.create('div', 'class-css-botones');
     botones.innerHTML = "<div style='color: black;background:#34c234b5'>Porcentaje Bajo</div><div style='color: black;background:#d3d331b5'>Porcentaje Medio</div><div style='color: black;background:#ff0000b5'>Porcentaje Alto</div>"
     return botones;
 };
 
-botonesControlCSV.onAdd = function() { // creación de los botones
+botonesControlCSV.onAdd = function () { // creación de los botones
     var botones = L.DomUtil.create('div', 'class-css-botones');
     botones.innerHTML = `<buttom  id="agregar-marcadoresCSV" class="btn btn-primary" style="background:'green'">Mostrar Marcadores</buttom>`;
     botones.innerHTML += `<buttom  id="remover-marcadoresCSV" class="btn btn-warning">Ocultar Marcadores</buttom>`;
@@ -135,7 +136,10 @@ function correlacio(mD, z) {
 ///crea una imagen con A,B como sus dimenciones
 //zi arrays de valores para cada cuadro dentro
 //id del canvas
-function creaImagen(A, B, zi, id) {
+
+function creaImagen(A, B, zi, id, imgOpcion) {//imgOpcion=imgZonaAlta
+    var mayorDato = imgOpcion === "imgZonaAlta" ? 5 * (data_ovi_max / colors.length) : 0;
+    console.log("MAyorDato:: ", mayorDato)
     //remplace//console.log("A:", A, "B::", B)
     var canvas = document.getElementById(id);
     var ctx = canvas.getContext("2d");
@@ -149,7 +153,7 @@ function creaImagen(A, B, zi, id) {
     //remplace//console.log("Est_Des_Data.data_max:::", Est_Des_Data.data_max)
     var max = data_ovi_max //getMaxValor(ovitrampas);
     for (var i = 0; i < A; i++) {
-        var aumentI = 0; //-0.8
+        var aumentI =0.3; //-0.8
         y0 = 0;
         y1 = 0;
         y1 = canvas.width
@@ -157,12 +161,13 @@ function creaImagen(A, B, zi, id) {
         for (var j = 0; j < B; j++) {
             x1 = canvas.width / A
             y1 = canvas.height / B
-            if (zi[k] !== (-1)) {
+            if (zi[k] !== (-1) && zi[k] >= mayorDato) {
                 ctx.fillStyle = getC(zi[k], max);
                 ctx.fillRect(x0 - aumentI, y0 - aumentI, x1 + 2 * aumentI, y1 + 2 * aumentI);
                 //ctx.arc((x0+x1)/2, (y0+y1)/2, (canvas.width/A)/2 , 0,Math.PI * 2);
-                //ctx.stroke(); 
+                //ctx.stroke();
                 //ctx.strokeRect(x0, y0, x1, y1);
+                //ctx.lineWidth = 0.5;
             }
             //ctx.strokeRect(x0, y0, x1, y1);
             y0 -= (canvas.width / B)
@@ -242,7 +247,7 @@ function addTablaIndicador(data) {
         //divRango += "<div id='rango' style='color:black;background:" + colors[i] + "'>" + v2 + "</div>";
         v2 = "";
     }
-    botonesControlInfo.onAdd = function() { // creación de los botones
+    botonesControlInfo.onAdd = function () { // creación de los botones
         var botones = L.DomUtil.create('div', 'class-css-botones');
         //botones.style.width=22+"%"
         botones.innerHTML += "<div class='row' style='width: 200px;'>" + divRango + "</div>"
@@ -282,7 +287,7 @@ function modelExp(h, a, m_s) {
     }
 }
 
-//genera valores del variograma teorico que se ha ajustado 
+//genera valores del variograma teorico que se ha ajustado
 function dataVT(nugget, sillPartial, rango, model_semi) {
     var distRange = chartVariograma.data.datasets[0].data[chartVariograma.data.datasets[0].data.length - 1].x
     //remplace//console.log("distRange::::", distRange)
@@ -445,14 +450,14 @@ function interpolar(metodo) {
 
     document.getElementById("interpolarCSV").style.display = "";
     document.getElementById("interpolarCSV").style.top = 0 + "%";
-    if (metodo == "kriging") {
+    if (metodo === "kriging") {
         metodo_aplicado = metodo
         if (dat_semivariograma.m !== "") {
             document.getElementById("divProgressInterpolar").style.display = ""
             //document.getElementById("imgLoading").style.display = "";
             document.getElementById("interpolarCSV").style.filter = "blur(0px)";
             document.getElementById("id_variograma").style.display = "none";
-            //creamos el worker  
+            //creamos el worker
             //remplace//console.log("dat_semivariograma:;", dat_semivariograma)
             wk_kriging = new Worker('/interpoladoresjs/kriging_ordinario.js');
             wk_kriging.onerror = (event) => {
@@ -463,7 +468,7 @@ function interpolar(metodo) {
             };
             wk_kriging.postMessage({ x: x, y: y, z: z, semivariograma: dat_semivariograma, pi: puntos_a_interpolar, ms: dat_semivariograma.modelo })
             wk_kriging.onmessage = (event) => {
-                if (event.data.type == "result") {
+                if (event.data.type === "result") {
                     //remplace//console.log("DataKriging:", event.data);
                     dat_semivariograma.mvt = event.data.mvt
                     var zi = event.data.zi;
@@ -473,7 +478,16 @@ function interpolar(metodo) {
                     }
                     let opacidad_img = 1;
                     if (mapCSVInter.hasLayer(imgOpaci)) { mapCSVInter.removeLayer(imgOpaci); }
-                    var imgk = L.imageOverlay(creaImagen(A, B, zi, "canvasMap"), [
+                    if (mapCSVInter.hasLayer(imgZonaAlta)) { mapCSVInter.removeLayer(imgZonaAlta); }
+
+                    imgZonaAlta = L.imageOverlay(creaImagen(A, B, zi, "canvasMapZonaAlta", "imgZonaAlta"), [
+                        [cajaMulti[1], cajaMulti[0]],
+                        [cajaMulti[3], cajaMulti[2]]
+                    ], {
+                        opacity: 1
+                    });
+
+                    var imgk = L.imageOverlay(creaImagen(A, B, zi, "canvasMap", ""), [
                         [cajaMulti[1], cajaMulti[0]],
                         [cajaMulti[3], cajaMulti[2]]
                     ], {
@@ -496,11 +510,11 @@ function interpolar(metodo) {
             alert("Ajuste el semivariograma")
         }
 
-    } else if (metodo == "idw") {
+    } else if (metodo === "idw") {
         metodo_aplicado = metodo
         document.getElementById("divProgressInterpolar").style.display = ""
         //document.getElementById("imgLoading").style.display = "";
-        //creamos el worker  
+        //creamos el worker
         //remplace//console.log("dat_semivariograma:;", dat_semivariograma)
         wk_idw = new Worker('/interpoladoresjs/idw.js');
 
@@ -522,13 +536,14 @@ function interpolar(metodo) {
                 }
                 let opacidad_img = 1;
                 if (mapCSVInter.hasLayer(imgOpaci)) { mapCSVInter.removeLayer(imgOpaci); }
-                var img_idw = L.imageOverlay(creaImagen(A, B, zi, "canvasMap"), [
+                if (mapCSVInter.hasLayer(imgZonaAlta)) { mapCSVInter.removeLayer(imgZonaAlta); }
+                imgZonaAlta = L.imageOverlay(creaImagen(A, B, zi, "canvasMapZonaAlta", "imgZonaAlta"), [
                     [cajaMulti[1], cajaMulti[0]],
                     [cajaMulti[3], cajaMulti[2]]
                 ], {
-                    opacity: opacidad_img
+                    opacity: 1
                 });
-                imgOpaci = L.imageOverlay(creaImagen(A, B, zi, "canvasMap"), [
+                imgOpaci = L.imageOverlay(creaImagen(A, B, zi, "canvasMap", ""), [
                     [cajaMulti[1], cajaMulti[0]],
                     [cajaMulti[3], cajaMulti[2]]
                 ], {
@@ -547,13 +562,18 @@ function interpolar(metodo) {
 
     }
 }
+function SZA() {
+    mapCSVInter.removeLayer(imgOpaci);
+    imgZonaAlta.addTo(mapCSVInter)
+}
+
 
 function generarPI(zonaSelect) { //genear puntos a interpolar
     //console.log("zonaSelect::", zonaSelect)
     //var zonaCoord = zonaSelect[0].geometry.coordinates[0]
     //remplace//console.log("1")
     let positions = []
-    zonaSelect[0].geometry.coordinates[0][0].forEach(function(point) {
+    zonaSelect[0].geometry.coordinates[0][0].forEach(function (point) {
         positions.push([point[1], point[0]]);
     });
     mapCSVInter.removeLayer(scope);
@@ -565,10 +585,10 @@ function generarPI(zonaSelect) { //genear puntos a interpolar
     let line = turf.lineString(inv(positions));
     let bbox = turf.bbox(line);
     let dcuadro = turf.distance([bbox[0], bbox[1]], [bbox[0], bbox[3]], options);
-    let cantidad_de_cuadrados_por_ladao = 100
+    let cantidad_de_cuadrados_por_ladao = 150
     let tamCuadro = Math.ceil(dcuadro / cantidad_de_cuadrados_por_ladao) //80
     let squareGrid = turf.squareGrid(bbox, tamCuadro, options);
-    cajaMulti = turf.bbox(squareGrid); //cuadro dlimitador del poligono 
+    cajaMulti = turf.bbox(squareGrid); //cuadro dlimitador del poligono
     let d = turf.distance([cajaMulti[0], cajaMulti[3]], [cajaMulti[2], cajaMulti[3]], {
         units: 'meters'
     });
@@ -597,7 +617,7 @@ function generarPI(zonaSelect) { //genear puntos a interpolar
 
 function crearXY(p, min, max) {
     min = 0; // min - (10 * min) / 100
-    max = max + (0.3 * max); // max + (30 * max) / 100 
+    max = max + (0.3 * max); // max + (30 * max) / 100
     const x_rect = [];
     const y_rect = [];
     for (let i = parseInt(min); i < parseInt(max); i++) {
@@ -691,13 +711,13 @@ function crearMapaDeCalor(zonaV, m_i) {
     //zonaSelect=zonaV
     generarPI(zonaV) //generar puntos a interpolar
     if (m_i == "kriging") {
-        let button_view = '<button onclick="showVariograma()"><img src="/images/graf.png" id="icon_inter">Ver Semivariograma</button><button onclick="validacionCruzada(' + '\'kriging\'' + ')"><img src="/images/graf.png" id="icon_inter">Validación cruzada</button><button  onclick="ocultarIMG()" id="ocultarIMG"><img src="/images/oculto.png" id="icon_inter">Ocultar IMG</button><button onclick="mostrarIMG()" id="mostrarIMG"><img src="/images/ojo.png" id="icon_inter">Mostrar IMG</button><button onclick="dIMG()"><img src="/images/salvar.png" id="icon_inter">Descargar IMG</button><button id="ocultarPuntos" onclick="ocultarPuntos()"><img src="/images/oculto.png" id="icon_inter">Ocultar Puntos</button><button id="mostrarPuntos" onclick="mostrarPuntos()"><img src="/images/ojo.png" id="icon_inter">Mostrar Puntos</button>'; //<button onclick="showError()"><img src="/images/ojo.png" id="icon_inter">Mostrar Res. validacion cruzada</button>'
+        let button_view = '<button onclick="showVariograma()"><img src="/images/graf.png" id="icon_inter">Ver Semivariograma</button><button onclick="validacionCruzada(' + '\'kriging\'' + ')"><img src="/images/graf.png" id="icon_inter">Validación cruzada</button><button  onclick="ocultarIMG()" id="ocultarIMG"><img src="/images/oculto.png" id="icon_inter">Ocultar superficie</button><button onclick="mostrarIMG()" id="mostrarIMG"><img src="/images/ojo.png" id="icon_inter">Mostrar superficie</button><button onclick="dIMG()"><img src="/images/salvar.png" id="icon_inter">Descargar superficie</button><button id="ocultarPuntos" onclick="ocultarPuntos()"><img src="/images/oculto.png" id="icon_inter">Ocultar Puntos</button><button id="mostrarPuntos" onclick="mostrarPuntos()"><img src="/images/ojo.png" id="icon_inter">Mostrar Puntos</button><button onclick="SZA()"><img src="/images/ojo.png" id="icon_inter">Mostrar Zonas Altas</button>'; //<button onclick="showError()"><img src="/images/ojo.png" id="icon_inter">Mostrar Res. validacion cruzada</button>'
         document.getElementById("muestra_button_v_interpolar").innerHTML = button_view
         //document.getElementById("interpolarCSV").style.filter = "blur(5px)";
         crear_SemiVariograna_Experimental()
 
     } else if (m_i == "idw") {
-        let button_view = '<button onclick="ajustarP()"> <img src="/images/graf.png" id="icon_inter">Seleccionar parametro <strong>p</strong></button><button  onclick="ocultarIMG()" id="ocultarIMG"><img src="/images/oculto.png" id="icon_inter">Ocultar IMG</button><button onclick="mostrarIMG()" id="mostrarIMG"><img src="/images/ojo.png" id="icon_inter">Mostrar IMG</button><button onclick="dIMG()"><img src="/images/salvar.png" id="icon_inter">Descargar IMG</button><button id="ocultarPuntos" onclick="ocultarPuntos()"><img src="/images/oculto.png" id="icon_inter">Ocultar Puntos</button><button id="mostrarPuntos" onclick="mostrarPuntos()"><img src="/images/ojo.png" id="icon_inter">Mostrar Puntos</button>'
+        let button_view = '<button onclick="ajustarP()"> <img src="/images/graf.png" id="icon_inter">Seleccionar parametro <strong>p</strong></button><button  onclick="ocultarIMG()" id="ocultarIMG"><img src="/images/oculto.png" id="icon_inter">Ocultar superficie</button><button onclick="mostrarIMG()" id="mostrarIMG"><img src="/images/ojo.png" id="icon_inter">Mostrar superficie</button><button onclick="dIMG()"><img src="/images/salvar.png" id="icon_inter">Descargar superficie</button><button id="ocultarPuntos" onclick="ocultarPuntos()"><img src="/images/oculto.png" id="icon_inter">Ocultar Puntos</button><button id="mostrarPuntos" onclick="mostrarPuntos()"><img src="/images/ojo.png" id="icon_inter">Mostrar Puntos</button><button onclick="SZA()"><img src="/images/ojo.png" id="icon_inter">Mostrar Zonas Altas</button>'
         document.getElementById("muestra_button_v_interpolar").innerHTML = button_view
         interpolar(m_i)
     }
@@ -735,20 +755,21 @@ function ocultarMarcadores() {
 
 
 //redireccionar a Ventana de Mapa de calor
-function ir_url(n, c_id, type_dat, m_i) { //value 
+function ir_url(n, c_id, type_dat, m_i) { //value
     document.getElementById("interpolarCSV").style.display = "";
     //document.getElementById("imgLoading").style.display = "";
-    document.getElementById('agregar-marcadoresCSV').addEventListener('click', function() {
+    document.getElementById('agregar-marcadoresCSV').addEventListener('click', function () {
         groupMakersCSV.addTo(mapCSVInter)
     })
-    document.getElementById('remover-marcadoresCSV').addEventListener('click', function() {
+    document.getElementById('remover-marcadoresCSV').addEventListener('click', function () {
         groupMakersCSV.remove();
     })
 
     //elimina la imagen si esta en el mapa
-    if (mapCSVInter.hasLayer(imgOpaci)) { mapCSVInter.removeLayer(imgOpaci); }
+    if (mapCSVInter.hasLayer(imgOpaci)) { mapCSVInter.removeLayer(imgOpaci); }//imgZonaAlta
+    if (mapCSVInter.hasLayer(imgZonaAlta)) { mapCSVInter.removeLayer(imgZonaAlta); }
 
-    //document.getElementById("imgLoading").style.display = ""; //muestra la imagen en mapCSVInter 
+    //document.getElementById("imgLoading").style.display = ""; //muestra la imagen en mapCSVInter
     //groupCirclesCSV.remove()
     document.getElementById("interpolarCSV").style.top = 0 + "%";
     document.getElementById("nomColInterp").innerHTML = "Colonia : " + n; //+paramsValue[0].zona;
@@ -785,7 +806,7 @@ function ir_url(n, c_id, type_dat, m_i) { //value
 
     var zona;
     if (type_dat === "type_csv_no_zona") {
-        zona = zonaGeneral; ///agrega las zonas al mapa  
+        zona = zonaGeneral; ///agrega las zonas al mapa
         for (var i = 0; i < zonaGeneral.length; i++) {
             if (zonaGeneral[i].properties.gid === c_id) {
                 zona = [zonaGeneral[i]]
@@ -796,15 +817,15 @@ function ir_url(n, c_id, type_dat, m_i) { //value
         crearMapaDeCalor(zona, m_i);
     } else {
         fetch("/getZona", {
-                method: "POST",
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    gid: [c_id] //[paramsValue[0].zona_id]
-                })
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                gid: [c_id] //[paramsValue[0].zona_id]
             })
+        })
             .then(res => res.json())
             .then(data => {
-                zona = data.zona; ///agrega las zonas al mapa 
+                zona = data.zona; ///agrega las zonas al mapa
                 //remplace//console.log("zona despues:", zona);
                 crearMapaDeCalor(zona, m_i);
             });
@@ -814,12 +835,14 @@ function ir_url(n, c_id, type_dat, m_i) { //value
 //document.getElementById('mostrarIMG').addEventListener("click", function () {
 //layerGroup.addTo(map);
 function mostrarIMG() {
+    imgZonaAlta.addTo(mapCSVInter);
     imgOpaci.addTo(mapCSVInter);
 }
 //})
 //document.getElementById('ocultarIMG').addEventListener("click", function () {
 //map.removeLayer(layerGroup)
 function ocultarIMG() {
+    mapCSVInter.removeLayer(imgZonaAlta);
     mapCSVInter.removeLayer(imgOpaci);
 }
 //});
@@ -837,7 +860,7 @@ function showVariograma() {
 function dIMG() {
     const canvas = document.querySelector("#canvasMap")
     let enlace = document.createElement('a');
-    // El título 
+    // El título
     let nameAleatorio = (Math.floor(Math.random() * 100000)).toString()
     enlace.download = "MAPA_" + nameAleatorio + ".PNG";
     // Convertir la imagen a Base64 y ponerlo en el enlace
@@ -861,3 +884,5 @@ function closeSelectP() {
 function ajustarP() {
     document.getElementById("ventana_seleccionar_p").style.display = ""
 }
+
+
