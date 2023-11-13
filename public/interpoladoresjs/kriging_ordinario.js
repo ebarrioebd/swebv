@@ -192,7 +192,7 @@ Sylvester.Matrix.prototype = {
     },
 }
 
-function invMx(elements) {
+function invM(elements) {
     const mat = Sylvester.Matrix.create(elements).inverse()
     if (mat !== null) {
         return mat.elements
@@ -203,7 +203,7 @@ function invMx(elements) {
 
 //invertir matriz
 
-function invM(matriz) {
+function invMx(matriz) {
     // Obtener el tamaño de la matriz
     let n = matriz.length;
 
@@ -324,7 +324,7 @@ self.addEventListener('message', function(e) {
     let z = e.data.z
     let puntos_i = e.data.pi
     let variograma = e.data.semivariograma;
-    console.log("e.data.semivariograma:", e.data)
+    //console.log("e.data.semivariograma:", e.data)
     //crear Matriz de variograma Teorico
     let n = x.length;
     //conseguir la Matriz del Variograma Teorico de los puntos de muestra
@@ -338,14 +338,12 @@ self.addEventListener('message', function(e) {
         }
     }
     console.timeEnd("mvt")
-    mvt[n][n] = 0; 
+    mvt[n][n] = 0;  
     const progreso = 0;
     console.time("invM")
     let matriz_variograma_teorico = invM(mvt)
-    console.timeEnd("invM")
-    //console.log(matriz_variograma_teorico) 
-    let zi = [],
-        k = 0;
+    console.log("invM") 
+    let zi = [], k = 0;
     console.log("puntos_i.length:",puntos_i.length)
     console.time("estimar")
     let ipi=parseInt(puntos_i.length/10)
@@ -359,7 +357,7 @@ self.addEventListener('message', function(e) {
         //}
         if(i%ipi==0){self.postMessage({ type: "progress", p: (i * 100) / puntos_i.length })}
         k++;
-    } //findefor
+    } //findefor 
     console.timeEnd("estimar")
     self.postMessage({ type: "result", zi: zi, mvt: [] })
 

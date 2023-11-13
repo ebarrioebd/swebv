@@ -192,7 +192,7 @@ Sylvester.Matrix.prototype = {
     },
 }
 
-function invMx(elements) {
+function invM(elements) {
     const mat = Sylvester.Matrix.create(elements).inverse()
     if (mat !== null) {
         return mat.elements
@@ -203,7 +203,7 @@ function invMx(elements) {
 
 //invertir matriz
 
-function invM(matriz) {
+function invMx(matriz) {
     // Obtener el tamaño de la matriz
     let n = matriz.length;
 
